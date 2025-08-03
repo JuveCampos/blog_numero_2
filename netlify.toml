@@ -1,5 +1,5 @@
 [build]
-  command = "curl -LO https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.550/quarto-1.4.550-linux-amd64.tar.gz && tar -xzf quarto-1.4.550-linux-amd64.tar.gz && ./quarto-1.4.550/bin/quarto render"
+  command = "npx @quarto/cli render"
   publish = "_site"
 
 [[redirects]]
