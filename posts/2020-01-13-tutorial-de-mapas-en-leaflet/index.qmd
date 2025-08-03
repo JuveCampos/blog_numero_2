@@ -1,0 +1,245 @@
+---
+title: "Tutorial de mapas en Leaflet"
+author: "Juvenal Campos"
+date: "2020-01-13"
+categories: [Tutoriales, Mapas, R]
+tags: [R, Leaflet, Mapas]
+---
+
+La librería `leaflet` forma parte de la familia de librerías de los htmlwidgets, y su principal función es la de poder realizar mapas interactivos utilizando lenguaje R. Esta librería traduce nuestros comandos de R a JavaScript, creando una página web con elementos de información geográfica (como puntos, líneas o polígonos), fondos georreferenciados y funciones añadidas (como funciones de interacción con los elementos geográficos o aplicar zoom a zonas de interés). 
+
+# Ejemplo de Uso
+
+En este ejemplo veremos como visualizar información geografica utilizando `leaflet`. Para este ejemplo, realizaremos un mapa de **polígonos** utilizando información de las Entidades Federativas de la República Mexicana. Esta información se puede descargar desde INEGI. 
+
+## 1. Librerias.
+
+Las librerias necesarias para correr este ejemplo son las siguientes: 
+
+```{r, warning=FALSE, message=FALSE}
+library(leaflet)      # libreria para graficar mapas interactivos
+library(sf)           # manejo de informacion geografica 
+library(viridis)      # paletas de colores
+library(RColorBrewer) # mas paletas de colores
+library(dplyr)        # manejo de bases de datos
+library(htmlwidgets)  # para guardar el mapa como HTML
+```
+
+## 2. Abrimos el archivo shape
+
+Para el manejo de informacion espacial utilizaremos el paquete `sf`, el cual tiene funciones para abrir bases de datos geográficas.
+
+El formato del archivo seleccionado es el `*.geojson` por sus ventajas de almacenamiento y organización, sin embargo, la función siguiente funciona exactamente igual utilizando archivos `*.shp`
+
+```{r, echo=FALSE, warning=FALSE}
+root <- "https://raw.githubusercontent.com/JuveCampos/MexicoSinIslas/master"
+```
+
+```{r}
+# root <- "la direccion donde esta mi shapefile"
+shape <- st_read(paste0(root, "/Sin_islas.geojson"))
+```
+
+## 3. Generamos variables ficticias
+
+Con tal de asignarle un color a los poligonos de los estados de la republica crearemos variables ficticias; le generaremos un numero aleatorio a cada estado y una categoria en base a dicho numero.
+
+```{r}
+set.seed(1234)
+
+# Variable numerica
+shape$numerica <- runif(nrow(shape), min = 0, max = 1)
+
+# Variable categorica
+shape$categorica <- case_when(shape$numerica < 0.25 ~ "Estado feo", 
+                              shape$numerica >= 0.25 & shape$numerica < 0.5 ~ "Estado regular", 
+                              shape$numerica >= 0.5 & shape$numerica < 0.75 ~ "Estado bonito", 
+                              shape$numerica >= 0.75 ~ "Estado hermoso")
+# 
+
+```
+
+## 4. Generamos las paletas para colorear los mapas
+
+Las paletas son vectores de colores con los cuales vamos a colorear el mapa. Las funciones que el paquete `Leaflet` provee son las siguientes: 
+
+### colorNumeric()
+
+* `colorNumeric(palette, domain, na.color = "#808080", alpha = FALSE,
+  reverse = FALSE)`
+
+Esta funcion nos permite crear paletas de colores para variables o atributos que tengan valores numericos. Nos generara igualmente una escala de colores continua.
+
+### colorBin()
+
+* `colorBin(palette, domain, bins = 7, pretty = TRUE, na.color = "#808080",
+  alpha = FALSE, reverse = FALSE)`
+
+Esta funcion nos ayuda para crear paletas de colores donde automaticamente separa los valores de la variable numerica en rangos o bins (_botecitos_), generando una escala con valores discretos, en vez de continuos como hacia la funcion previa.
+
+### colorQuantile()
+
+* `colorQuantile(palette, domain, n = 4, probs = seq(0, 1, length.out = n + 1),
+  na.color = "#808080", alpha = FALSE, reverse = FALSE)`
+
+Esta funcion nos permite crear paletas de colores donde podemos separar la informacion en los cuantiles que especifiquemos previamente. Sirve para ver quienes se ubican en las partes inferiores y superiores de una escala numerica y de esta manera emitir juicios sobre la informacion.
+
+### colorFactor()
+
+* `colorFactor(palette, domain, levels = NULL, ordered = FALSE,
+  na.color = "#808080", alpha = FALSE, reverse = FALSE)`
+  
+Esta funcion crea paletas de colores mediante el uso de variables categoricas (factores en R), donde asigna un color diferente a cada categoria de informacion.
+
+
+```{r}
+
+palnumeric <- colorNumeric("viridis", domain = shape$numerica)
+palBin <- colorBin("magma", domain = shape$AREA, bins = 4)
+palQuantile <- colorQuantile("Spectral", domain = shape$numerica)
+palfac <- colorFactor("RdBu", domain = shape$categorica)
+
+```
+
+## 5. Generamos el popup 
+
+El `popup` es la ventana que se muestra al hacer click en un poligono del mapa. En este caso, queremos que al hacer click en un estado, se muestren cosas como el area, el numero aleatorio que le toco y que tan bonito es. 
+
+La parte encerrada con los caracteres `"<b>" y "</b>"` seran mostradas en negritas en el mapa, mientras que al introducir `"<br>"` se hara un corte de la oracion. Estos caracteres se les denomina como `html tags` y los presentados aqui son un ejemplo de varios que pueden utilizarse para los mapas de leaflet.
+
+```{r}
+
+# Funcion hecha en casa para mostrar los decimales que queremos: 
+specify_decimal <- function(x, k) trimws(format(round(x, k), nsmall=k))
+
+# Elaboracion del popup: 
+
+popup <- paste0(
+"<b>","Nombre estado: ",   "</b>",   as.character(shape$ENTIDAD) ,        "<br>",                     
+"<b>", "Capital: ",        "</b>",   as.character(shape$CAPITAL)   ,      "<br>",                   
+"<b>", "Area: ",           "</b>",   specify_decimal(shape$AREA,3) ,      "<br>", 
+"<b>", "Num. Aleatorio ",  "</b>",   specify_decimal(shape$numerica ,3) , "<br>",
+"<b>", "Tipo de Estado: ", "</b>",   shape$categorica ,                   "<br>" )
+    
+```
+
+## 6. Elaboramos el mapa
+A continuacion elaboraremos el mapa usando la libreria `leaflet`.
+```{r, eval=TRUE}
+
+# Funcion para crear el mapa
+leaflet(shape) %>%
+  # Opcion para anadir imagenes o mapas de fondo (tiles)
+  addProviderTiles("Esri.WorldTerrain") %>%
+  # Funcion para agregar poligonos
+  addPolygons(color = "#444444" ,
+              weight = 1, 
+              smoothFactor = 0.5,
+              opacity = 1.0,
+              fillOpacity = 0.5,
+              fillColor = ~palnumeric(shape$numerica),    # Color de llenado
+              layerId = ~shape$CVE_EDO,                  
+              highlightOptions = highlightOptions(color = "white", weight = 2,
+                                                  bringToFront = TRUE), #highlight cuando pasas el cursor
+              label = ~shape$ENTIDAD ,                                  # etiqueta cuando pasas el cursor
+              labelOptions = labelOptions(direction = "auto"),
+              popup = popup) %>%                                        # mostrar el popup
+  
+  addLegend(position = "topright", pal = palnumeric, values = ~shape$numerica,
+            title = "Suerte del Estado")                                # mostrar escala en el mapa
+
+```
+
+## 7. Mapa multicapa.
+
+Para finalizar, haremos un mapa multicapa con toda la informacion que hemos generado hasta el momento, esto es, que despliegue informacion de distintas variables al seleccionar estas en el mapa.
+
+```{r, eval=TRUE}
+
+mapa <- leaflet(shape) %>%
+  addProviderTiles("Esri.WorldTerrain") %>%
+  addPolygons(color = "#444444" ,
+              weight = 1, 
+              smoothFactor = 0.5,
+              opacity = 1.0,
+              fillOpacity = 0.5,
+              fillColor = ~palfac(shape$categorica),
+              group = "Belleza",
+              highlightOptions = highlightOptions(color = "white", weight = 2,
+                                                  bringToFront = TRUE),
+              label = ~shape$ENTIDAD ,
+              labelOptions = labelOptions(direction = "auto"),
+              popup = popup) %>%
+  
+   addLegend(position = "bottomleft", pal = palfac, values = ~shape$categorica,
+             title = "Belleza del Estado") %>%
+  
+  addPolygons(data = shape, 
+              color = "#444444" ,
+              weight = 1, 
+              smoothFactor = 0.5,
+              opacity = 1.0,
+              fillOpacity = 0.5,
+              fillColor = ~palnumeric(shape$numerica),
+              group = "Suerte",
+              highlightOptions = highlightOptions(color = "white", weight = 2,
+                                                  bringToFront = TRUE),
+              label = ~shape$ENTIDAD ,
+              labelOptions = labelOptions(direction = "auto"),
+              popup = popup) %>%
+  
+  addPolygons(data = shape, 
+              color = "#444444" ,
+              weight = 1, 
+              smoothFactor = 0.5,
+              opacity = 1.0,
+              fillOpacity = 0.5,
+              fillColor = ~palQuantile(shape$numerica),
+              group = "Porcentaje",
+              highlightOptions = highlightOptions(color = "white", weight = 2,
+                                                  bringToFront = TRUE),
+              label = ~shape$ENTIDAD ,
+              labelOptions = labelOptions(direction = "auto"),
+              popup = popup) %>%
+  
+  addLegend(position = "bottomright", pal = palQuantile, values = ~shape$numerica,
+            title = "Cuantiles de Suerte") %>%
+  
+  
+  addPolygons(data = shape, 
+              color = "#444444" ,
+              weight = 1, 
+              smoothFactor = 0.5,
+              opacity = 1.0,
+              fillOpacity = 0.5,
+              fillColor = ~palBin(shape$AREA),
+              group = "Area",
+              highlightOptions = highlightOptions(color = "white", weight = 2,
+                                                  bringToFront = TRUE),
+              label = ~shape$ENTIDAD ,
+              labelOptions = labelOptions(direction = "auto"),
+              popup = popup) %>%
+  
+  addLegend(position = "topleft", pal = palBin, values = ~shape$AREA,
+            title = "Areas") %>%
+  
+  addLayersControl( 
+    baseGroups = c("Belleza", "Suerte", "Porcentaje", "Area")) %>%
+
+  addLegend(position = "topright", pal = palnumeric, values = ~shape$numerica,
+          title = "Suerte del Estado") 
+
+# Imprimir el mapa
+mapa
+  
+```
+
+
+## 8. Guardamos el archivo.
+
+Para guardar el archivo haremos uso de la libreria `htmlwidgets`.
+
+```{r, eval=FALSE}
+# Gardar el mapa 
+htmlwidgets::saveWidget(mapa, "mapa.html")
+```

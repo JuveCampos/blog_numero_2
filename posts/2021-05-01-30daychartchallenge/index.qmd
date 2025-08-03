@@ -1,0 +1,83 @@
+---
+title: "#30DayChartChallenge 2021. Mis Gráficas"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2021-05-01"
+categories: 
+  - challenges
+  - 30daychartchallenge
+  - graficas
+  - dataviz
+tags:
+  - R
+  - ggplot2
+  - visualización
+image: "images/img_2.png"
+---
+
+En esta entrada de blog pongo mis gráficas del #30DayChartChallenge en un solo sitio.
+
+![](images/img_2.png){fig-align="center"}
+
+Las gráficas son (en su mayoría) replicables sin mayor dificultad; para esto hay que descargarse los códigos (+ las bases de datos) directamente en el repositorio de Github: <https://github.com/JuveCampos/30DayChartChallenge2021>.
+
+Cualquier duda, comentario o sugerencia favor de hacermelo llegar a la cuenta del Twitter :P.
+
+## Día 01. `part-to-whole`
+
+Gráfica para ver la aportación de la producción de Aguacate de cada una de las entidades del país.
+
+::: {.callout-note}
+## Tweet original
+[Ver tweet](https://twitter.com/JuvenalCamposF/status/1377820093359394820)
+
+Producción de aguacate por Entidad Federativa de México, 2019. De todos los aguacates de México, #Michoacán produce tres cuartas partes. 🥑🥑🥑👀
+:::
+
+## Día 02. `pictogram`
+
+Gráfica de proporción de las viviendas de la CDMX que tienen consolas de videojuegos.
+
+::: {.callout-note}
+## Tweet original
+[Ver tweet](https://twitter.com/JuvenalCamposF/status/1378164989014405122)
+
+Proporción de hogares con consolas de #Videojuegos en la Ciudad de México. Datos del Censo 2020 de @INEGI_INFORMA
+
+En la #CDMX 21% de las viviendas reportaron tener una consola de videojuegos, el porcentaje más alto del país.
+:::
+
+## Día 03. `historical`
+
+Gráfica de lluvia acumulada mensual desde 1877 a 2018.
+
+::: {.callout-note}
+## Tweet original
+[Ver tweet](https://twitter.com/JuvenalCamposF/status/1378378349488168961)
+
+Lluvia acumulada mensual registrada por el observatorio de Tacubaya desde 1877 hasta 2018. Con estos datos, podemos saber que tanto llovió en la época de Porfirio Díaz y todos los meses que vinieron después.
+:::
+
+## Día 04. `magical`
+
+Gráfica de menciones de cada una de las cuatro casas de Hogwarts en los 7 libros de Harry Potter.
+
+::: {.callout-note}
+## Tweet original
+[Ver tweet](https://twitter.com/JuvenalCamposF/status/1378772757198987265)
+
+Menciones a cada una de las 4 casas de #Hogwarts en los 7 libros de #harrypotter. Cada bolita es una mención.
+
+Código: <https://github.com/JuveCampos/30DayChartChallenge2021>
+:::
+
+::: {.callout-tip}
+## Todos los días del challenge
+
+Consulta el [repositorio completo](https://github.com/JuveCampos/30DayChartChallenge2021) para ver todas las gráficas y códigos del challenge.
+:::
+
+---
+
+> *Si quieres apoyarme con $$$ para seguir haciendo gráficas y material de #Rstats, considera donarme lo de un café en el siguiente enlace:*
+
+[![](https://img.buymeacoffee.com/api/?url=aHR0cHM6Ly9pbWcuYnV5bWVhY29mZmVlLmNvbS9hcGkvP3VybD1hSFIwY0hNNkx5OWpaRzR1WW5WNWJXVmhZMjltWm1WbExtTnZiUzkxY0d4dllXUnpMM0J5YjJacGJHVmZjR2xqZEhWeVpYTXZNakF5TVM4d05TODBPVFUyWkdVMk9HWTVaR1l6TnpaaFlqUm1NamszWkRCbE5tWTBZalppWWk1cWNHYz0mc2l6ZT0zMDAmbmFtZT1Kb3JnZStKdXZlbmFsK0NhbXBvcytGZXJyZWlyYQ==&creator=Jorge+Juvenal+Campos+Ferreira&is_creating=data%20analyst%20and%20data%20teacher&design_code=1&design_color=%2379D6B5&slug=juvenalcamposf)](https://www.buymeacoffee.com/juvenalcamposf){fig-align="center"}

@@ -1,0 +1,14 @@
+---
+title: "Juve Blog"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
+---
+
+Bienvenido a mi blog personal. Aquí encontrarás tutoriales de R, análisis de datos, visualizaciones y proyectos personales.

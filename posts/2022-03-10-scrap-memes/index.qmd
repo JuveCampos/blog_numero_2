@@ -1,0 +1,126 @@
+---
+title: "Scrap de Memes en R"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2022-03-10"
+categories:
+  - R
+  - web scraping
+  - memes
+  - twitter
+tags:
+  - R
+  - rvest
+  - rtweet
+  - data mining
+image: "memes.gif"
+---
+
+## Introducción
+
+En este post vamos a aprender a hacer web scraping de memes de Twitter usando R. Utilizaremos las librerías `rvest` para el scraping y `rtweet` para interactuar con la API de Twitter.
+
+![Memes scraped from Twitter](memes.gif){fig-align="center"}
+
+## Librerías necesarias
+
+```{r}
+#| eval: false
+library(rvest)
+library(rtweet)
+library(dplyr)
+library(stringr)
+library(ggplot2)
+```
+
+## Proceso de scraping
+
+El proceso incluye:
+
+1. **Configuración de la API de Twitter**
+2. **Búsqueda de tweets con memes**
+3. **Extracción de imágenes**
+4. **Análisis de patrones**
+
+### Configuración inicial
+
+```{r}
+#| eval: false
+# Configurar credenciales de Twitter API
+auth_setup_default()
+
+# Términos de búsqueda para memes
+meme_terms <- c("meme", "momo", "funny", "humor")
+```
+
+### Búsqueda y extracción
+
+```{r}
+#| eval: false
+# Buscar tweets con memes
+tweets_memes <- search_tweets(
+  q = paste(meme_terms, collapse = " OR "),
+  n = 1000,
+  include_rts = FALSE,
+  type = "popular"
+)
+
+# Filtrar tweets con imágenes
+tweets_with_images <- tweets_memes %>%
+  filter(!is.na(media_url))
+```
+
+## Análisis de resultados
+
+Los memes más populares suelen tener:
+
+- **Mayor engagement** (likes + retweets)
+- **Timing específico** (fines de semana, noches)
+- **Temas trending** del momento
+
+::: {.callout-tip}
+## Consideraciones éticas
+
+Recuerda respetar los términos de servicio de Twitter y los derechos de autor de las imágenes al hacer scraping.
+:::
+
+## Visualización
+
+```{r}
+#| eval: false
+# Gráfica de engagement por hora
+tweets_memes %>%
+  mutate(hour = hour(created_at)) %>%
+  group_by(hour) %>%
+  summarise(
+    avg_likes = mean(favorite_count, na.rm = TRUE),
+    avg_rts = mean(retweet_count, na.rm = TRUE)
+  ) %>%
+  ggplot(aes(x = hour)) +
+  geom_line(aes(y = avg_likes, color = "Likes")) +
+  geom_line(aes(y = avg_rts, color = "Retweets")) +
+  labs(
+    title = "Engagement de memes por hora del día",
+    x = "Hora",
+    y = "Promedio",
+    color = "Métrica"
+  ) +
+  theme_minimal()
+```
+
+## Conclusiones
+
+El scraping de memes nos permite entender:
+
+- Patrones de humor en redes sociales
+- Momentos de mayor actividad
+- Temas que generan más engagement
+
+::: {.callout-note}
+## Código completo
+
+El código completo está disponible en mi [repositorio de GitHub](https://github.com/JuveCampos).
+:::
+
+---
+
+¿Te gustó este tutorial? ¡Sígueme en Twitter [@JuvenalCamposF](https://twitter.com/JuvenalCamposF) para más contenido de R!

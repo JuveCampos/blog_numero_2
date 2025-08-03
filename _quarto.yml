@@ -1,0 +1,37 @@
+project:
+  type: website
+
+website:
+  title: "Juve Blog"
+  description: "Blog y portafolio de trabajo"
+  
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - href: posts.qmd
+        text: Posts
+    right:
+      - icon: github
+        href: https://github.com/JuveCampos
+      - icon: twitter
+        href: https://twitter.com/JuvenalCamposF
+      - icon: linkedin
+        href: https://www.linkedin.com/in/jorge-juvenal-campos-ferreira-5532b7160/
+
+  page-footer:
+    center: "Blog personal de Jorge Juvenal Campos Ferreira"
+    
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    code-fold: false
+    code-tools: true
+    highlight-style: github
+    lang: es
+
+execute:
+  freeze: auto

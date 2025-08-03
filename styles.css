@@ -1,0 +1,24 @@
+/* Custom styles for Juvenal's blog */
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+.listing-title {
+  color: #2c3e50;
+}
+
+.listing-description {
+  color: #7f8c8d;
+}
+
+code {
+  color: #e74c3c;
+  background-color: #f8f9fa;
+}
+
+.highlight {
+  background-color: #fff3cd;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+}
