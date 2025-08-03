@@ -1,1 +1,7 @@
 /.quarto/
+/_site/
+/.DS_Store
+/node_modules/
+/.netlify/
+.Rproj.user
+*.Rproj
