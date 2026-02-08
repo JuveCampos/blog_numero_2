@@ -1,8 +1,3 @@
 [build]
-  command = "npx @quarto/cli render"
+  command = "wget -qO quarto.tar.gz https://github.com/quarto-dev/quarto-cli/releases/download/v1.7.32/quarto-1.7.32-linux-amd64.tar.gz && tar -xzf quarto.tar.gz && ./quarto-1.7.32/bin/quarto render"
   publish = "_site"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
