@@ -130,11 +130,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">Sobre mí</span></a>
+    <span class="nav-link">
+<span class="menu-text">about.qmd</span>
+    </span>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html"> 
+    <a class="nav-link" href="../../posts.qmd"> 
 <span class="menu-text">Posts</span></a>
   </li>  
 </ul>
@@ -151,6 +152,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.linkedin.com/in/jorge-juvenal-campos-ferreira-5532b7160/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.instagram.com/juvenalcampos.dataviz/"> <i class="bi bi-instagram" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://bsky.app/profile/juvenalcamposf.bsky.social"> <i class="bi bi-cloud" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -187,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Tabulizer para tablas en pdf</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<h1 class="title">Tabulizer para tablas en pdf</h1>
   <div class="quarto-categories">
     <div class="quarto-category">pdf</div>
     <div class="quarto-category">Tutoriales</div>
@@ -400,8 +411,6 @@ Fig. 1: La tabla de interés en la página 113.
 <p><strong>–Juvenal</strong></p>
 
 
-<!-- -->
-
 </section>
 </section>
 </section>
@@ -477,60 +486,9 @@ Fig. 1: La tabla de interés en la página 113.
       });
       clipboardModal.on('success', onCopySuccess);
     }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
-    }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/juvenalcampos\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -856,209 +814,7 @@ Fig. 1: La tabla de interés en la página 113.
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Tabulizer para tablas en pdf"</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Juvenal Campos"  </span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2021-05-19"</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [pdf, Tutoriales, graficas]</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="an">tags:</span><span class="co"> []</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>:::{.callout-warning}</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>**NOTA IMPORTANTE**: La librería <span class="in">`tabulizer`</span> ya no está disponible en CRAN desde 2021. Este tutorial es de archivo histórico y el código no es ejecutable en la versión actual. Para extraer tablas de PDFs actualmente se recomienda usar librerías como <span class="in">`pdftools`</span> o <span class="in">`pdfplumber`</span> en Python.</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  p<span class="fu">.footnote</span>{</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span><span class="cn">#5e5e5e</span><span class="op">;</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span><span class="dv">90</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">text-align</span><span class="ch">:</span><span class="dv">center</span><span class="op">;</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  img {</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span><span class="ch">:</span> <span class="dv">40</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">height</span><span class="ch">:</span> <span class="bu">auto</span><span class="op">;</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>A inicios de año generé un pequeño hilo de Twitter sobre como aprovechar tablas provenientes de un <span class="in">`*.pdf`</span> en nuestros análisis de <span class="in">`#rstats`</span>. </span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">blockquote</span><span class="ot"> class</span><span class="op">=</span><span class="st">"twitter-tweet"</span><span class="dt">&gt;&lt;</span><span class="kw">p</span><span class="ot"> lang</span><span class="op">=</span><span class="st">"es"</span><span class="ot"> dir</span><span class="op">=</span><span class="st">"ltr"</span><span class="dt">&gt;</span>Pues bueno, igualmente para mi primer hilo del año voy a re-crear este hilo de <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://twitter.com/claudiodanielpc?ref_src=twsrc%5Etfw"</span><span class="dt">&gt;</span>@claudiodanielpc<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span> pero usando <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://twitter.com/hashtag/RStats?src=hash</span><span class="dv">&amp;amp;</span><span class="st">ref_src=twsrc%5Etfw"</span><span class="dt">&gt;</span>#RStats<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span> <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://t.co/gifEKbJ9v3"</span><span class="dt">&gt;</span>https://t.co/gifEKbJ9v3<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span><span class="dv">&amp;mdash;</span> Juvenal (@JuvenalCamposF) <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://twitter.com/JuvenalCamposF/status/1347367599508647939?ref_src=twsrc%5Etfw"</span><span class="dt">&gt;</span>January 8, 2021<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;/</span><span class="kw">blockquote</span><span class="dt">&gt;</span> <span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> async src</span><span class="op">=</span><span class="st">"https://platform.twitter.com/widgets.js"</span><span class="ot"> charset</span><span class="op">=</span><span class="st">"utf-8"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>Sin embargo, como generalmente los hilos de Twitter son vanos y se olvidan con el tiempo, he decidido generar una entrada de blog para tener el código a la mano para futuros trabajos y, de esta manera, no estar googleando mis hilos cada vez que necesite sacar información de tablas en <span class="in">`*.pdf`</span>. Igualmente, tener la entrada de blog permite que otros usuarios puedan también acceder a este contenido de manera más fácil.</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="fu"># Sobre mi hilo en Twitter: </span></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>En mi hilo quise puntualizar algunos aspectos de la extracción de tablas a través de códigos en #rstats: </span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 1. Primero, la librería </span><span class="in">`tabula`</span><span class="at">, o </span><span class="in">`tabula-py`</span><span class="at"> es una librería de Python que es un **wrapper** de una librería de Java que también se llama tabula.</span></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="at">En R **también existen estas librerías wrapper**, y, en este caso, la librería se llama </span><span class="in">`[tabulizer](https://cran.r-project.org/web/packages/tabulizer/vignettes/tabulizer.html)`</span><span class="at">.</span></span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> style </span><span class="op">=</span> <span class="st">'text-align:center;'</span><span class="dt">&gt;</span></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src </span><span class="op">=</span> <span class="st">'https://pbs.twimg.com/media/ErLN5IGVgAM0_sh?format=png</span><span class="er">&amp;</span><span class="st">name=240x240'</span><span class="ot"> height </span><span class="op">=</span> <span class="st">'120px'</span><span class="dt">&gt;</span></span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 2. Para poder utilizar estas librerías basadas en Java se requiere bajar a nuestra sesión de **R** la librería </span><span class="in">`rJava`</span><span class="at"> y, obvio, tener una distribución de </span><span class="in">`Java`</span><span class="at"> instalada en tu computadora...</span></span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="at">...O </span><span class="co">[</span><span class="ot">en su defecto</span><span class="co">]</span><span class="at"> usar </span><span class="in">`RStudio Cloud`</span><span class="at">, que es como </span><span class="in">`RStudio`</span><span class="at">, pero en la nube y sin problemas de librerías.</span></span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> style </span><span class="op">=</span> <span class="st">'text-align:center;'</span><span class="dt">&gt;</span></span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src </span><span class="op">=</span> <span class="st">'https://pbs.twimg.com/media/ErLPQ9GVQAQZFzN?format=jpg</span><span class="er">&amp;</span><span class="st">name=360x360'</span><span class="ot"> style </span><span class="op">=</span> <span class="st">''</span><span class="dt">&gt;</span></span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Otras librerías que igualmente usan Java son </span><span class="in">`mailR`</span><span class="at"> (la que utilizo para mandar correos automatizados) o </span><span class="in">`RSelenium`</span><span class="at"> (para hacer tests de p{aginas web o web scraping con usuarios automatizados).</span></span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>Una de las cosas que descubrí re-haciendo el proceso de extracción de datos es que es **muy complicado instalar librerías que dependen de Java en computadoras Mac con procesador M1**. Por lo mismo, si planeas utilizar una de estas librerías (o si decides seguir este mini-tutorial) te recomiendo que no lo intentes desde una de estas nuevas Mac, ya que no vas a poder T__T. (O, si puedes, pásame el secreto). </span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tablas en *.pdf</span></span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>Muchas veces nos vamos a ver en la necesidad de extraer datos en <span class="in">`*.pdf`</span>; ya sea porque es la única manera en que podemos encontrar la información, porque las personas que se encargan de proporcionarnos los datos de interés no conocen la conveniencia de presentar sus datos en formatos abiertos o quizá por el simple hecho de que quieren ser malos con nosotros y ponernos dificultades para realizar análisis a partir de sus datos.</span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>En esta entrada de blog vamos a ocuparnos del _caso menos malo posible_: el caso en el que alguién pasó un archivo de Word a PDF con tablas en el. Estos archivos tienen la ventaja de que respetan cierta estructura y esto permite que la extracción de información sea más sencilla. </span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>Para esta labor, vamos a extraer datos del **Plan estratégico y financiero 2021-2025 de Infonavit**, el cual es un documento que trabajó el buen <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href </span><span class="op">=</span> <span class="st">'https://twitter.com/claudiodanielpc'</span><span class="dt">&gt;</span>@claudiodanielpc<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span> en un hilo parecido al mío, desde el cual extrajo los mismos datos, pero haciendo el proceso en Python. </span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## Proceso: </span></span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>**Primero**, instalamos la librería <span class="in">`tabulizer`</span>: </span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalamos tabulizer </span></span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tabulizer"</span>) <span class="co"># Para instalar tabulizer en mi compu</span></span>
-<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>**Segundo: ** Llamamos a las librerías y guardamos la ubicación del archivo del **Plan estratégico y financiero 2021-2025 de Infonavit**: </span>
-<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="in">```{r cache=FALSE, warning=FALSE, message=FALSE, eval=FALSE}</span></span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="co"># Librerias ---- </span></span>
-<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a><span class="co"># library(tabulizer) # Para leer tablas en pdf - YA NO DISPONIBLE</span></span>
-<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># Para manipular datos</span></span>
-<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="co"># # Obtenemos la url del Plan del INFONAVIT</span></span>
-<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="co"># url &lt;- "/home/juvenal/Descargas/Plan_Estrategico_y_Financiero_2020-2024.pdf"</span></span>
-<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://portalmx.infonavit.org.mx/wps/wcm/connect/67e528e7-f13d-4dbf-a668-b29a594351c3/Plan_Estrategico_y_Financiero_2020-2024.pdf?MOD=AJPERES&amp;CVID=mYkHiU3"</span></span>
-<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>**Tercero: ** Ya que tenemos la dirección de nuestro archivo, ahora extraemos los datos que nos interesan. En este caso, queremos los datos de la Tabla 29: _Programa operativo Anual 2021 por estado,_ que se encuentra en la página 113.</span>
-<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> style </span><span class="op">=</span> <span class="st">'text-align:center;'</span><span class="dt">&gt;</span></span>
-<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src </span><span class="op">=</span> <span class="st">'images/captura_tabla_pdf.png'</span><span class="ot"> style </span><span class="op">=</span> <span class="st">'width:100%;'</span><span class="dt">&gt;</span></span>
-<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- ![](images/captura_tabla_pdf.png) --&gt;</span></span>
-<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class </span><span class="op">=</span> <span class="st">'footnote'</span><span class="dt">&gt;</span>Fig. 1: La tabla de interés en la página 113. <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraemos la tabla de la página 113</span></span>
-<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a><span class="co"># tab &lt;- extract_tables(url, </span></span>
-<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a><span class="co">#                       pages = 113, </span></span>
-<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="co">#                       method = "stream")</span></span>
-<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="co"># NOTA: La función extract_tables ya no está disponible</span></span>
-<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>Del chunk de código de arriba podemos ver que la función para extraer tablas es la función <span class="in">`extract_tables()`</span>, la cual recibe como primer argumento la ubicación del archivo, la página que contiene la tabla y el método de extracción de los datos. </span>
-<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>La función provee de dos métodos distintos para realizar la extracción de la información: el método <span class="in">`stream`</span>, el algoritmo de extracción básico de <span class="in">`tabula`</span>, el método <span class="in">`lattice`</span>, el algoritmo de extracción de hojas de cálculo de <span class="in">`tabula`</span>, y el método <span class="in">`decide`</span>, que escoge, por página, el método más apropiado de los dos anteriores. _Todos los argumentos de la función se pueden consultar en la documentación de dicha función._ Otro argumento interesante es el argumento <span class="in">`area`</span>, el cual permite al usuario seleccionar las coordenadas del documento en las cuales quiere que se enfoque el algoritmo para la extracción de información. </span>
-<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>En este caso, el algoritmo <span class="in">`lattice`</span> extraía solamente los datos de los renglones que no tenían el fondo blanco, por lo que nos proporcionaba solamente la mitad de la información; por eso, tras prueba y error se decidió que el método ideal era el método que usaba el algoritmo <span class="in">`stream`</span>.</span>
-<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a>**Cuarto: ** Ya con los datos extraídos dentro del objeto <span class="in">`tab`</span>, aprovechamos los patrones de su estructura para poder darles una forma de tabla estructurada. </span>
-<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a>En el último paso, vamos a romper la columna 6 para dividirla en 4 columnas adicionales a partir de los espacios guardados en cada celda. Para esto utilizamos la función <span class="in">`tidyr::separate()`</span>.</span>
-<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a><span class="in">```{r warning=FALSE, eval=FALSE}</span></span>
-<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a><span class="co"># Generamos la tabla: </span></span>
-<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a><span class="co"># matriz &lt;- tab[[1]] %&gt;% # Nos quedamos con la tabla</span></span>
-<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a><span class="co">#   as.tibble() %&gt;% # Convertimos a tibble</span></span>
-<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a><span class="co">#   filter(V1 != "") %&gt;% # Filtramos los renglones en blanco</span></span>
-<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a><span class="co">#   slice(-1) %&gt;% # quitamos el primer renglón</span></span>
-<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a><span class="co">#   separate(V6, </span></span>
-<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a><span class="co">#            into = c("V6", "V7", "V8", "V9"), </span></span>
-<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a><span class="co">#            sep = "\\s") # Separamos la columna 6 en 4 columnas mas</span></span>
-<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilizando el espacio.</span></span>
-<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a><span class="co"># NOTA: Depende de tabulizer que ya no está disponible</span></span>
-<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a>Ahora, vamos a renombrar las columnas a los nombres que vienen en el documento original. </span>
-<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a><span class="co"># Le metemos los nombres personalizados (que signifiquen algo para nosotros)</span></span>
-<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a><span class="co"># names(matriz) &lt;- c("Entidad", </span></span>
-<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a><span class="co">#                    "Nueva", </span></span>
-<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a><span class="co">#                    "Existente", </span></span>
-<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a><span class="co">#                    "No Hipotecarios", </span></span>
-<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a><span class="co">#                    "Total", </span></span>
-<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="co">#                    "Infonavit", </span></span>
-<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a><span class="co">#                    "Entidades Financieras", </span></span>
-<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a><span class="co">#                    "No-hipotecarias", </span></span>
-<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a><span class="co">#                    "Total (Derrama de Crédito)")</span></span>
-<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertimos las columnas a numero</span></span>
-<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a><span class="co"># matriz[,2:9] &lt;- lapply(matriz[,2:9], function(x){</span></span>
-<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a><span class="co">#   x %&gt;% </span></span>
-<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a><span class="co">#     str_remove_all(pattern = ",") %&gt;% # Le quitamos las comas</span></span>
-<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a><span class="co">#     as.numeric() # Lo convertimos a numero</span></span>
-<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a><span class="co"># })</span></span>
-<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a><span class="co"># NOTA: Depende de tabulizer que ya no está disponible</span></span>
-<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a>Y ya, finalmente armamos la gráfica utilizando código de <span class="in">`ggplot()`</span>.</span>
-<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=10, eval = FALSE}</span></span>
-<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a><span class="co"># Armamos las grafica de porcentaje de créditos por entidad:</span></span>
-<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a><span class="co"># Generamos la base de datos a graficar</span></span>
-<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a>bd_plot <span class="ot">&lt;-</span> matriz <span class="sc">%&gt;%</span> </span>
-<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Entidad,Nueva) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Entidad <span class="sc">!=</span> <span class="st">"Nacional"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Pctje =</span> <span class="dv">100</span><span class="sc">*</span>Nueva<span class="sc">/</span><span class="fu">sum</span>(Nueva)) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="sc">-</span>Pctje) </span>
-<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a><span class="co"># Hacemos la gráfica</span></span>
-<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>bd_plot <span class="sc">%&gt;%</span> </span>
-<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Entidad, Pctje), <span class="at">y =</span> Pctje)) <span class="sc">+</span> </span>
-<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"orange"</span>) <span class="sc">+</span> </span>
-<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> </span>
-<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(Pctje,<span class="dv">1</span>), <span class="st">"%"</span>)), </span>
-<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a>             <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.05</span>) <span class="sc">+</span> </span>
-<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.3</span>), <span class="dv">0</span>)) <span class="sc">+</span> </span>
-<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>, <span class="at">x =</span> <span class="st">""</span>, </span>
-<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Porcentaje del total de Créditos para adquisición de vivienda nueva</span><span class="sc">\n</span><span class="st">por Entidad Federativa, 2021"</span>, </span>
-<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Fuente: Plan Estratégico y Financiero 2021-2025. INFONAVIT. "</span>) <span class="sc">+</span></span>
-<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
-<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>), </span>
-<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_blank</span>(), </span>
-<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src </span><span class="op">=</span> <span class="st">'images/grafica.png'</span><span class="ot"> style </span><span class="op">=</span> <span class="st">'width:100%;'</span><span class="dt">&gt;</span></span>
-<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>Finalmente, concluí el hilo con el siguiente mensaje: </span>
-<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Y listo. Con este hilo, quiero mostrar que muchas de las tareas sencillas de esto del manejo de los datos se pueden hacer de manera sencilla tanto en #Rstats como en #Python, y que los pasos son prácticamente los mismos, solo cambia la sintaxis. :P</span></span>
-<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a><span class="at">_Ese es todo el hilo. Si andan sin quehacer y quieren repasar sus conocimientos de importar tablas de `pdf`, de `dplyr` o de hacer gráficas de barras en R, en este enlace esta el código completo:_ </span></span>
-<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a>https://github.com/JuveCampos/juveBlog/blob/master/tabula/recreandoTablaDanielPC.R</span>
-<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a><span class="fu">### Otras librerías para tratar con datos en pdf. </span></span>
-<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a>El ejemplo de esta entrada de blog es algo muy sencillo; cada pdf es es distinto y dependiendo de su calidad, de su estructura y de la complejidad de su estructura va a ser la dificultad a la que nos vamos a enfrentar tratando de extraerle información. </span>
-<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a>Otras librerías/paquetes de R muy útiles para lidiar con la extracción de datos provenientes de <span class="in">`pdfs`</span> son la librería <span class="in">`pdftools`</span> y la librería <span class="in">`tesseract`</span> (o al menos son las que yo conozco). La primera es buena cuando la información que queremos extraer es información de texto, mientras que la segunda cuenta con un algoritmo de _reconocimiento óptico de caracteres_ para leer texto de pdfs escaneados (muy utilizados por parte de oficinas de gobierno, especialmente cuando responden solicitudes de información) o texto proveniente de imagenes. </span>
-<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a><span class="fu">### En conclusión</span></span>
-<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a>Mas que una guía para extraer datos de <span class="in">`pdfs`</span>, esta entrada tuvo el propósito de guardar, para futuras referencias, el proceso que llevé a cabo a principios de año con el documento de infonavit; de todos modos, espero que sirva como punto de partida para aquellas personas que estan empezando a usar R y de repente se topan con datos en estos formatos, para personas que quieran implementar procesos de extracción de datos con métodos replicables y para personas que quieran experimentar con alternativas a los programas comerciales para lidiar con pdfs (como <span class="in">`iLovePDF`</span> o <span class="in">`textSniper`</span>). </span>
-<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a>Quedo al pendiente sobre dudas y observaciones al presente contenido; igualmente, si conocen alguna librería adicional, no duden en compartirla conmigo en mis redes :9</span>
-<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>¡Saludos!</span>
-<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a>**--Juvenal**</span></code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+  </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

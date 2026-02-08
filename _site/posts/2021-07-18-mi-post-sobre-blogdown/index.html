@@ -130,11 +130,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">Sobre mí</span></a>
+    <span class="nav-link">
+<span class="menu-text">about.qmd</span>
+    </span>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html"> 
+    <a class="nav-link" href="../../posts.qmd"> 
 <span class="menu-text">Posts</span></a>
   </li>  
 </ul>
@@ -151,6 +152,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.linkedin.com/in/jorge-juvenal-campos-ferreira-5532b7160/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.instagram.com/juvenalcampos.dataviz/"> <i class="bi bi-instagram" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://bsky.app/profile/juvenalcamposf.bsky.social"> <i class="bi bi-cloud" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -194,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Mi post sobre blogdown</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<h1 class="title">Mi post sobre blogdown</h1>
 </div>
 
 
@@ -418,8 +429,6 @@ Este soy yo sin saber que pronto ibamos a dejar de trabajar de manera presencial
 <p>-Happy Coding</p>
 
 
-<!-- -->
-
 </section>
 
 </main> <!-- /main -->
@@ -493,60 +502,9 @@ Este soy yo sin saber que pronto ibamos a dejar de trabajar de manera presencial
       });
       clipboardModal.on('success', onCopySuccess);
     }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
-    }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/juvenalcampos\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -872,262 +830,7 @@ Este soy yo sin saber que pronto ibamos a dejar de trabajar de manera presencial
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Mi post sobre blogdown"</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Juvenal Campos"  </span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2021-07-18"</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> []</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="an">tags:</span><span class="co"> []</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="pp">#rcorners2</span> {</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">25</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border</span><span class="ch">:</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#73AD21</span><span class="op">;</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span> </span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">width</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span> </span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  p<span class="fu">.centrado</span> {</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">text-align</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  p<span class="fu">.footnote</span>{</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span><span class="cn">#5e5e5e</span><span class="op">;</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span><span class="dv">90</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>  <span class="kw">text-align</span><span class="ch">:</span><span class="dv">center</span><span class="op">;</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  img {</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span><span class="ch">:</span> <span class="dv">90</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">height</span><span class="ch">:</span> <span class="bu">auto</span><span class="op">;</span></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">text-align</span><span class="ch">:</span><span class="dv">center</span><span class="op">;</span> </span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>  i {</span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span><span class="cn">#5e5e5e</span><span class="op">;</span></span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>  strong {</span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-weight</span><span class="ch">:</span> <span class="dv">1000</span><span class="op">;</span></span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span><span class="cn">white</span><span class="op">;</span></span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>    font-face<span class="ch">:</span><span class="dv">bold</span><span class="op">;</span></span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#3366FF</span><span class="op">;</span></span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>  }  </span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="fu">## TL; DR</span></span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> id</span><span class="op">=</span><span class="st">"rcorners2"</span><span class="dt">&gt;</span></span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">i</span><span class="dt">&gt;</span>Esta entrada de blog trata de explicar algunas generalidades sobre la creación y publicación de páginas web estilo _blog_ a traves del uso de la librería <span class="in">`blogdown`</span> de R.<span class="dt">&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> </span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="fu">## Motivación</span></span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>Uno de los temas más comunes entre aquellas personas que escriben blogs de R es, precisamente, **como crear blogs en R**. Además, he visto tantos ultimamente, que decidí escribir mi propio post sobre <span class="in">`blogdown`</span> con mi experiencia utilizando la librería para generar blogs temáticos sobre R, sobre como construí el mio y algunos tips y consejos después de un año creando y gestionando mi página con esta librería.</span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## Importancia de tener un sitio personal</span></span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>Un **sitio personal** es una página web en la cual subimos contenido acerca de nosotros, de nuestro trabajo y de las cosas que nos gustan. </span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>En su curso, <span class="in">`The personal website playbook`</span>, <span class="co">[</span><span class="ot">Tom Hirst</span><span class="co">](https://www.tomhirst.com/products/personal-website-playbook/)</span> nos da algunas de las ventajas de porque es conveniente contar con un sitio personal:  </span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Presentarnos efectivamente: nuestros intereses, nuestros proyectos, nuestras ideas y nuestra historia.** Una página web consiste de un gran espacio para expresarnos y comunicarnos. </span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Incrementar nuestra visibilidad en línea.** Un sitio web bien diseñado puede ser una parte integral de nuestra estrategia comercial (si tenemos alguna).</span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Presentar los servicios y productos que ofrecemos: ** en caso de que los tengamos a la venta, podemos generar un catálogo con estos y ponerlo disponible 24/7.</span>
-<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Practicar nuestras habilidades de comunicación** al estar escribiendo contenido para este sitio.  </span>
-<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Es el CV moderno.** Nos permite destacar y diferenciarnos de la competencia (que no tiene su propia página). </span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Consiste en un repositorio de documentos, tutoriales archivos y bases de datos útiles** tanto para nosotros como para personas a las que podamos ayudar después. Tiene sus ventajas respecto a nuestros perfiles de Redes Sociales al darle más orden y estructura a nuestros contenidos, además de no vernos limitados por el espacio que nos dan para realizar publicaciones.</span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Es por estos motivos que decidí generar mi propia página personal.  --&gt;</span></span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="fu">## ¿Qué es RMarkdown? </span></span>
-<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>RMarkdown es la **combinación del lenguaje de marcado `Markdown` combinado con las capacidades del lenguaje de programación `R`** para analizar y visualizar datos. </span>
-<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class </span><span class="op">=</span> <span class="st">"centrado"</span><span class="dt">&gt;</span></span>
-<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>![](images/Captura de Pantalla 2021-07-18 a la(s) 23.33.01.png)</span>
-<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class </span><span class="op">=</span> <span class="st">"footnote"</span><span class="dt">&gt;</span>Fig. 2. RMarkdown como la combinación de R y Markdown.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- meter enlaces de los archivos --&gt;</span></span>
-<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>Al combinar ambos lenguajes tenemos la capacidad de crear una gran cantidad de documentos, que van desde una página web básica en HTML hasta documentos <span class="in">`*.pdf`</span> (con ayuda de <span class="in">`LaTeX`</span>), documentos de _Word_, presentaciones de diapositivas (<span class="in">`Xaringan`</span>), libros electrónicos (<span class="in">`bookdown`</span>) y, por supuesto, blogs personales.</span>
-<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class </span><span class="op">=</span> <span class="st">"centrado"</span><span class="dt">&gt;</span></span>
-<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://d33wubrfki0l68.cloudfront.net/aee91187a9c6811a802ddc524c3271302893a149/a7003/images/bandthree2.png)</span></span>
-<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class </span><span class="op">=</span> <span class="st">'footnote'</span><span class="dt">&gt;</span>Fig. 2. Documentos y programas que trabajan con RMarkdown.<span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>Fuente: <span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span>RStudio. <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a>Personalmente, considero que aprender <span class="in">`RMarkdown`</span> es una habilidad muy importante entre aquellos aspirantes a analistas de datos, científicos de datos y econometristas **que han escogido el lenguaje `R` como su herramienta de trabajo;** nos ofrece una herramienta de comunicación altamente versatil, nos obliga a trabajar de manera reproducible, a escribir mejor código y es la puerta de entrada a otro tipo de habilidades muy útiles, como la creación y la estructura de _páginas web_  y a aprender <span class="in">`CSS`</span>. </span>
-<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>Para que los artículos que generes en tu blog se vean lo más bonitos posible, primero hay que aprender a utilizar <span class="in">`RMarkdown.`</span> Posiblemente en el <span class="co">[</span><span class="ot">LNPP</span><span class="co">](https://www.lnpp.mx)</span> abramos un curso pronto, pero por ahora, puedes aprender lo básico en <span class="co">[</span><span class="ot">este tutorial chiquito que hice alguna vez</span><span class="co">](https://rpubs.com/Juve_Campos/rmarkdown)</span> para mi otro blog :9 o en algun curso en línea (<span class="co">[</span><span class="ot">como este</span><span class="co">](https://www.datacamp.com/courses/reporting-with-r-markdown)</span>).</span>
-<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a><span class="fu">## Blogdown</span></span>
-<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>El paquete <span class="in">`Blogdown`</span> es el paquete de <span class="in">`R`</span> creado para generar sitios web estáticos personalizables en <span class="in">`Markdown.`</span> </span>
-<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>Entre las ventajas que ofrece estan las siguientes: </span>
-<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a>1) **Podemos incluir y ejecutar código de `R`**(o de cualquier otro lenguaje de programación soportado por el paquete <span class="in">`knit`</span>, como <span class="in">`Python`</span>).</span>
-<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>2) Automáticamente **nos genera** (renderiza) **resultados** como gráficas, tablas, resultados de análisis estadísticos y widgets de HTML.</span>
-<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>3) Nos permite **incluir** citaciones, pies de página y ecuaciones <span class="in">`LaTeX`</span>, así como código HTML en caso de que necesitemos cosas más particulares. </span>
-<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a><span class="fu">### Instalación</span></span>
-<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>Este paquete se encuentra disponible en el <span class="in">`CRAN.`</span> Se puede instalar con el siguiente código: </span>
-<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"blogdown"</span>)</span>
-<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a>Igualmente, la versión de desarrollo se puede descargar con el siguiente código: </span>
-<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'rstudio/blogdown'</span>)</span>
-<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a><span class="fu">## ¿Por qué usar `blogdown`? </span></span>
-<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a>Las ventajas de <span class="in">`blogdown`</span> con respecto a otros servicios (como <span class="in">`wordpress`</span> o publicar en <span class="in">`medium`</span>) consisten prácticamente en tres cosas: </span>
-<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a>1) **Facilita la inclusión de código de R.** Al estar basado en R, le da el formato correcto al código que publiquemos. Igualmente, como en cualquier documento de RMarkdown, genera y ejecuta código en su propio ambiente, por lo que no tenemos que preocuparnos por estar pegando _por separado_ los resultados de ejecutar ciertos bloques de código. </span>
-<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a>2) **Es gratuito**. Ventajas de ser _Open Source._</span>
-<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>3) **Te permite empezar a trabajar desde _ya_ en tu sitio web**. Solo se necesita descargar el paquete.</span>
-<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a><span class="fu">## En que casos usar `blogdown`</span></span>
-<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>Personalmente, creo que utilizar la librería <span class="in">`blogdown`</span> **es un buen ejercicio para aquellos programadores de R que deseen publicar cosas** (como visualizaciones o tutoriales) dado que las herramientas del paquete nos facilitan bastante el trabajo. </span>
-<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a>También podría ser útil para alguien que solo quiere **experimentar y montar un pequeño blog** y quiere hacerlo rápido y gratis, e irlo mejorarlo sobre la marcha.</span>
-<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a>Sin embargo, para sitios web más complejos o para publicaciones de blog de otro tipo de temas, quizá convenga explorar soluciones de mercado (como <span class="in">`Wordpress`</span> o <span class="in">`Medium`</span>) las cuales pueden proveer de más herramientas a los autores, como añalisis de tráfico, instalación de <span class="in">`plugins`</span>, generación de tiendas de <span class="in">`e-commerce`</span>, entre muchas otras ventajas de los servicios modernos y programados por alguien más. </span>
-<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a><span class="fu">## Framework `Hugo`</span></span>
-<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a>Por default, el paquete <span class="in">`blogdown`</span> usa <span class="in">`Hugo`</span>, un generador de sitios estáticos <span class="in">`open-source`</span>, el cual provee una manera rápida y flexible de generar el contenido de tu sitio y de compartirlo en línea. </span>
-<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a>Según su repositorio en línea, <span class="in">`Hugo`</span> está optimizado para ser rápido, fácil de usar y ser altamente configurable. <span class="in">`Hugo`</span> toma un directorio con contenido compatible y lo convierte en código HTML listo para ser publicado en la web. </span>
-<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a>Cuando se utiliza en <span class="in">`blogdown`</span>, instalamos <span class="in">`Hugo`</span> desde RStudio (por lo que no debemos preocuparnos tanto por entenderlo en un principio).</span>
-<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a>Para revisar los temas disponibles para generar nuestros blogs, podemos consultar el enlace de temas disponibles para <span class="in">`Hugo`</span>: https://themes.gohugo.io y ver cual nos agrada más. </span>
-<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a>El código fuente de <span class="in">`Hugo`</span> se puede consultar en este repositorio: https://github.com/gohugoio/hugo </span>
-<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a>Para instalar Hugo y tenerlo listo en nuestra sesión de RStudio, lo hacemos con el siguiente código: </span>
-<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a>blogdown<span class="sc">::</span><span class="fu">install_hugo</span>()</span>
-<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a><span class="fu">## Parte técnica: </span></span>
-<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Para hacer menos pesada esta entrada, decidí mover toda la parte técnica (entendiendo como _parte técnica_ donde trabajamos con RStudio) al siguiente enlace: https://juvenalcampos.com/2021/08/01/generando-un-blog-y-más-cosas-técnicas/ </span></span>
-<span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a><span class="fu">## ¿Donde Publicar mi blog? </span></span>
-<span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a>Publicar el blog consiste en poner a disposición todo el contenido de la página web. Para publicar la página en línea, los dos servicios más comunes son <span class="in">`Github Pages`</span> y <span class="in">`Netlify`</span>. Podemos usar una de las dos, o ambas. </span>
-<span id="cb4-176"><a href="#cb4-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-177"><a href="#cb4-177" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- En ambos casos, podemos almacenar el código y los archivos en un `repositorio de Github` para que el servicio genere la página (y para ahorrarnos también el costo de un servidor). Esto aplica solo para el caso de páginas web estáticas.  --&gt;</span></span>
-<span id="cb4-178"><a href="#cb4-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-179"><a href="#cb4-179" aria-hidden="true" tabindex="-1"></a>**Github Pages** es un servicio de <span class="in">`Github`</span> que permite construir una página web a partir de un repositorio de código. Para esto, tenemos que generar un repositorio y después cargar, en dicho repositorio, todo el código necesario para generar la página y configurar el repositorio para que muestre este contenido. </span>
-<span id="cb4-180"><a href="#cb4-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-181"><a href="#cb4-181" aria-hidden="true" tabindex="-1"></a>Por su parte, **Netlify** es una compañía que ofrece servicios de computación en la nube para el almacenamiento de aplicaciones web y sitios estáticos (como un blog). Uno de sus servicios consiste en proveer almacenamiento (host) a páginas web almacenadas a través de un control de versiones <span class="in">`Git`</span>, por lo que, al igual que el servicio anterior, nos permite almacenar páginas donde el código está almacenado en repositorios de <span class="in">`Github.`</span> </span>
-<span id="cb4-182"><a href="#cb4-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-183"><a href="#cb4-183" aria-hidden="true" tabindex="-1"></a>La ventaja de <span class="in">`Netlify`</span> sobre <span class="in">`Github Pages`</span> radica en que <span class="in">`Netlify`</span> corre <span class="in">`Hugo`</span> desde sus servidores, por lo que disminuye los tiempos de carga de la página. </span>
-<span id="cb4-184"><a href="#cb4-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-185"><a href="#cb4-185" aria-hidden="true" tabindex="-1"></a>Otra ventaja es que <span class="in">`Netlify`</span> nos puede ayudar a gestionar la compra de dominios (direcciones web), por lo que si queremos que nuestra página tenga su dominio personalizado, lo podemos _obtener/comprar_ de forma sencilla desde este servicio. </span>
-<span id="cb4-186"><a href="#cb4-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-187"><a href="#cb4-187" aria-hidden="true" tabindex="-1"></a>**Nota:** De ambos servicios se desprende el hecho de que el hosteo se tiene que realizar desde un repositorio de Github; esto tiene la ventaja de que todos los sitios web construidos con esta librería tienen el código disponible en línea y, si queremos, podemos descargar el código que los genera en nuestras computadoras. </span>
-<span id="cb4-188"><a href="#cb4-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-189"><a href="#cb4-189" aria-hidden="true" tabindex="-1"></a><span class="fu">## Algunos ejemplos: </span></span>
-<span id="cb4-190"><a href="#cb4-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-191"><a href="#cb4-191" aria-hidden="true" tabindex="-1"></a>Algunos ejemplos de blogs construidos con la librería <span class="in">`blogdown`</span> son los siguientes: </span>
-<span id="cb4-192"><a href="#cb4-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-193"><a href="#cb4-193" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Blog de Yihui Xie (creador de la librería)</span><span class="co">](https://yihui.org)</span></span>
-<span id="cb4-194"><a href="#cb4-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-195"><a href="#cb4-195" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">RStudio blog</span><span class="co">](https://blog.rstudio.com)</span></span>
-<span id="cb4-196"><a href="#cb4-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-197"><a href="#cb4-197" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">RViews blog</span><span class="co">](https://rviews.rstudio.com)</span></span>
-<span id="cb4-198"><a href="#cb4-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-199"><a href="#cb4-199" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Simplystatistics.</span><span class="co">](https://simplystatistics.org)</span></span>
-<span id="cb4-200"><a href="#cb4-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-201"><a href="#cb4-201" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Rob Hyndman.</span><span class="co">](https://robjhyndman.com)</span></span>
-<span id="cb4-202"><a href="#cb4-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-203"><a href="#cb4-203" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Karl Broman.</span><span class="co">](http://kbroman.org/)</span></span>
-<span id="cb4-204"><a href="#cb4-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-205"><a href="#cb4-205" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Isabella Benabaye</span><span class="co">](https://isabella-b.com)</span></span>
-<span id="cb4-206"><a href="#cb4-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-207"><a href="#cb4-207" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Juvenal Campos (yo mero).</span><span class="co">](https://juvenalcampos.com)</span></span>
-<span id="cb4-208"><a href="#cb4-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-209"><a href="#cb4-209" aria-hidden="true" tabindex="-1"></a><span class="fu">## Referencias: </span></span>
-<span id="cb4-210"><a href="#cb4-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-211"><a href="#cb4-211" aria-hidden="true" tabindex="-1"></a>Para escribir esta entrada, tomé como referencia las siguientes publicaciones (además de mi experiencia personal). </span>
-<span id="cb4-212"><a href="#cb4-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-213"><a href="#cb4-213" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Librería de Github:** https://github.com/rstudio/blogdown </span>
-<span id="cb4-214"><a href="#cb4-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-215"><a href="#cb4-215" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Temas de Hugo:** https://themes.gohugo.io </span>
-<span id="cb4-216"><a href="#cb4-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-217"><a href="#cb4-217" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Libro de blogdown:** https://bookdown.org/yihui/blogdown/ </span>
-<span id="cb4-218"><a href="#cb4-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-219"><a href="#cb4-219" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Preguntas y ayuda en stackoverflow:** https://stackoverflow.com/questions/tagged/blogdown </span>
-<span id="cb4-220"><a href="#cb4-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-221"><a href="#cb4-221" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Artículo en español de Rubén Casal:** https://rubenfcasal.github.io/post/creación-de-sitios-web-con-blogdown/ </span>
-<span id="cb4-222"><a href="#cb4-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-223"><a href="#cb4-223" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Blogdown en 2021:** https://alison.rbind.io/blog/2020-12-new-year-new-blogdown/ </span>
-<span id="cb4-224"><a href="#cb4-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-225"><a href="#cb4-225" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Página personal:** https://pamepairo.netlify.app/post/7-12-2020-motivos-pagina-web/ </span>
-<span id="cb4-226"><a href="#cb4-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-227"><a href="#cb4-227" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Webs con Rmarkdown:** https://paocorrales.github.io/post/webs-con-rmarkdown/ </span>
-<span id="cb4-228"><a href="#cb4-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-229"><a href="#cb4-229" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Wikipedia de Netlify:** https://es.wikipedia.org/wiki/Hugo_(software)</span>
-<span id="cb4-230"><a href="#cb4-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-231"><a href="#cb4-231" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Curso `The personal website playbook` de Tom Hirst. Clase 01.** https://www.tomhirst.com/products/personal-website-playbook/ </span>
-<span id="cb4-232"><a href="#cb4-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-233"><a href="#cb4-233" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusion </span></span>
-<span id="cb4-234"><a href="#cb4-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-235"><a href="#cb4-235" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> style </span><span class="op">=</span> <span class="st">'color: gray;'</span><span class="dt">&gt;</span>Contenido de una presentación brindada en el LNPP-Tech del 12 de marzo del 2020.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span> </span>
-<span id="cb4-236"><a href="#cb4-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-237"><a href="#cb4-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-238"><a href="#cb4-238" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class </span><span class="op">=</span> <span class="st">"centrado"</span><span class="dt">&gt;</span></span>
-<span id="cb4-239"><a href="#cb4-239" aria-hidden="true" tabindex="-1"></a>![](images/Captura de Pantalla 2021-07-18 a la(s) 15.30.54.png)</span>
-<span id="cb4-240"><a href="#cb4-240" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb4-241"><a href="#cb4-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-242"><a href="#cb4-242" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class </span><span class="op">=</span> <span class="st">"footnote"</span><span class="dt">&gt;</span> Este soy yo sin saber que pronto ibamos a dejar de trabajar de manera presencial<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb4-243"><a href="#cb4-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-244"><a href="#cb4-244" aria-hidden="true" tabindex="-1"></a>Este fue el contenido (ligeramente aumentado) de una charla que di para un **LNPP-Tech** en marzo de 2020, unos dias antes de tener que dejar de ir presencialmente a mi lugar de trabajo. Los **LNPP-Tech** son una iniciativa de mi lugar de trabajo en la cual todos podemos compartirnos conocimientos técnicos a partir de clases y talleres con el fin de que todos podamos aprender del talento de las personas con las que trabajamos todos los días. </span>
-<span id="cb4-245"><a href="#cb4-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-246"><a href="#cb4-246" aria-hidden="true" tabindex="-1"></a>Una de las cosas que **la pandemia ha evidenciado es la necesidad de tener una presencia más fuerte en línea **, y desde el inicio del confinamiento hasta ahora hemos visto como una gran cantidad de profesionistas, desde dentistas hasta economistas consagrados, pasando por candidatos a gobernador, **han tenido que hacerse espacio en las redes para llegar a más audiencias y poder vender sus bienes y sus servicios** en una época en la cual las actividades de promoción de manera personal se han visto fuertemente limitadas. </span>
-<span id="cb4-247"><a href="#cb4-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-248"><a href="#cb4-248" aria-hidden="true" tabindex="-1"></a>Es por esto que me animé a escribir un blog y hacer una presentación para mis compañeros del Laboratorio; para que **más personas se animen a dar un primer paso** en la creación de su página web y de sus estrategias digitales, para que **mas personas conozcan las herramientas que nos brinda R para la creación y la gestión de contenido** y para que **se animen a escribir** sus tutoriales y sus entradas de blog. </span>
-<span id="cb4-249"><a href="#cb4-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-250"><a href="#cb4-250" aria-hidden="true" tabindex="-1"></a>Ojalá haya más personas que se animen a escribir su propio contenido 😉. </span>
-<span id="cb4-251"><a href="#cb4-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-252"><a href="#cb4-252" aria-hidden="true" tabindex="-1"></a>Cualquier duda, consulta o sugerencia quedo al pendiente en mi correo **juveroark@gmail.com** o en mis RRSS disponibles en la parte de arriba de la página. </span>
-<span id="cb4-253"><a href="#cb4-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-254"><a href="#cb4-254" aria-hidden="true" tabindex="-1"></a>-Happy Coding</span></code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+  </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

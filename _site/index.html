@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Juve Blog</title>
+<title>Jorge Juvenal Campos Ferreira — Ciencia de Datos – Jorge Juvenal Campos Ferreira</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,46 +20,10 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -107,20 +71,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-articulos-recientes .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      valueNames: ['listing-image','listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 18,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-articulos-recientes'] = new List('listing-articulos-recientes', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -170,12 +135,12 @@ window.Quarto = {
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Juve Blog</span>
+    <span class="navbar-title">Jorge Juvenal Campos Ferreira</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Buscar"></div>
@@ -186,30 +151,31 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">Sobre mí</span></a>
+<span class="menu-text">Inicio</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./posts.html"> 
-<span class="menu-text">Posts</span></a>
+<span class="menu-text">Blog</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/JuveCampos"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/JuveCampos"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/JuvenalCamposF"> <i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/JuvenalCamposF"> <i class="bi bi-twitter" role="img" aria-label="Twitter">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/jorge-juvenal-campos-ferreira-5532b7160/"> <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/jorge-juvenal-campos-ferreira-5532b7160/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.instagram.com/juvenalcampos.dataviz/"> <i class="bi bi-instagram" role="img" aria-label="Instagram">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -221,721 +187,579 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <div class="quarto-title-block"><div><h1 class="title">Juve Blog</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(21)</span></div><div class="category" data-category="MzBkYXljaGFydGNoYWxsZW5nZQ==">30daychartchallenge <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YXBwbGU=">apple <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YmxvZw==">blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QmxvZw==">Blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YmxvZ2Rvd24=">blogdown <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y2hhbGxlbmdlcw==">challenges <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGF0YXZpeg==">dataviz <span class="quarto-category-count">(5)</span></div><div class="category" data-category="ZGVtb2dyYWYlQzMlQURh">demografía <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2dwbG90Mg==">ggplot2 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z3JhZmljYXM=">graficas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="aXBob25l">iphone <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TWFwYXM=">Mapas <span class="quarto-category-count">(3)</span></div><div class="category" data-category="bWVtZXM=">memes <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGRm">pdf <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(6)</span></div><div class="category" data-category="c2hpbnk=">shiny <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dGVjbm9sb2dpYQ==">tecnologia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHV0b3JpYWxlcw==">tutoriales <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VHV0b3JpYWxlcw==">Tutoriales <span class="quarto-category-count">(4)</span></div><div class="category" data-category="dHdpdHRlcg==">twitter <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dmlzdWFsaXphY2klQzMlQjNu">visualización <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dmlzdWFsaXphY2lvbmVz">visualizaciones <span class="quarto-category-count">(4)</span></div><div class="category" data-category="d2ViJTIwc2NyYXBpbmc=">web scraping <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="hero-name title display-7">Jorge Juvenal<br>Campos Ferreira</h1></header>
 
 
 
 
+<!-- ============================================
+     HERO CAROUSEL
+     ============================================ -->
+<section class="hero-section">
+  <div class="carousel-container" aria-hidden="true">
+    <div class="carousel-slide active" style="background-image: url('images/carousel/IMG_9785.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('images/carousel/IMG_7831.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('images/carousel/IMG_7548.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('images/carousel/IMG_6747.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('images/carousel/IMG_5463.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('images/carousel/IMG_5412.jpg')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    
+    <p class="hero-tagline">Ciencia de datos · Periodismo de datos · Docencia</p>
+    <a href="#socios" class="scroll-indicator" aria-label="Desplazar hacia abajo">
+      <span>Conoce mi trabajo</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </a>
+  </div>
+  <div class="carousel-dots"></div>
+</section>
 
-<p>Bienvenido a mi blog personal. Aquí encontrarás tutoriales de R, análisis de datos, visualizaciones y proyectos personales.</p>
+<!-- ============================================
+     SOCIOS Y COLABORADORES
+     ============================================ -->
+<section id="socios" class="section section-alt">
+  <div class="section-container">
+    <h2 class="section-title anchored">Socios y colaboradores</h2>
+    <p class="section-subtitle">Organizaciones con las que colaboro</p>
+    <div class="partners-grid">
 
+      <a href="https://claveigualdad.org" class="partner-card glass-card" target="_blank" rel="noopener noreferrer">
+        <img class="partner-logo" src="https://images.squarespace-cdn.com/content/v1/68813d1432161302fea0b0c4/5a29bbab-56fa-45a6-82e4-e104094c7893/clave_logo.png" alt="Logo Clave Igualdad">
+        <span class="partner-name">Clave Igualdad</span>
+      </a>
 
+      <a href="https://mexicocomovamos.mx" class="partner-card glass-card" target="_blank" rel="noopener noreferrer">
+        <img class="partner-logo" src="https://ap-cdn.sfo3.cdn.digitaloceanspaces.com/uploads/2022/05/Logo-Mexico-Como-Vamos.png" alt="Logo México, ¿Cómo Vamos?">
+        <span class="partner-name">México, ¿Cómo Vamos?</span>
+      </a>
 
-<!-- -->
+      <a href="https://tec.mx/es/ciencias-sociales" class="partner-card glass-card" target="_blank" rel="noopener noreferrer">
+        <img class="partner-logo tec-logo" src="https://tec.mx/themes/custom/emulsify_tec/images/logo-tec-fafafa.svg" alt="Logo Tec de Monterrey">
+        <span class="partner-name">Tec de Monterrey</span>
+      </a>
 
+      <a href="https://novagob.org" class="partner-card glass-card" target="_blank" rel="noopener noreferrer">
+        <img class="partner-logo novagob-logo" src="https://novagob.org/wp-content/uploads/2025/03/novagob.brand_imagotipo_grey-2.png" alt="Logo Fundación Novagob">
+        <span class="partner-name">Fundación Novagob</span>
+      </a>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="dGVjbm9sb2dpYSUyQ2FwcGxlJTJDaXBob25l" data-listing-date-sort="1665464400000" data-listing-file-modified-sort="1754175467431" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1100">
-<div class="thumbnail"><a href="./posts/2022-10-11-iphone-14-caracteristicas-y-datos/index.html" class="no-external">
+      <a href="https://atiempo.tv/author/juvenal-campos/" class="partner-card glass-card" target="_blank" rel="noopener noreferrer">
+        <img class="partner-logo" src="https://i0.wp.com/atiempo.tv/wp-content/uploads/2024/02/Logo-atiempo-SEMANARIO-01-1.png?fit=1510%2C694&amp;ssl=1" alt="Logo ATiempo.TV">
+        <span class="partner-name">ATiempo.TV</span>
+      </a>
 
-<p class="card-img-top"><img src="posts/2022-10-11-iphone-14-caracteristicas-y-datos/images/image1.png"  class="thumbnail-image card-img"/></p>
+    </div>
+  </div>
+</section>
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2022-10-11-iphone-14-caracteristicas-y-datos/index.html" class="no-external">iPhone 14: presentación, características y datos</a>
-</h3>
+<!-- ============================================
+     PROYECTOS DESTACADOS
+     ============================================ -->
+<section id="proyectos" class="section">
+  <div class="section-container">
+    <h2 class="section-title anchored">Proyectos destacados</h2>
+    <p class="section-subtitle">Una selección de mi trabajo reciente</p>
+    <div class="projects-grid">
+
+      <!-- Proyecto 1: Índice de Progreso Social -->
+      <a href="https://mexicocomovamos.mx/indice-de-progreso-social/" class="project-card glass-card" target="_blank" rel="noopener noreferrer">
+        <img class="project-img" src="https://mexicocomovamos.mx/wp-content/uploads/2025/11/ips25-portada-alta.jpg" alt="Índice de Progreso Social">
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">Índice</span>
+            <span class="tag">Calidad de vida</span>
+          </div>
+          <h3 class="project-title anchored">Índice de progreso social</h3>
+          <p class="project-desc">
+            Elaborado como parte del equipo de México, ¿Cómo vamos?, el Índice de Progreso Social es una medida que permite medir la calidad de vida de las personas en las 32 entidades de México.
+          </p>
+          <span class="project-link">Ver proyecto →</span>
+        </div>
+      </a>
+
+      <!-- Proyecto 2: Artículos ATiempo.TV -->
+      <a href="https://atiempo.tv/author/juvenal-campos/" class="project-card glass-card" target="_blank" rel="noopener noreferrer">
+        <img class="project-img" src="https://i0.wp.com/atiempo.tv/wp-content/uploads/2026/02/Juvenal.jpg.jpeg?resize=1024%2C576&amp;ssl=1" alt="Apuntes de datos en ATiempo.TV">
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">Periodismo de datos</span>
+            <span class="tag">IA</span>
+          </div>
+          <h3 class="project-title anchored">Apuntes de datos en ATiempo.TV</h3>
+          <p class="project-desc">
+            Publicaciones sobre IA y análisis de datos publicados en ATiempo.TV, medio digital de Coahuila, México.
+          </p>
+          <span class="project-link">Ver proyecto →</span>
+        </div>
+      </a>
+
+      <!-- Proyecto 3: Presentaciones -->
+      <a href="https://juvecampos.github.io/presentaciones/" class="project-card glass-card" target="_blank" rel="noopener noreferrer">
+        <img class="project-img" src="images/proyectos/prez.png" alt="Presentaciones">
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">Docencia</span>
+            <span class="tag">Presentaciones</span>
+          </div>
+          <h3 class="project-title anchored">Presentaciones</h3>
+          <p class="project-desc">
+            Repositorio de presentaciones elaboradas para clases, eventos y conferencias.
+          </p>
+          <span class="project-link">Ver proyecto →</span>
+        </div>
+      </a>
+
+      <!-- Proyecto 4: Índice de Ciudades Sostenibles -->
+      <a href="https://ics.novagob.mx" class="project-card glass-card" target="_blank" rel="noopener noreferrer">
+        <img class="project-img" src="images/proyectos/ics.png" alt="Índice de Ciudades Sostenibles 2024">
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">Índice</span>
+            <span class="tag">ODS</span>
+          </div>
+          <h3 class="project-title anchored">Índice de ciudades sostenibles 2024</h3>
+          <p class="project-desc">
+            El Índice de Ciudades Sostenibles y el Índice de Estados Sostenibles miden el avance de las ciudades y las entidades federativas de México hacia el cumplimiento de los Objetivos de Desarrollo Sostenible.
+          </p>
+          <span class="project-link">Ver proyecto →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+<!-- ============================================
+     ARTÍCULOS / BLOG (Quarto Listing)
+     ============================================ -->
+<section id="articulos" class="blog-section section-alt">
+<div class="section-container">
+<h2 class="section-title anchored">Artículos recientes</h2>
+<p class="section-subtitle">Tutoriales, análisis y reflexiones sobre ciencia de datos</p>
+<div id="listing-articulos-recientes" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="QVRpZW1wby5UViUyQ1BlcmlvZGlzbW8lMjBkZSUyMGRhdG9z" data-listing-date-sort="1770098400000" data-listing-file-modified-sort="1770540232770" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="133">
+<a href="./posts/2026-02-03-mi-trabajo-esta-en-peligro-por-la-ia/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://i0.wp.com/atiempo.tv/wp-content/uploads/2026/02/Juvenal.jpg.jpeg?resize=1000%2C563&amp;ssl=1" class="thumbnail-image card-img" style="height: 200px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+¿Mi trabajo está en peligro por la IA?
+</h5>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('dGVjbm9sb2dpYQ=='); return false;">tecnologia</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QVRpZW1wby5UVg=='); return false;">ATiempo.TV</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('YXBwbGU='); return false;">apple</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aXBob25l'); return false;">iphone</div>
+<div class="listing-category" onclick="window.quartoListingCategory('UGVyaW9kaXNtbyUyMGRlJTIwZGF0b3M='); return false;">Periodismo de datos</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/2022-10-11-iphone-14-caracteristicas-y-datos/index.html" class="no-external">
-Los lanzamientos de productos tecnológicos suelen ser año con año eventos altamente esperados por los fanáticos de sus respectivas marcas, y ningún producto tecnológico es…
-</a></div>
+<div class="card-text listing-description delink">
+<p>Hablar de inteligencia artificial es hablar de un campo que cambia a toda velocidad. En muy poco tiempo, las herramientas basadas en estos modelos se han colado en oficinas…</p>
 </div>
-<div class="metadata">
-<a href="./posts/2022-10-11-iphone-14-caracteristicas-y-datos/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
-11 oct 2022
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
+3 feb 2026
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="dHV0b3JpYWxlcyUyQ1I=" data-listing-date-sort="1660107600000" data-listing-file-modified-sort="1754175436193" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1006">
-<div class="thumbnail"><a href="./posts/2022-08-10-convertir-documentos-word-powerpoint-pdf-r/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2022-08-10-convertir-documentos-word-powerpoint-pdf-r/images/Captura de Pantalla 2022-08-25 a la(s) 16.16.49.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2022-08-10-convertir-documentos-word-powerpoint-pdf-r/index.html" class="no-external">Convertir documentos de Word y Power Point a PDF en R</a>
-</h3>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="QVRpZW1wby5UViUyQ1BlcmlvZGlzbW8lMjBkZSUyMGRhdG9z" data-listing-date-sort="1767160800000" data-listing-file-modified-sort="1770540232770" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="51">
+<a href="./posts/2025-12-31-el-2025-desde-apuntes-de-datos/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://i0.wp.com/atiempo.tv/wp-content/uploads/2025/12/image4.png?resize=1000%2C563&amp;ssl=1" class="thumbnail-image card-img" style="height: 200px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+El 2025 desde apuntes de datos
+</h5>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('dHV0b3JpYWxlcw=='); return false;">tutoriales</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QVRpZW1wby5UVg=='); return false;">ATiempo.TV</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+<div class="listing-category" onclick="window.quartoListingCategory('UGVyaW9kaXNtbyUyMGRlJTIwZGF0b3M='); return false;">Periodismo de datos</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/2022-08-10-convertir-documentos-word-powerpoint-pdf-r/index.html" class="no-external">
-Durante la primera mitad del año me tocó estar trabajando con infografías en Word (y PPTX) acerca de un proyecto del cual no puedo hablar porque todavía no se publica. En un…<strong></strong><strong></strong>
-</a></div>
+<div class="card-text listing-description delink">
+<p>Estas fechas de reflexión nos invitan a pensar en todo lo que ocurrió a lo largo del año; las cosas que pasaron, las cosas a las que sobrevivimos, las cosas que vienen y las…</p>
 </div>
-<div class="metadata">
-<a href="./posts/2022-08-10-convertir-documentos-word-powerpoint-pdf-r/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
-10 ago 2022
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
+31 dic 2025
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="UiUyQ3dlYiUyMHNjcmFwaW5nJTJDbWVtZXMlMkN0d2l0dGVy" data-listing-date-sort="1646892000000" data-listing-file-modified-sort="1754172805685" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="309">
-<div class="thumbnail"><a href="./posts/2022-03-10-scrap-memes/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2022-03-10-scrap-memes/memes.gif" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2022-03-10-scrap-memes/index.html" class="no-external">Scrap de Memes en R</a>
-</h3>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="QVRpZW1wby5UViUyQ1BlcmlvZGlzbW8lMjBkZSUyMGRhdG9z" data-listing-date-sort="1765432800000" data-listing-file-modified-sort="1770540232771" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="74">
+<a href="./posts/2025-12-11-novedades-de-la-ia-a-diciembre-del-2025/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://i0.wp.com/atiempo.tv/wp-content/uploads/2025/12/image-3.jpeg?resize=1000%2C546&amp;ssl=1" class="thumbnail-image card-img" style="height: 200px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Novedades de la IA a diciembre del 2025
+</h5>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QVRpZW1wby5UVg=='); return false;">ATiempo.TV</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('d2ViJTIwc2NyYXBpbmc='); return false;">web scraping</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWVtZXM='); return false;">memes</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHdpdHRlcg=='); return false;">twitter</div>
+<div class="listing-category" onclick="window.quartoListingCategory('UGVyaW9kaXNtbyUyMGRlJTIwZGF0b3M='); return false;">Periodismo de datos</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/2022-03-10-scrap-memes/index.html" class="no-external">
-En este post vamos a aprender a hacer web scraping de memes de Twitter usando R. Utilizaremos las librerías <code>rvest</code> para el scraping y <code>rtweet</code> para interactuar con la API de…
-</a></div>
+<div class="card-text listing-description delink">
+<p>En los últimos cuatro meses, todas las compañías de IA han lanzado versiones mejoradas de sus modelos de chat, la construcción de centros de datos ha explotado y se han…</p>
 </div>
-<div class="metadata">
-<a href="./posts/2022-03-10-scrap-memes/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
-10 mar 2022
-</div>
-<div class="listing-author">
-Jorge Juvenal Campos Ferreira
-</div>
-</a>
+11 dic 2025
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="dmlzdWFsaXphY2lvbmVzJTJDZGF0YXZpeg==" data-listing-date-sort="1646200800000" data-listing-file-modified-sort="1754175403771" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="56" data-listing-word-count-sort="11145">
-<div class="thumbnail"><a href="./posts/2022-03-02-mis-visualizaciones-de-febrero-2022/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2022-03-02-mis-visualizaciones-de-febrero-2022/index.html" class="no-external">Mis visualizaciones de Febrero, 2022 (y de meses anteriores)</a>
-</h3>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="QVRpZW1wby5UViUyQ1BlcmlvZGlzbW8lMjBkZSUyMGRhdG9z" data-listing-date-sort="1764309600000" data-listing-file-modified-sort="1770539117577" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="90">
+<a href="./posts/2025-11-28-de-que-mueren-los-coahuilenses-edicion-2025-con-datos-del-20/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://i0.wp.com/atiempo.tv/wp-content/uploads/2023/10/WhatsApp-Image-2019-10-22-at-22.06.01.png?resize=1000%2C667&amp;ssl=1" class="thumbnail-image card-img" style="height: 200px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+¿De qué mueren los coahuilenses? (Edición 2025 con datos del 2024)
+</h5>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXphY2lvbmVz'); return false;">visualizaciones</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QVRpZW1wby5UVg=='); return false;">ATiempo.TV</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YXZpeg=='); return false;">dataviz</div>
+<div class="listing-category" onclick="window.quartoListingCategory('UGVyaW9kaXNtbyUyMGRlJTIwZGF0b3M='); return false;">Periodismo de datos</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/2022-03-02-mis-visualizaciones-de-febrero-2022/index.html" class="no-external">
-En esta entrada pongo las visualizaciones que hice durante febrero del presente año en mi página de Instagram.
-</a></div>
+<div class="card-text listing-description delink">
+<p>Cada año, cerca de la conmemoración del Día de Muertos, el INEGI publica las cifras definitivas de defunciones del año previo en el informe “Estadísticas de Defunciones…</p>
 </div>
-<div class="metadata">
-<a href="./posts/2022-03-02-mis-visualizaciones-de-febrero-2022/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
-2 mar 2022
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
+28 nov 2025
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="dmlzdWFsaXphY2lvbmVzJTJDZGF0YXZpeg==" data-listing-date-sort="1635919200000" data-listing-file-modified-sort="1754175374731" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="61" data-listing-word-count-sort="12167">
-<div class="thumbnail"><a href="./posts/2021-11-03-mis-visualizaciones-de-octubre-2021-v2/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2021-11-03-mis-visualizaciones-de-octubre-2021-v2/images/ig_oct.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2021-11-03-mis-visualizaciones-de-octubre-2021-v2/index.html" class="no-external">Mis visualizaciones de Octubre, 2021 (v2)</a>
-</h3>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="QVRpZW1wby5UViUyQ1BlcmlvZGlzbW8lMjBkZSUyMGRhdG9z" data-listing-date-sort="1758776400000" data-listing-file-modified-sort="1770539117577" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="98">
+<a href="./posts/2025-09-25-la-revolucion-de-las-decisiones-basadas-en-datos-transforman/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://i0.wp.com/atiempo.tv/wp-content/uploads/2025/09/JC.jpg?resize=1000%2C563&amp;ssl=1" class="thumbnail-image card-img" style="height: 200px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+La revolución de las decisiones basadas en datos: transformando sectores en México y el mundo
+</h5>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXphY2lvbmVz'); return false;">visualizaciones</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QVRpZW1wby5UVg=='); return false;">ATiempo.TV</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YXZpeg=='); return false;">dataviz</div>
+<div class="listing-category" onclick="window.quartoListingCategory('UGVyaW9kaXNtbyUyMGRlJTIwZGF0b3M='); return false;">Periodismo de datos</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/2021-11-03-mis-visualizaciones-de-octubre-2021-v2/index.html" class="no-external">
-A continuación, las visualizaciones que elaboré a lo largo del mes de Octubre del 2021 para mi cuenta de visualizaciones de Instagram:
-</a></div>
+<div class="card-text listing-description delink">
+<p>Históricamente, las decisiones de los negocios suelen tomarse por experiencias e intuición de sus ejecutivos, gerentes y empleados. Son famosas las historias de cómo las…</p>
 </div>
-<div class="metadata">
-<a href="./posts/2021-11-03-mis-visualizaciones-de-octubre-2021-v2/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
-3 nov 2021
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
+25 sept 2025
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="dmlzdWFsaXphY2lvbmVzJTJDZGF0YXZpeg==" data-listing-date-sort="1635656400000" data-listing-file-modified-sort="1754175340353" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="61" data-listing-word-count-sort="12173">
-<div class="thumbnail"><a href="./posts/2021-10-31-mis-visualizaciones-de-octubre-2021/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2021-10-31-mis-visualizaciones-de-octubre-2021/images/Captura de Pantalla 2021-10-31 a la(s) 21.09.18.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2021-10-31-mis-visualizaciones-de-octubre-2021/index.html" class="no-external">Mis visualizaciones de Octubre 2021</a>
-</h3>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="5" data-categories="QVRpZW1wby5UViUyQ1BlcmlvZGlzbW8lMjBkZSUyMGRhdG9z" data-listing-date-sort="1757566800000" data-listing-file-modified-sort="1770540232771" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="139">
+<a href="./posts/2025-09-11-terapia-psicologica-cuando-la-ia-llega-al-divan/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://i0.wp.com/atiempo.tv/wp-content/uploads/2025/09/maxresdefault.jpeg?resize=1000%2C563&amp;ssl=1" class="thumbnail-image card-img" style="height: 200px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+TerapIA psicológica: cuando la IA llega al diván
+</h5>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXphY2lvbmVz'); return false;">visualizaciones</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QVRpZW1wby5UVg=='); return false;">ATiempo.TV</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YXZpeg=='); return false;">dataviz</div>
+<div class="listing-category" onclick="window.quartoListingCategory('UGVyaW9kaXNtbyUyMGRlJTIwZGF0b3M='); return false;">Periodismo de datos</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/2021-10-31-mis-visualizaciones-de-octubre-2021/index.html" class="no-external">
-A continuación, las visualizaciones que elaboré a lo largo del mes de Octubre del 2021 para mi cuenta de visualizaciones de Instagram:
-</a></div>
+<div class="card-text listing-description delink">
+<p>La idea de que una máquina proporcione terapia psicológica no es nueva; los primeros intentos de programas de computadora con este fin datan de 1966 con el programa ELIZA…</p>
 </div>
-<div class="metadata">
-<a href="./posts/2021-10-31-mis-visualizaciones-de-octubre-2021/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
-31 oct 2021
+11 sept 2025
 </div>
-<div class="listing-author">
-Juvenal Campos
 </div>
-</a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="dmlzdWFsaXphY2lvbmVzJTJDZGF0YXZpeg==" data-listing-date-sort="1633237200000" data-listing-file-modified-sort="1754175311605" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="28" data-listing-word-count-sort="5459">
-<div class="thumbnail"><a href="./posts/2021-10-03-mis-visualizaciones-de-septiembre-2021/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2021-10-03-mis-visualizaciones-de-septiembre-2021/images/banner.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2021-10-03-mis-visualizaciones-de-septiembre-2021/index.html" class="no-external">Mis visualizaciones de Septiembre 2021</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXphY2lvbmVz'); return false;">visualizaciones</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YXZpeg=='); return false;">dataviz</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2021-10-03-mis-visualizaciones-de-septiembre-2021/index.html" class="no-external">
-Este mes afortunadamente estuve cargadito de trabajo, por lo que no le dediqué tanto de mi tiempo libre a crear visualizaciones en mi tiempo libre.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2021-10-03-mis-visualizaciones-de-septiembre-2021/index.html" class="no-external">
-<div class="listing-date">
-3 oct 2021
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="" data-listing-date-sort="1630386000000" data-listing-file-modified-sort="1754175152554" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="869">
-<div class="thumbnail"><a href="./posts/2021-08-31-mis-visualizaciones-de-agosto-2021/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2021-08-31-mis-visualizaciones-de-agosto-2021/images/Captura de Pantalla 2021-08-31 a la(s) 13.30.17.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2021-08-31-mis-visualizaciones-de-agosto-2021/index.html" class="no-external">Mis visualizaciones de agosto 2021</a>
-</h3>
-<div class="listing-categories">
-
-</div>
-<div class="delink listing-description"><a href="./posts/2021-08-31-mis-visualizaciones-de-agosto-2021/index.html" class="no-external">
-Colección de las visualizaciones que he realizado este mes en mi cuenta de Instagram de visualizaciones de datos.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2021-08-31-mis-visualizaciones-de-agosto-2021/index.html" class="no-external">
-<div class="listing-date">
-31 ago 2021
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="" data-listing-date-sort="1628226000000" data-listing-file-modified-sort="1754175062788" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1721">
-<div class="thumbnail"><a href="./posts/2021-08-06-solucion-problema-gdal-sf-mac/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2021-08-06-solucion-problema-gdal-sf-mac/images/image1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2021-08-06-solucion-problema-gdal-sf-mac/index.html" class="no-external">Solución al problema de GDAL para instalar la librería <code>sf</code> en mac</a>
-</h3>
-<div class="listing-categories">
-
-</div>
-<div class="delink listing-description"><a href="./posts/2021-08-06-solucion-problema-gdal-sf-mac/index.html" class="no-external">
-Resolviendo el problema de la instalación del paquete sf en mac.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2021-08-06-solucion-problema-gdal-sf-mac/index.html" class="no-external">
-<div class="listing-date">
-6 ago 2021
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-categories="YmxvZyUyQ2Jsb2dkb3du" data-listing-date-sort="1627794000000" data-listing-file-modified-sort="1754174954728" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="526">
-<div class="thumbnail"><a href="./posts/2021-08-01-generando-un-blog-y-mas-cosas-tecnicas/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2021-08-01-generando-un-blog-y-mas-cosas-tecnicas/images/img_1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2021-08-01-generando-un-blog-y-mas-cosas-tecnicas/index.html" class="no-external">Generando un blog y más cosas técnicas</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('YmxvZw=='); return false;">blog</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YmxvZ2Rvd24='); return false;">blogdown</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2021-08-01-generando-un-blog-y-mas-cosas-tecnicas/index.html" class="no-external">
-<b>En esta entrada de blog planeo ir escribiendo tutoriales y guías técnicas para poder tabajar con R y <code>blogdown</code>.</b>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2021-08-01-generando-un-blog-y-mas-cosas-tecnicas/index.html" class="no-external">
-<div class="listing-date">
-1 ago 2021
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="10" data-categories="" data-listing-date-sort="1626584400000" data-listing-file-modified-sort="1754174780224" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1066">
-<div class="thumbnail"><a href="./posts/2021-07-18-mi-post-de-blogdown/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2021-07-18-mi-post-de-blogdown/images/img_1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2021-07-18-mi-post-de-blogdown/index.html" class="no-external">Mi post de blogdown</a>
-</h3>
-<div class="listing-categories">
-
-</div>
-<div class="delink listing-description"><a href="./posts/2021-07-18-mi-post-de-blogdown/index.html" class="no-external">
-
-Contenido de la presentación brindada en el LNPP-Tech 2020.
-
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2021-07-18-mi-post-de-blogdown/index.html" class="no-external">
-<div class="listing-date">
-18 jul 2021
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="11" data-categories="" data-listing-date-sort="1626584400000" data-listing-file-modified-sort="1754174904125" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1975">
-<div class="thumbnail"><a href="./posts/2021-07-18-mi-post-sobre-blogdown/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2021-07-18-mi-post-sobre-blogdown/images/Captura de Pantalla 2021-07-18 a la(s) 23.33.01.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2021-07-18-mi-post-sobre-blogdown/index.html" class="no-external">Mi post sobre blogdown</a>
-</h3>
-<div class="listing-categories">
-
-</div>
-<div class="delink listing-description"><a href="./posts/2021-07-18-mi-post-sobre-blogdown/index.html" class="no-external">
-
-<i>Esta entrada de blog trata de explicar algunas generalidades sobre la creación y publicación de páginas web estilo <em>blog</em> a traves del uso de la librería <code>blogdown</code> de R.</i>
-
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2021-07-18-mi-post-sobre-blogdown/index.html" class="no-external">
-<div class="listing-date">
-18 jul 2021
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="12" data-categories="cGRmJTJDVHV0b3JpYWxlcyUyQ2dyYWZpY2Fz" data-listing-date-sort="1621400400000" data-listing-file-modified-sort="1754177269408" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1962">
-<div class="thumbnail"><a href="./posts/2021-05-19-tabulizer-para-tablas-en-pdf/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2021-05-19-tabulizer-para-tablas-en-pdf/images/captura_tabla_pdf.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2021-05-19-tabulizer-para-tablas-en-pdf/index.html" class="no-external">Tabulizer para tablas en pdf</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGRm'); return false;">pdf</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('VHV0b3JpYWxlcw=='); return false;">Tutoriales</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z3JhZmljYXM='); return false;">graficas</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2021-05-19-tabulizer-para-tablas-en-pdf/index.html" class="no-external">
-<strong>NOTA IMPORTANTE</strong>: La librería <code>tabulizer</code> ya no está disponible en CRAN desde 2021. Este tutorial es de archivo histórico y el código no es ejecutable en la versión actual.…<code></code><code></code>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2021-05-19-tabulizer-para-tablas-en-pdf/index.html" class="no-external">
-<div class="listing-date">
-19 may 2021
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="13" data-categories="Y2hhbGxlbmdlcyUyQzMwZGF5Y2hhcnRjaGFsbGVuZ2UlMkNncmFmaWNhcyUyQ2RhdGF2aXo=" data-listing-date-sort="1619845200000" data-listing-file-modified-sort="1754172766289" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="287">
-<div class="thumbnail"><a href="./posts/2021-05-01-30daychartchallenge/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2021-05-01-30daychartchallenge/images/img_2.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2021-05-01-30daychartchallenge/index.html" class="no-external">30DayChartChallenge 2021. Mis Gráficas</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y2hhbGxlbmdlcw=='); return false;">challenges</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('MzBkYXljaGFydGNoYWxsZW5nZQ=='); return false;">30daychartchallenge</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z3JhZmljYXM='); return false;">graficas</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YXZpeg=='); return false;">dataviz</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2021-05-01-30daychartchallenge/index.html" class="no-external">
-En esta entrada de blog pongo mis gráficas del #30DayChartChallenge en un solo sitio.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2021-05-01-30daychartchallenge/index.html" class="no-external">
-<div class="listing-date">
-1 may 2021
-</div>
-<div class="listing-author">
-Jorge Juvenal Campos Ferreira
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="14" data-categories="VHV0b3JpYWxlcyUyQ1I=" data-listing-date-sort="1607061600000" data-listing-file-modified-sort="1754176921855" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2059">
-<div class="thumbnail"><a href="./posts/2020-12-04-pivoteando-bases/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2020-12-04-pivoteando-bases/p_longer.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2020-12-04-pivoteando-bases/index.html" class="no-external">Pivoteando bases: breve tutorial de pivot_longer y pivot_wider</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('VHV0b3JpYWxlcw=='); return false;">Tutoriales</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2020-12-04-pivoteando-bases/index.html" class="no-external">
-Las tablas consisten en una disposición de datos en un arreglo matricial de filas y columnas. Estas tablas pueden mostrar su información de distintas maneras, dependiendo de…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2020-12-04-pivoteando-bases/index.html" class="no-external">
-<div class="listing-date">
-4 dic 2020
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="15" data-categories="TWFwYXM=" data-listing-date-sort="1595739600000" data-listing-file-modified-sort="1754174387332" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2147">
-<div class="thumbnail"><a href="./posts/2020-07-26-cortando-islas/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2020-07-26-cortando-islas/index_files/figure-html/unnamed-chunk-3-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2020-07-26-cortando-islas/index.html" class="no-external">Cortando Islas</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFwYXM='); return false;">Mapas</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2020-07-26-cortando-islas/index.html" class="no-external">
-<strong>Elaborado por: Juvenal Campos y Ami Sosa</strong>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2020-07-26-cortando-islas/index.html" class="no-external">
-<div class="listing-date">
-26 jul 2020
-</div>
-<div class="listing-author">
-Juvenal Campos y Ami Sosa
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="16" data-categories="c2hpbnk=" data-listing-date-sort="1583215200000" data-listing-file-modified-sort="1754174275817" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="563">
-<div class="thumbnail"><a href="./posts/2020-03-03-ejemplos-de-lo-que-se-puede-hacer-en-shiny/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2020-03-03-ejemplos-de-lo-que-se-puede-hacer-en-shiny/metrica.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2020-03-03-ejemplos-de-lo-que-se-puede-hacer-en-shiny/index.html" class="no-external">Ejemplos de lo que se puede hacer en shiny</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('c2hpbnk='); return false;">shiny</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2020-03-03-ejemplos-de-lo-que-se-puede-hacer-en-shiny/index.html" class="no-external">
-<strong>¿Qué es shiny?</strong>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2020-03-03-ejemplos-de-lo-que-se-puede-hacer-en-shiny/index.html" class="no-external">
-<div class="listing-date">
-3 mar 2020
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="17" data-categories="TWFwYXMlMkNSJTJDVHV0b3JpYWxlcw==" data-listing-date-sort="1582005600000" data-listing-file-modified-sort="1754176207959" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2353">
-<div class="thumbnail"><a href="./posts/2020-02-18-distancia-punto-a-linea/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2020-02-18-distancia-punto-a-linea/conversacionJesus.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2020-02-18-distancia-punto-a-linea/index.html" class="no-external">Distancia Punto a Linea</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFwYXM='); return false;">Mapas</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('VHV0b3JpYWxlcw=='); return false;">Tutoriales</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2020-02-18-distancia-punto-a-linea/index.html" class="no-external">
-La semana pasada, mientras estaba yo muy a gusto en mi trabajo limpiando bases de datos, un amigo mío muy querido (y con quien di un curso hace un par de años) Jesús Carrillo <span class="citation" data-cites="ProfeTriste">…</span>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2020-02-18-distancia-punto-a-linea/index.html" class="no-external">
-<div class="listing-date">
-18 feb 2020
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="18" data-categories="UiUyQ2dncGxvdDIlMkNkZW1vZ3JhZiVDMyVBRGElMkN2aXN1YWxpemFjaSVDMyVCM24=" data-listing-date-sort="1580018400000" data-listing-file-modified-sort="1754174098240" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3277">
-<div class="thumbnail"><a href="./posts/2020-01-26-visualizando-piramides-de-poblacion-en-r/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2020-01-26-visualizando-piramides-de-poblacion-en-r/TablaFinal.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2020-01-26-visualizando-piramides-de-poblacion-en-r/index.html" class="no-external">Visualizando pirámides de población en R</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z2dwbG90Mg=='); return false;">ggplot2</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGVtb2dyYWYlQzMlQURh'); return false;">demografía</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXphY2klQzMlQjNu'); return false;">visualización</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2020-01-26-visualizando-piramides-de-poblacion-en-r/index.html" class="no-external">
-Las pirámides de población (o <em>pirámide demográfica</em>, como le dicen los demógrafos) son un tipo de gráfica que nos permite analizar la distribución de la población por edades…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2020-01-26-visualizando-piramides-de-poblacion-en-r/index.html" class="no-external">
-<div class="listing-date">
-26 ene 2020
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="19" data-categories="VHV0b3JpYWxlcyUyQ01hcGFzJTJDUg==" data-listing-date-sort="1578895200000" data-listing-file-modified-sort="1754173902564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2550">
-<div class="thumbnail"><a href="./posts/2020-01-13-tutorial-de-mapas-en-leaflet/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2020-01-13-tutorial-de-mapas-en-leaflet/index.html" class="no-external">Tutorial de mapas en Leaflet</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('VHV0b3JpYWxlcw=='); return false;">Tutoriales</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFwYXM='); return false;">Mapas</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2020-01-13-tutorial-de-mapas-en-leaflet/index.html" class="no-external">
-La librería <code>leaflet</code> forma parte de la familia de librerías de los htmlwidgets, y su principal función es la de poder realizar mapas interactivos utilizando lenguaje R. Esta…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2020-01-13-tutorial-de-mapas-en-leaflet/index.html" class="no-external">
-<div class="listing-date">
-13 ene 2020
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="20" data-categories="QmxvZw==" data-listing-date-sort="1578204000000" data-listing-file-modified-sort="1754173822999" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="611">
-<div class="thumbnail"><a href="./posts/2020-01-05-nuestro-primer-post/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2020-01-05-nuestro-primer-post/index.html" class="no-external">Nuestro primer Post</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('QmxvZw=='); return false;">Blog</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2020-01-05-nuestro-primer-post/index.html" class="no-external">
-Hacer un blog es una idea que había estado rondandome la cabeza durante ya un año, a inicios del 2019, cuando me comprometí públicamente en un Tweet a hacerlo como uno de…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2020-01-05-nuestro-primer-post/index.html" class="no-external">
-<div class="listing-date">
-5 ene 2020
-</div>
-<div class="listing-author">
-Juvenal Campos
-</div>
-</a>
-</div>
+</div></a>
 </div>
 </div>
 <div class="listing-no-matching d-none">No hay resultados</div>
-</div></main> <!-- /main -->
+</div>
+<div class="blog-cta-wrapper">
+  <a href="posts.html" class="btn-primary-outline">Ver todos los artículos →</a>
+</div>
+</div>
+</section>
+
+
+
+
+</main> <!-- /main -->
+<!-- ============================================================
+     FOOTER PERSONALIZADO
+     ============================================================ -->
+<footer class="custom-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Jorge Juvenal Campos Ferreira</h3>
+        <p>
+          Científico de datos especializado en datos públicos y privados
+          para la solución de problemas. Periodismo de datos y docencia.
+        </p>
+      </div>
+      <div class="footer-links">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="posts.html">Blog</a></li>
+          <li><a href="index.html#socios">Colaboradores</a></li>
+          <li><a href="index.html#proyectos">Proyectos</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://github.com/JuveCampos" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://twitter.com/JuvenalCamposF" target="_blank" rel="noopener">Twitter / X</a></li>
+          <li><a href="https://www.linkedin.com/in/jorge-juvenal-campos-ferreira-5532b7160/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://bsky.app/profile/juvenalcamposf.bsky.social" target="_blank" rel="noopener">Bluesky</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Jorge Juvenal Campos Ferreira. Todos los derechos reservados.</span>
+      <div class="footer-social">
+        <a href="https://github.com/JuveCampos" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+        </a>
+        <a href="https://twitter.com/JuvenalCamposF" target="_blank" rel="noopener" aria-label="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/jorge-juvenal-campos-ferreira-5532b7160/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+        </a>
+        <a href="https://bsky.app/profile/juvenalcamposf.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.575 3.497 6.182 3.254-4.517.752-8.438 2.589-3.077 9.11 5.883 6.734 8.391-.4 9.271-3.218.88 2.818 2.39 9.628 9.27 3.218 5.36-6.52 1.44-8.358-3.076-9.11 2.607.243 5.397-.627 6.182-3.254.246-.828.624-5.788.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C18.046 4.748 15.087 8.687 14 10.8h-2z"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT — Theme toggle, navbar scroll, animations
+     ============================================================ -->
+<script>
+(function() {
+  'use strict';
+
+  /* ---- SVG Icons ---- */
+  var sunIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+  var moonIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+
+  var THEME_KEY = 'jcf-theme-preference';
+
+  /* ---- Theme Management ---- */
+  function getSystemTheme() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    var btn = document.getElementById('theme-toggle');
+    if (btn) {
+      btn.innerHTML = theme === 'dark' ? sunIcon : moonIcon;
+      btn.setAttribute('aria-label',
+        theme === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
+    }
+  }
+
+  function setTheme(theme) {
+    localStorage.setItem(THEME_KEY, theme);
+    applyTheme(theme);
+  }
+
+  /* Apply immediately to prevent flash of wrong theme */
+  var storedTheme = localStorage.getItem(THEME_KEY);
+  applyTheme(storedTheme || getSystemTheme());
+
+  /* Detect hero page immediately */
+  if (document.querySelector('.hero-section')) {
+    document.body.classList.add('has-hero');
+  }
+
+  /* Listen for system theme changes */
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+    if (!localStorage.getItem(THEME_KEY)) {
+      applyTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+
+  /* ---- DOM Ready ---- */
+  document.addEventListener('DOMContentLoaded', function() {
+
+    /* Re-check hero (in case DOM wasn't ready for the first check) */
+    if (document.querySelector('.hero-section')) {
+      document.body.classList.add('has-hero');
+    }
+
+    /* -- Create theme toggle button -- */
+    var toggle = document.createElement('button');
+    toggle.id = 'theme-toggle';
+    toggle.className = 'theme-toggle-btn';
+    toggle.setAttribute('aria-label', 'Cambiar tema');
+    toggle.addEventListener('click', function() {
+      var current = document.documentElement.getAttribute('data-theme') || 'light';
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    /* Insert into navbar (right side, next to social icons) */
+    var navRight = document.querySelector('.navbar-nav.ms-auto')
+                || document.querySelector('.navbar .navbar-nav:last-child');
+    if (navRight) {
+      var li = document.createElement('li');
+      li.className = 'nav-item d-flex align-items-center ms-2';
+      li.appendChild(toggle);
+      navRight.appendChild(li);
+    } else {
+      var navContainer = document.querySelector('.navbar .container-fluid')
+                      || document.querySelector('.navbar .container');
+      if (navContainer) {
+        navContainer.appendChild(toggle);
+      }
+    }
+
+    /* Set initial icon */
+    var currentTheme = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+    applyTheme(currentTheme);
+
+    /* -- Navbar scroll effect (only on hero pages) -- */
+    var navbar = document.querySelector('.navbar');
+    if (navbar && document.body.classList.contains('has-hero')) {
+      function onScroll() {
+        if (window.scrollY > 60) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    /* -- Section reveal animation (IntersectionObserver) -- */
+    var sections = document.querySelectorAll('.section');
+    if (sections.length > 0 && 'IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      sections.forEach(function(section) {
+        observer.observe(section);
+      });
+    } else {
+      /* Fallback: show all sections immediately */
+      sections.forEach(function(s) { s.classList.add('visible'); });
+    }
+
+    /* -- Hero Carousel -- */
+    var slides = document.querySelectorAll('.carousel-slide');
+    var dotsContainer = document.querySelector('.carousel-dots');
+    if (slides.length > 1 && dotsContainer) {
+      var currentSlide = 0;
+      var carouselInterval;
+
+      /* Create dots */
+      slides.forEach(function(_, i) {
+        var dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Imagen ' + (i + 1));
+        dot.addEventListener('click', function() {
+          goToSlide(i);
+          resetInterval();
+        });
+        dotsContainer.appendChild(dot);
+      });
+
+      var dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+      function goToSlide(n) {
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+        currentSlide = n;
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+      }
+
+      function nextSlide() {
+        goToSlide((currentSlide + 1) % slides.length);
+      }
+
+      function resetInterval() {
+        clearInterval(carouselInterval);
+        carouselInterval = setInterval(nextSlide, 5000);
+      }
+
+      /* Auto-play: cambiar cada 5 segundos */
+      carouselInterval = setInterval(nextSlide, 5000);
+    }
+
+    /* -- Smooth scroll for anchor links -- */
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          var navbarHeight = navbar ? navbar.offsetHeight : 0;
+          var targetPos = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 20;
+          window.scrollTo({ top: targetPos, behavior: 'smooth' });
+        }
+      });
+    });
+
+  });
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -1005,57 +829,6 @@ Juvenal Campos
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -1385,36 +1158,8 @@ Juvenal Campos
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Juve Blog"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  contents: posts</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  sort: "date desc"</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  type: default</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">  categories: true</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">  sort-ui: false</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">  filter-ui: false</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> full</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="an">title-block-banner:</span><span class="co"> true</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Bienvenido a mi blog personal. Aquí encontrarás tutoriales de R, análisis de datos, visualizaciones y proyectos personales.</span></code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+  </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>Blog personal de Jorge Juvenal Campos Ferreira</p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
-  </div>
-</footer>
 
 
 

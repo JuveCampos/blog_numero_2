@@ -142,11 +142,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">Sobre mí</span></a>
+    <span class="nav-link">
+<span class="menu-text">about.qmd</span>
+    </span>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html"> 
+    <a class="nav-link" href="../../posts.qmd"> 
 <span class="menu-text">Posts</span></a>
   </li>  
 </ul>
@@ -163,6 +164,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.linkedin.com/in/jorge-juvenal-campos-ferreira-5532b7160/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.instagram.com/juvenalcampos.dataviz/"> <i class="bi bi-instagram" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://bsky.app/profile/juvenalcamposf.bsky.social"> <i class="bi bi-cloud" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -207,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Tutorial de mapas en Leaflet</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<h1 class="title">Tutorial de mapas en Leaflet</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Tutoriales</div>
     <div class="quarto-category">Mapas</div>
@@ -473,8 +484,6 @@ Geodetic CRS:  WGS 84</code></pre>
 </div>
 
 
-<!-- -->
-
 </section>
 </section>
 
@@ -549,60 +558,9 @@ Geodetic CRS:  WGS 84</code></pre>
       });
       clipboardModal.on('success', onCopySuccess);
     }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
-    }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/juvenalcampos\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -928,252 +886,7 @@ Geodetic CRS:  WGS 84</code></pre>
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb10" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Tutorial de mapas en Leaflet"</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Juvenal Campos"</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2020-01-13"</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Tutoriales, Mapas, R]</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="an">tags:</span><span class="co"> [R, Leaflet, Mapas]</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>La librería <span class="in">`leaflet`</span> forma parte de la familia de librerías de los htmlwidgets, y su principal función es la de poder realizar mapas interactivos utilizando lenguaje R. Esta librería traduce nuestros comandos de R a JavaScript, creando una página web con elementos de información geográfica (como puntos, líneas o polígonos), fondos georreferenciados y funciones añadidas (como funciones de interacción con los elementos geográficos o aplicar zoom a zonas de interés). </span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># Ejemplo de Uso</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>En este ejemplo veremos como visualizar información geografica utilizando <span class="in">`leaflet`</span>. Para este ejemplo, realizaremos un mapa de **polígonos** utilizando información de las Entidades Federativas de la República Mexicana. Esta información se puede descargar desde INEGI. </span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1. Librerias.</span></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>Las librerias necesarias para correr este ejemplo son las siguientes: </span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, warning=FALSE, message=FALSE}</span></span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)      <span class="co"># libreria para graficar mapas interactivos</span></span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)           <span class="co"># manejo de informacion geografica </span></span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)      <span class="co"># paletas de colores</span></span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer) <span class="co"># mas paletas de colores</span></span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)        <span class="co"># manejo de bases de datos</span></span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmlwidgets)  <span class="co"># para guardar el mapa como HTML</span></span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2. Abrimos el archivo shape</span></span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>Para el manejo de informacion espacial utilizaremos el paquete <span class="in">`sf`</span>, el cual tiene funciones para abrir bases de datos geográficas.</span>
-<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>El formato del archivo seleccionado es el <span class="in">`*.geojson`</span> por sus ventajas de almacenamiento y organización, sin embargo, la función siguiente funciona exactamente igual utilizando archivos <span class="in">`*.shp`</span></span>
-<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE, warning=FALSE}</span></span>
-<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>root <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/JuveCampos/MexicoSinIslas/master"</span></span>
-<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="co"># root &lt;- "la direccion donde esta mi shapefile"</span></span>
-<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>shape <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="fu">paste0</span>(root, <span class="st">"/Sin_islas.geojson"</span>))</span>
-<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3. Generamos variables ficticias</span></span>
-<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>Con tal de asignarle un color a los poligonos de los estados de la republica crearemos variables ficticias; le generaremos un numero aleatorio a cada estado y una categoria en base a dicho numero.</span>
-<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable numerica</span></span>
-<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>shape<span class="sc">$</span>numerica <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="fu">nrow</span>(shape), <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>)</span>
-<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable categorica</span></span>
-<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a>shape<span class="sc">$</span>categorica <span class="ot">&lt;-</span> <span class="fu">case_when</span>(shape<span class="sc">$</span>numerica <span class="sc">&lt;</span> <span class="fl">0.25</span> <span class="sc">~</span> <span class="st">"Estado feo"</span>, </span>
-<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a>                              shape<span class="sc">$</span>numerica <span class="sc">&gt;=</span> <span class="fl">0.25</span> <span class="sc">&amp;</span> shape<span class="sc">$</span>numerica <span class="sc">&lt;</span> <span class="fl">0.5</span> <span class="sc">~</span> <span class="st">"Estado regular"</span>, </span>
-<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a>                              shape<span class="sc">$</span>numerica <span class="sc">&gt;=</span> <span class="fl">0.5</span> <span class="sc">&amp;</span> shape<span class="sc">$</span>numerica <span class="sc">&lt;</span> <span class="fl">0.75</span> <span class="sc">~</span> <span class="st">"Estado bonito"</span>, </span>
-<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a>                              shape<span class="sc">$</span>numerica <span class="sc">&gt;=</span> <span class="fl">0.75</span> <span class="sc">~</span> <span class="st">"Estado hermoso"</span>)</span>
-<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a><span class="fu">## 4. Generamos las paletas para colorear los mapas</span></span>
-<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a>Las paletas son vectores de colores con los cuales vamos a colorear el mapa. Las funciones que el paquete <span class="in">`Leaflet`</span> provee son las siguientes: </span>
-<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a><span class="fu">### colorNumeric()</span></span>
-<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>`colorNumeric(palette, domain, na.color = "#808080", alpha = FALSE,</span>
-<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a>  reverse = FALSE)`</span>
-<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a>Esta funcion nos permite crear paletas de colores para variables o atributos que tengan valores numericos. Nos generara igualmente una escala de colores continua.</span>
-<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a><span class="fu">### colorBin()</span></span>
-<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>`colorBin(palette, domain, bins = 7, pretty = TRUE, na.color = "#808080",</span>
-<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a>  alpha = FALSE, reverse = FALSE)`</span>
-<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a>Esta funcion nos ayuda para crear paletas de colores donde automaticamente separa los valores de la variable numerica en rangos o bins (_botecitos_), generando una escala con valores discretos, en vez de continuos como hacia la funcion previa.</span>
-<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a><span class="fu">### colorQuantile()</span></span>
-<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>`colorQuantile(palette, domain, n = 4, probs = seq(0, 1, length.out = n + 1),</span>
-<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a>  na.color = "#808080", alpha = FALSE, reverse = FALSE)`</span>
-<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a>Esta funcion nos permite crear paletas de colores donde podemos separar la informacion en los cuantiles que especifiquemos previamente. Sirve para ver quienes se ubican en las partes inferiores y superiores de una escala numerica y de esta manera emitir juicios sobre la informacion.</span>
-<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a><span class="fu">### colorFactor()</span></span>
-<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>`colorFactor(palette, domain, levels = NULL, ordered = FALSE,</span>
-<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a>  na.color = "#808080", alpha = FALSE, reverse = FALSE)`</span>
-<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a>Esta funcion crea paletas de colores mediante el uso de variables categoricas (factores en R), donde asigna un color diferente a cada categoria de informacion.</span>
-<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a>palnumeric <span class="ot">&lt;-</span> <span class="fu">colorNumeric</span>(<span class="st">"viridis"</span>, <span class="at">domain =</span> shape<span class="sc">$</span>numerica)</span>
-<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a>palBin <span class="ot">&lt;-</span> <span class="fu">colorBin</span>(<span class="st">"magma"</span>, <span class="at">domain =</span> shape<span class="sc">$</span>AREA, <span class="at">bins =</span> <span class="dv">4</span>)</span>
-<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a>palQuantile <span class="ot">&lt;-</span> <span class="fu">colorQuantile</span>(<span class="st">"Spectral"</span>, <span class="at">domain =</span> shape<span class="sc">$</span>numerica)</span>
-<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a>palfac <span class="ot">&lt;-</span> <span class="fu">colorFactor</span>(<span class="st">"RdBu"</span>, <span class="at">domain =</span> shape<span class="sc">$</span>categorica)</span>
-<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a><span class="fu">## 5. Generamos el popup </span></span>
-<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a>El <span class="in">`popup`</span> es la ventana que se muestra al hacer click en un poligono del mapa. En este caso, queremos que al hacer click en un estado, se muestren cosas como el area, el numero aleatorio que le toco y que tan bonito es. </span>
-<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a>La parte encerrada con los caracteres <span class="in">`"&lt;b&gt;" y "&lt;/b&gt;"`</span> seran mostradas en negritas en el mapa, mientras que al introducir <span class="in">`"&lt;br&gt;"`</span> se hara un corte de la oracion. Estos caracteres se les denomina como <span class="in">`html tags`</span> y los presentados aqui son un ejemplo de varios que pueden utilizarse para los mapas de leaflet.</span>
-<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a><span class="co"># Funcion hecha en casa para mostrar los decimales que queremos: </span></span>
-<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a>specify_decimal <span class="ot">&lt;-</span> <span class="cf">function</span>(x, k) <span class="fu">trimws</span>(<span class="fu">format</span>(<span class="fu">round</span>(x, k), <span class="at">nsmall=</span>k))</span>
-<span id="cb10-120"><a href="#cb10-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a><span class="co"># Elaboracion del popup: </span></span>
-<span id="cb10-122"><a href="#cb10-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-123"><a href="#cb10-123" aria-hidden="true" tabindex="-1"></a>popup <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
-<span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a><span class="st">"&lt;b&gt;"</span>,<span class="st">"Nombre estado: "</span>,   <span class="st">"&lt;/b&gt;"</span>,   <span class="fu">as.character</span>(shape<span class="sc">$</span>ENTIDAD) ,        <span class="st">"&lt;br&gt;"</span>,                     </span>
-<span id="cb10-125"><a href="#cb10-125" aria-hidden="true" tabindex="-1"></a><span class="st">"&lt;b&gt;"</span>, <span class="st">"Capital: "</span>,        <span class="st">"&lt;/b&gt;"</span>,   <span class="fu">as.character</span>(shape<span class="sc">$</span>CAPITAL)   ,      <span class="st">"&lt;br&gt;"</span>,                   </span>
-<span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a><span class="st">"&lt;b&gt;"</span>, <span class="st">"Area: "</span>,           <span class="st">"&lt;/b&gt;"</span>,   <span class="fu">specify_decimal</span>(shape<span class="sc">$</span>AREA,<span class="dv">3</span>) ,      <span class="st">"&lt;br&gt;"</span>, </span>
-<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a><span class="st">"&lt;b&gt;"</span>, <span class="st">"Num. Aleatorio "</span>,  <span class="st">"&lt;/b&gt;"</span>,   <span class="fu">specify_decimal</span>(shape<span class="sc">$</span>numerica ,<span class="dv">3</span>) , <span class="st">"&lt;br&gt;"</span>,</span>
-<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a><span class="st">"&lt;b&gt;"</span>, <span class="st">"Tipo de Estado: "</span>, <span class="st">"&lt;/b&gt;"</span>,   shape<span class="sc">$</span>categorica ,                   <span class="st">"&lt;br&gt;"</span> )</span>
-<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb10-130"><a href="#cb10-130" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-131"><a href="#cb10-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a><span class="fu">## 6. Elaboramos el mapa</span></span>
-<span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a>A continuacion elaboraremos el mapa usando la libreria <span class="in">`leaflet`</span>.</span>
-<span id="cb10-134"><a href="#cb10-134" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval=TRUE}</span></span>
-<span id="cb10-135"><a href="#cb10-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a><span class="co"># Funcion para crear el mapa</span></span>
-<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(shape) <span class="sc">%&gt;%</span></span>
-<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Opcion para anadir imagenes o mapas de fondo (tiles)</span></span>
-<span id="cb10-139"><a href="#cb10-139" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addProviderTiles</span>(<span class="st">"Esri.WorldTerrain"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-140"><a href="#cb10-140" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Funcion para agregar poligonos</span></span>
-<span id="cb10-141"><a href="#cb10-141" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPolygons</span>(<span class="at">color =</span> <span class="st">"#444444"</span> ,</span>
-<span id="cb10-142"><a href="#cb10-142" aria-hidden="true" tabindex="-1"></a>              <span class="at">weight =</span> <span class="dv">1</span>, </span>
-<span id="cb10-143"><a href="#cb10-143" aria-hidden="true" tabindex="-1"></a>              <span class="at">smoothFactor =</span> <span class="fl">0.5</span>,</span>
-<span id="cb10-144"><a href="#cb10-144" aria-hidden="true" tabindex="-1"></a>              <span class="at">opacity =</span> <span class="fl">1.0</span>,</span>
-<span id="cb10-145"><a href="#cb10-145" aria-hidden="true" tabindex="-1"></a>              <span class="at">fillOpacity =</span> <span class="fl">0.5</span>,</span>
-<span id="cb10-146"><a href="#cb10-146" aria-hidden="true" tabindex="-1"></a>              <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">palnumeric</span>(shape<span class="sc">$</span>numerica),    <span class="co"># Color de llenado</span></span>
-<span id="cb10-147"><a href="#cb10-147" aria-hidden="true" tabindex="-1"></a>              <span class="at">layerId =</span> <span class="sc">~</span>shape<span class="sc">$</span>CVE_EDO,                  </span>
-<span id="cb10-148"><a href="#cb10-148" aria-hidden="true" tabindex="-1"></a>              <span class="at">highlightOptions =</span> <span class="fu">highlightOptions</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">weight =</span> <span class="dv">2</span>,</span>
-<span id="cb10-149"><a href="#cb10-149" aria-hidden="true" tabindex="-1"></a>                                                  <span class="at">bringToFront =</span> <span class="cn">TRUE</span>), <span class="co">#highlight cuando pasas el cursor</span></span>
-<span id="cb10-150"><a href="#cb10-150" aria-hidden="true" tabindex="-1"></a>              <span class="at">label =</span> <span class="sc">~</span>shape<span class="sc">$</span>ENTIDAD ,                                  <span class="co"># etiqueta cuando pasas el cursor</span></span>
-<span id="cb10-151"><a href="#cb10-151" aria-hidden="true" tabindex="-1"></a>              <span class="at">labelOptions =</span> <span class="fu">labelOptions</span>(<span class="at">direction =</span> <span class="st">"auto"</span>),</span>
-<span id="cb10-152"><a href="#cb10-152" aria-hidden="true" tabindex="-1"></a>              <span class="at">popup =</span> popup) <span class="sc">%&gt;%</span>                                        <span class="co"># mostrar el popup</span></span>
-<span id="cb10-153"><a href="#cb10-153" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-154"><a href="#cb10-154" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addLegend</span>(<span class="at">position =</span> <span class="st">"topright"</span>, <span class="at">pal =</span> palnumeric, <span class="at">values =</span> <span class="sc">~</span>shape<span class="sc">$</span>numerica,</span>
-<span id="cb10-155"><a href="#cb10-155" aria-hidden="true" tabindex="-1"></a>            <span class="at">title =</span> <span class="st">"Suerte del Estado"</span>)                                <span class="co"># mostrar escala en el mapa</span></span>
-<span id="cb10-156"><a href="#cb10-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-157"><a href="#cb10-157" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-158"><a href="#cb10-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-159"><a href="#cb10-159" aria-hidden="true" tabindex="-1"></a><span class="fu">## 7. Mapa multicapa.</span></span>
-<span id="cb10-160"><a href="#cb10-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-161"><a href="#cb10-161" aria-hidden="true" tabindex="-1"></a>Para finalizar, haremos un mapa multicapa con toda la informacion que hemos generado hasta el momento, esto es, que despliegue informacion de distintas variables al seleccionar estas en el mapa.</span>
-<span id="cb10-162"><a href="#cb10-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-163"><a href="#cb10-163" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval=TRUE}</span></span>
-<span id="cb10-164"><a href="#cb10-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-165"><a href="#cb10-165" aria-hidden="true" tabindex="-1"></a>mapa <span class="ot">&lt;-</span> <span class="fu">leaflet</span>(shape) <span class="sc">%&gt;%</span></span>
-<span id="cb10-166"><a href="#cb10-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addProviderTiles</span>(<span class="st">"Esri.WorldTerrain"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-167"><a href="#cb10-167" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPolygons</span>(<span class="at">color =</span> <span class="st">"#444444"</span> ,</span>
-<span id="cb10-168"><a href="#cb10-168" aria-hidden="true" tabindex="-1"></a>              <span class="at">weight =</span> <span class="dv">1</span>, </span>
-<span id="cb10-169"><a href="#cb10-169" aria-hidden="true" tabindex="-1"></a>              <span class="at">smoothFactor =</span> <span class="fl">0.5</span>,</span>
-<span id="cb10-170"><a href="#cb10-170" aria-hidden="true" tabindex="-1"></a>              <span class="at">opacity =</span> <span class="fl">1.0</span>,</span>
-<span id="cb10-171"><a href="#cb10-171" aria-hidden="true" tabindex="-1"></a>              <span class="at">fillOpacity =</span> <span class="fl">0.5</span>,</span>
-<span id="cb10-172"><a href="#cb10-172" aria-hidden="true" tabindex="-1"></a>              <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">palfac</span>(shape<span class="sc">$</span>categorica),</span>
-<span id="cb10-173"><a href="#cb10-173" aria-hidden="true" tabindex="-1"></a>              <span class="at">group =</span> <span class="st">"Belleza"</span>,</span>
-<span id="cb10-174"><a href="#cb10-174" aria-hidden="true" tabindex="-1"></a>              <span class="at">highlightOptions =</span> <span class="fu">highlightOptions</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">weight =</span> <span class="dv">2</span>,</span>
-<span id="cb10-175"><a href="#cb10-175" aria-hidden="true" tabindex="-1"></a>                                                  <span class="at">bringToFront =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb10-176"><a href="#cb10-176" aria-hidden="true" tabindex="-1"></a>              <span class="at">label =</span> <span class="sc">~</span>shape<span class="sc">$</span>ENTIDAD ,</span>
-<span id="cb10-177"><a href="#cb10-177" aria-hidden="true" tabindex="-1"></a>              <span class="at">labelOptions =</span> <span class="fu">labelOptions</span>(<span class="at">direction =</span> <span class="st">"auto"</span>),</span>
-<span id="cb10-178"><a href="#cb10-178" aria-hidden="true" tabindex="-1"></a>              <span class="at">popup =</span> popup) <span class="sc">%&gt;%</span></span>
-<span id="cb10-179"><a href="#cb10-179" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-180"><a href="#cb10-180" aria-hidden="true" tabindex="-1"></a>   <span class="fu">addLegend</span>(<span class="at">position =</span> <span class="st">"bottomleft"</span>, <span class="at">pal =</span> palfac, <span class="at">values =</span> <span class="sc">~</span>shape<span class="sc">$</span>categorica,</span>
-<span id="cb10-181"><a href="#cb10-181" aria-hidden="true" tabindex="-1"></a>             <span class="at">title =</span> <span class="st">"Belleza del Estado"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-182"><a href="#cb10-182" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-183"><a href="#cb10-183" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPolygons</span>(<span class="at">data =</span> shape, </span>
-<span id="cb10-184"><a href="#cb10-184" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#444444"</span> ,</span>
-<span id="cb10-185"><a href="#cb10-185" aria-hidden="true" tabindex="-1"></a>              <span class="at">weight =</span> <span class="dv">1</span>, </span>
-<span id="cb10-186"><a href="#cb10-186" aria-hidden="true" tabindex="-1"></a>              <span class="at">smoothFactor =</span> <span class="fl">0.5</span>,</span>
-<span id="cb10-187"><a href="#cb10-187" aria-hidden="true" tabindex="-1"></a>              <span class="at">opacity =</span> <span class="fl">1.0</span>,</span>
-<span id="cb10-188"><a href="#cb10-188" aria-hidden="true" tabindex="-1"></a>              <span class="at">fillOpacity =</span> <span class="fl">0.5</span>,</span>
-<span id="cb10-189"><a href="#cb10-189" aria-hidden="true" tabindex="-1"></a>              <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">palnumeric</span>(shape<span class="sc">$</span>numerica),</span>
-<span id="cb10-190"><a href="#cb10-190" aria-hidden="true" tabindex="-1"></a>              <span class="at">group =</span> <span class="st">"Suerte"</span>,</span>
-<span id="cb10-191"><a href="#cb10-191" aria-hidden="true" tabindex="-1"></a>              <span class="at">highlightOptions =</span> <span class="fu">highlightOptions</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">weight =</span> <span class="dv">2</span>,</span>
-<span id="cb10-192"><a href="#cb10-192" aria-hidden="true" tabindex="-1"></a>                                                  <span class="at">bringToFront =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb10-193"><a href="#cb10-193" aria-hidden="true" tabindex="-1"></a>              <span class="at">label =</span> <span class="sc">~</span>shape<span class="sc">$</span>ENTIDAD ,</span>
-<span id="cb10-194"><a href="#cb10-194" aria-hidden="true" tabindex="-1"></a>              <span class="at">labelOptions =</span> <span class="fu">labelOptions</span>(<span class="at">direction =</span> <span class="st">"auto"</span>),</span>
-<span id="cb10-195"><a href="#cb10-195" aria-hidden="true" tabindex="-1"></a>              <span class="at">popup =</span> popup) <span class="sc">%&gt;%</span></span>
-<span id="cb10-196"><a href="#cb10-196" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-197"><a href="#cb10-197" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPolygons</span>(<span class="at">data =</span> shape, </span>
-<span id="cb10-198"><a href="#cb10-198" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#444444"</span> ,</span>
-<span id="cb10-199"><a href="#cb10-199" aria-hidden="true" tabindex="-1"></a>              <span class="at">weight =</span> <span class="dv">1</span>, </span>
-<span id="cb10-200"><a href="#cb10-200" aria-hidden="true" tabindex="-1"></a>              <span class="at">smoothFactor =</span> <span class="fl">0.5</span>,</span>
-<span id="cb10-201"><a href="#cb10-201" aria-hidden="true" tabindex="-1"></a>              <span class="at">opacity =</span> <span class="fl">1.0</span>,</span>
-<span id="cb10-202"><a href="#cb10-202" aria-hidden="true" tabindex="-1"></a>              <span class="at">fillOpacity =</span> <span class="fl">0.5</span>,</span>
-<span id="cb10-203"><a href="#cb10-203" aria-hidden="true" tabindex="-1"></a>              <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">palQuantile</span>(shape<span class="sc">$</span>numerica),</span>
-<span id="cb10-204"><a href="#cb10-204" aria-hidden="true" tabindex="-1"></a>              <span class="at">group =</span> <span class="st">"Porcentaje"</span>,</span>
-<span id="cb10-205"><a href="#cb10-205" aria-hidden="true" tabindex="-1"></a>              <span class="at">highlightOptions =</span> <span class="fu">highlightOptions</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">weight =</span> <span class="dv">2</span>,</span>
-<span id="cb10-206"><a href="#cb10-206" aria-hidden="true" tabindex="-1"></a>                                                  <span class="at">bringToFront =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb10-207"><a href="#cb10-207" aria-hidden="true" tabindex="-1"></a>              <span class="at">label =</span> <span class="sc">~</span>shape<span class="sc">$</span>ENTIDAD ,</span>
-<span id="cb10-208"><a href="#cb10-208" aria-hidden="true" tabindex="-1"></a>              <span class="at">labelOptions =</span> <span class="fu">labelOptions</span>(<span class="at">direction =</span> <span class="st">"auto"</span>),</span>
-<span id="cb10-209"><a href="#cb10-209" aria-hidden="true" tabindex="-1"></a>              <span class="at">popup =</span> popup) <span class="sc">%&gt;%</span></span>
-<span id="cb10-210"><a href="#cb10-210" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-211"><a href="#cb10-211" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addLegend</span>(<span class="at">position =</span> <span class="st">"bottomright"</span>, <span class="at">pal =</span> palQuantile, <span class="at">values =</span> <span class="sc">~</span>shape<span class="sc">$</span>numerica,</span>
-<span id="cb10-212"><a href="#cb10-212" aria-hidden="true" tabindex="-1"></a>            <span class="at">title =</span> <span class="st">"Cuantiles de Suerte"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-213"><a href="#cb10-213" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-214"><a href="#cb10-214" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-215"><a href="#cb10-215" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPolygons</span>(<span class="at">data =</span> shape, </span>
-<span id="cb10-216"><a href="#cb10-216" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#444444"</span> ,</span>
-<span id="cb10-217"><a href="#cb10-217" aria-hidden="true" tabindex="-1"></a>              <span class="at">weight =</span> <span class="dv">1</span>, </span>
-<span id="cb10-218"><a href="#cb10-218" aria-hidden="true" tabindex="-1"></a>              <span class="at">smoothFactor =</span> <span class="fl">0.5</span>,</span>
-<span id="cb10-219"><a href="#cb10-219" aria-hidden="true" tabindex="-1"></a>              <span class="at">opacity =</span> <span class="fl">1.0</span>,</span>
-<span id="cb10-220"><a href="#cb10-220" aria-hidden="true" tabindex="-1"></a>              <span class="at">fillOpacity =</span> <span class="fl">0.5</span>,</span>
-<span id="cb10-221"><a href="#cb10-221" aria-hidden="true" tabindex="-1"></a>              <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">palBin</span>(shape<span class="sc">$</span>AREA),</span>
-<span id="cb10-222"><a href="#cb10-222" aria-hidden="true" tabindex="-1"></a>              <span class="at">group =</span> <span class="st">"Area"</span>,</span>
-<span id="cb10-223"><a href="#cb10-223" aria-hidden="true" tabindex="-1"></a>              <span class="at">highlightOptions =</span> <span class="fu">highlightOptions</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">weight =</span> <span class="dv">2</span>,</span>
-<span id="cb10-224"><a href="#cb10-224" aria-hidden="true" tabindex="-1"></a>                                                  <span class="at">bringToFront =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb10-225"><a href="#cb10-225" aria-hidden="true" tabindex="-1"></a>              <span class="at">label =</span> <span class="sc">~</span>shape<span class="sc">$</span>ENTIDAD ,</span>
-<span id="cb10-226"><a href="#cb10-226" aria-hidden="true" tabindex="-1"></a>              <span class="at">labelOptions =</span> <span class="fu">labelOptions</span>(<span class="at">direction =</span> <span class="st">"auto"</span>),</span>
-<span id="cb10-227"><a href="#cb10-227" aria-hidden="true" tabindex="-1"></a>              <span class="at">popup =</span> popup) <span class="sc">%&gt;%</span></span>
-<span id="cb10-228"><a href="#cb10-228" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-229"><a href="#cb10-229" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addLegend</span>(<span class="at">position =</span> <span class="st">"topleft"</span>, <span class="at">pal =</span> palBin, <span class="at">values =</span> <span class="sc">~</span>shape<span class="sc">$</span>AREA,</span>
-<span id="cb10-230"><a href="#cb10-230" aria-hidden="true" tabindex="-1"></a>            <span class="at">title =</span> <span class="st">"Areas"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-231"><a href="#cb10-231" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-232"><a href="#cb10-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addLayersControl</span>( </span>
-<span id="cb10-233"><a href="#cb10-233" aria-hidden="true" tabindex="-1"></a>    <span class="at">baseGroups =</span> <span class="fu">c</span>(<span class="st">"Belleza"</span>, <span class="st">"Suerte"</span>, <span class="st">"Porcentaje"</span>, <span class="st">"Area"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb10-234"><a href="#cb10-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-235"><a href="#cb10-235" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addLegend</span>(<span class="at">position =</span> <span class="st">"topright"</span>, <span class="at">pal =</span> palnumeric, <span class="at">values =</span> <span class="sc">~</span>shape<span class="sc">$</span>numerica,</span>
-<span id="cb10-236"><a href="#cb10-236" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"Suerte del Estado"</span>) </span>
-<span id="cb10-237"><a href="#cb10-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-238"><a href="#cb10-238" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimir el mapa</span></span>
-<span id="cb10-239"><a href="#cb10-239" aria-hidden="true" tabindex="-1"></a>mapa</span>
-<span id="cb10-240"><a href="#cb10-240" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-241"><a href="#cb10-241" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-242"><a href="#cb10-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-243"><a href="#cb10-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-244"><a href="#cb10-244" aria-hidden="true" tabindex="-1"></a><span class="fu">## 8. Guardamos el archivo.</span></span>
-<span id="cb10-245"><a href="#cb10-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-246"><a href="#cb10-246" aria-hidden="true" tabindex="-1"></a>Para guardar el archivo haremos uso de la libreria <span class="in">`htmlwidgets`</span>.</span>
-<span id="cb10-247"><a href="#cb10-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-248"><a href="#cb10-248" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval=FALSE}</span></span>
-<span id="cb10-249"><a href="#cb10-249" aria-hidden="true" tabindex="-1"></a><span class="co"># Gardar el mapa </span></span>
-<span id="cb10-250"><a href="#cb10-250" aria-hidden="true" tabindex="-1"></a>htmlwidgets<span class="sc">::</span><span class="fu">saveWidget</span>(mapa, <span class="st">"mapa.html"</span>)</span>
-<span id="cb10-251"><a href="#cb10-251" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-</code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+  </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

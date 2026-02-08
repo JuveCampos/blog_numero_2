@@ -164,6 +164,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </i> 
 <span class="menu-text"></span></a>
   </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.instagram.com/juvenalcampos.dataviz/"> <i class="bi bi-instagram" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://bsky.app/profile/juvenalcamposf.bsky.social"> <i class="bi bi-cloud" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -189,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Cortando Islas</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<h1 class="title">Cortando Islas</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Mapas</div>
   </div>
@@ -546,8 +556,6 @@ all geometries</code></pre>
 <p><em>¡Gracias por leernos! :3</em></p>
 
 
-<!-- -->
-
 </section>
 
 </main> <!-- /main -->
@@ -620,57 +628,6 @@ all geometries</code></pre>
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -1000,334 +957,7 @@ all geometries</code></pre>
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb25" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Cortando Islas"</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Juvenal Campos y Ami Sosa"</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2020-07-26"</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Mapas]</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="an">tags:</span><span class="co"> [sf, geoespacial, islas, mapas, tutorial]</span></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  h2 {</span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span><span class="cn">red</span><span class="op">;</span></span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>  iframe{</span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>        <span class="kw">width</span><span class="ch">:</span> <span class="dv">1000</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>        <span class="kw">height</span><span class="ch">:</span> <span class="dv">750</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">border</span><span class="ch">:</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#ccc</span><span class="op">;</span></span>
-<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>  p<span class="fu">.footnote</span>{</span>
-<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span><span class="cn">#5e5e5e</span><span class="op">;</span></span>
-<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span><span class="dv">70</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a> **Elaborado por: Juvenal Campos y Ami Sosa** </span>
-<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a> Ver países y continentes enteros ya no es un derecho exclusivo de los astronautas o los superhéroes. Gracias a los sistemas de información geográfica cada vez es más sencillo crear nuestros propios mapas y representar visualmente los fenómenos que consideramos importantes para entender mejor el mundo que nos rodea. Sin embargo, hacer mapas y manipular información geográfica es un ejercicio **muy poderoso** que puede ser usado para informar o para desinformar.</span>
-<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a> *"Recuerda, un gran poder conlleva una gran responsabilidad"*  </span>
-<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://media.giphy.com/media/MCZ39lz83o5lC/giphy.gif)</span></span>
-<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a>Para el presente tutorial nos concentraremos en el caso de presentar información a través de mapas con territorios insulares. </span>
-<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a>Las **islas** son uno de esos detalles que podemos pasar por alto pero que pueden tener efectos confusos para quienes ven nuestros mapas, ya que **no todas las islas son iguales**. </span>
-<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a>De acuerdo con el INEGI, el Territorio Insular Mexicano está integrado por 2,128 islas entre las cuales sólo 82 están pobladas. </span>
-<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-42"><a href="#cb25-42" aria-hidden="true" tabindex="-1"></a>Es importante investigar previamente para saber con qué tipo de isla estamos lidiando, para decidir si contribuye o deteriora la claridad de comprensión y análisis de nuestros datos. </span>
-<span id="cb25-43"><a href="#cb25-43" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-44"><a href="#cb25-44" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-45"><a href="#cb25-45" aria-hidden="true" tabindex="-1"></a>Por ejemplo, **si estamos mapeando defunciones de COVID-19 por municipio**, incluir en nuestro mapa una isla deshabitada que forma parte de un municipio podría llevarnos a **visualizar información errónea** y decir que esa isla tiene defunciones cuando esta ni si quiera está poblada. </span>
-<span id="cb25-46"><a href="#cb25-46" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-47"><a href="#cb25-47" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-48"><a href="#cb25-48" aria-hidden="true" tabindex="-1"></a> **Entonces, si consideras que lo más conveniente es no mapear una isla pero no sabes cómo eliminarla, no te preocupes, aquí te proponemos una manera de hacerlo. (Otra forma de eliminar islas la puedes encontrar [acá]())** </span>
-<span id="cb25-49"><a href="#cb25-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-50"><a href="#cb25-50" aria-hidden="true" tabindex="-1"></a><span class="fu">### Inicio del tutorial</span></span>
-<span id="cb25-51"><a href="#cb25-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-52"><a href="#cb25-52" aria-hidden="true" tabindex="-1"></a>Si quieres descargar la base de datos para replicar este ejercicio, puedes descargarla de este <span class="co">[</span><span class="ot">enlace</span><span class="co">](https://raw.githubusercontent.com/JuveCampos/juveBlog/master/cortando%20Islas/mpios.geojson)</span>. La base de datos en la que nos basamos es la de división municipal de CONABIO, la cual puedes descargar de este <span class="co">[</span><span class="ot">enlace</span><span class="co">](http://www.conabio.gob.mx/informacion/gis/)</span>.</span>
-<span id="cb25-53"><a href="#cb25-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-54"><a href="#cb25-54" aria-hidden="true" tabindex="-1"></a>Primero lo básico, cargar las librerías <span class="in">`tidyverse`</span>, <span class="in">`sf`</span> y <span class="in">`leaflet`</span> que nos ayudarán a manipular y visualizar información geográfica. </span>
-<span id="cb25-55"><a href="#cb25-55" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-56"><a href="#cb25-56" aria-hidden="true" tabindex="-1"></a><span class="in">```{r message=FALSE, cache=FALSE, warning=FALSE}</span></span>
-<span id="cb25-57"><a href="#cb25-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Librerías ----</span></span>
-<span id="cb25-58"><a href="#cb25-58" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb25-59"><a href="#cb25-59" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb25-60"><a href="#cb25-60" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
-<span id="cb25-61"><a href="#cb25-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span> </span>
-<span id="cb25-62"><a href="#cb25-62" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb25-63"><a href="#cb25-63" aria-hidden="true" tabindex="-1"></a>Después debemos obtener la base de datos con el archivo de información geográfica que vamos a utilizar para crear nuestro mapa y filtramos el nombre del estado al que le vamos a quitar las islas. </span>
-<span id="cb25-64"><a href="#cb25-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-65"><a href="#cb25-65" aria-hidden="true" tabindex="-1"></a>En este caso vamos a eliminar las _islas Revillagigedo_ de Colima, que son consideradas como _Patrimonio Natural de la Humanidad_, como parque nacional y porque tienen una población muy pequeña (60 habitantes entre todas las islas). </span>
-<span id="cb25-66"><a href="#cb25-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-67"><a href="#cb25-67" aria-hidden="true" tabindex="-1"></a><span class="ss">*  </span><span class="co">[</span><span class="ot">Islas Revillagigedo</span><span class="co">](https://es.wikipedia.org/wiki/Archipiélago_de_Revillagigedo)</span> </span>
-<span id="cb25-68"><a href="#cb25-68" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb25-69"><a href="#cb25-69" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://media.giphy.com/media/26FfiihphZyQruIp2/giphy.gif)</span></span>
-<span id="cb25-70"><a href="#cb25-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-73"><a href="#cb25-73" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-74"><a href="#cb25-74" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos ----</span></span>
-<span id="cb25-75"><a href="#cb25-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-76"><a href="#cb25-76" aria-hidden="true" tabindex="-1"></a><span class="co"># Capa geografica</span></span>
-<span id="cb25-77"><a href="#cb25-77" aria-hidden="true" tabindex="-1"></a>url_shape <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/JuveCampos/juveBlog/master/cortando%20Islas/mpios.geojson"</span></span>
-<span id="cb25-78"><a href="#cb25-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-79"><a href="#cb25-79" aria-hidden="true" tabindex="-1"></a><span class="co"># Leemos el shape</span></span>
-<span id="cb25-80"><a href="#cb25-80" aria-hidden="true" tabindex="-1"></a>bd <span class="ot">&lt;-</span> <span class="fu">st_read</span>(url_shape, </span>
-<span id="cb25-81"><a href="#cb25-81" aria-hidden="true" tabindex="-1"></a>              <span class="at">quiet =</span> T)</span>
-<span id="cb25-82"><a href="#cb25-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-83"><a href="#cb25-83" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtramos Colima</span></span>
-<span id="cb25-84"><a href="#cb25-84" aria-hidden="true" tabindex="-1"></a>colima <span class="ot">&lt;-</span> bd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(NOM_ENT <span class="sc">==</span> <span class="st">"Colima"</span>)</span>
-<span id="cb25-85"><a href="#cb25-85" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-86"><a href="#cb25-86" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-87"><a href="#cb25-87" aria-hidden="true" tabindex="-1"></a> Exploramos la base y la mapeamos para ver cómo se ve el estado con islas y después nos aseguramos de que sea una base geográfica. </span>
-<span id="cb25-88"><a href="#cb25-88" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-91"><a href="#cb25-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-92"><a href="#cb25-92" aria-hidden="true" tabindex="-1"></a><span class="co"># Exploramos la base </span></span>
-<span id="cb25-93"><a href="#cb25-93" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(colima, <span class="at">max.plot =</span> <span class="dv">1</span>)</span>
-<span id="cb25-94"><a href="#cb25-94" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-95"><a href="#cb25-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-96"><a href="#cb25-96" aria-hidden="true" tabindex="-1"></a>Como podemos ver en la imagen de arriba, el objeto <span class="in">`colima`</span> efectivamente es una base de datos geográfica que abarca tanto la zona territorial como las islas que se encuentran al poniente. </span>
-<span id="cb25-97"><a href="#cb25-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-100"><a href="#cb25-100" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-101"><a href="#cb25-101" aria-hidden="true" tabindex="-1"></a><span class="co"># Checamos el sistema de coordenadas </span></span>
-<span id="cb25-102"><a href="#cb25-102" aria-hidden="true" tabindex="-1"></a><span class="do">## de referencia (crs)</span></span>
-<span id="cb25-103"><a href="#cb25-103" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(colima)</span>
-<span id="cb25-104"><a href="#cb25-104" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-105"><a href="#cb25-105" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-106"><a href="#cb25-106" aria-hidden="true" tabindex="-1"></a> La proyección tiene un sistema de referencia de coordenadas igual a 4326 (<span class="co">[</span><span class="ot">WGS84</span><span class="co">](https://spatialreference.org/ref/epsg/wgs-84/)</span>), lo que significa que está en términos de latitud y longitud. **Saber el sistema de referencia es muy importante a la hora de utilizar y procesar la información.**</span>
-<span id="cb25-107"><a href="#cb25-107" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-108"><a href="#cb25-108" aria-hidden="true" tabindex="-1"></a>Después obtenemos las coordenadas extremas del territorio de Colima, es decir, el punto máximo en <span class="in">`x`</span> y en <span class="in">`y`</span>, el punto mínimo en <span class="in">`x`</span> y en <span class="in">`y`</span>, buscando generar un cuadro que englobe al estado sin sus islas. </span>
-<span id="cb25-109"><a href="#cb25-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-110"><a href="#cb25-110" aria-hidden="true" tabindex="-1"></a>Puedes  obtener estas coordenadas en Google Maps, como muestran las imágenes a continuación:  </span>
-<span id="cb25-111"><a href="#cb25-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-112"><a href="#cb25-112" aria-hidden="true" tabindex="-1"></a><span class="al">![](coordMinColima.png)</span></span>
-<span id="cb25-113"><a href="#cb25-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-114"><a href="#cb25-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-115"><a href="#cb25-115" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> style </span><span class="op">=</span> <span class="st">'color:gray;'</span><span class="dt">&gt;</span>Coordenadas mínimas del polígono territorial de Colima<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb25-116"><a href="#cb25-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-117"><a href="#cb25-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-118"><a href="#cb25-118" aria-hidden="true" tabindex="-1"></a><span class="al">![](coordMaxColima.png)</span></span>
-<span id="cb25-119"><a href="#cb25-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-120"><a href="#cb25-120" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> style </span><span class="op">=</span> <span class="st">'color:gray;'</span><span class="dt">&gt;</span>Coordenadas máximas del polígono territorial de Colima<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb25-121"><a href="#cb25-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-122"><a href="#cb25-122" aria-hidden="true" tabindex="-1"></a>Registramos las coordenadas: </span>
-<span id="cb25-123"><a href="#cb25-123" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-126"><a href="#cb25-126" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-127"><a href="#cb25-127" aria-hidden="true" tabindex="-1"></a><span class="co"># Coordenadas extremas Colima Territorial</span></span>
-<span id="cb25-128"><a href="#cb25-128" aria-hidden="true" tabindex="-1"></a>maxX <span class="ot">=</span> <span class="sc">-</span><span class="fl">103.47499</span></span>
-<span id="cb25-129"><a href="#cb25-129" aria-hidden="true" tabindex="-1"></a>minX <span class="ot">=</span> <span class="sc">-</span><span class="fl">104.76983</span></span>
-<span id="cb25-130"><a href="#cb25-130" aria-hidden="true" tabindex="-1"></a>maxY <span class="ot">=</span> <span class="fl">19.563769</span></span>
-<span id="cb25-131"><a href="#cb25-131" aria-hidden="true" tabindex="-1"></a>minY <span class="ot">=</span> <span class="fl">18.65329</span></span>
-<span id="cb25-132"><a href="#cb25-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-133"><a href="#cb25-133" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb25-134"><a href="#cb25-134" aria-hidden="true" tabindex="-1"></a>Después elaboramos la matriz de coordenadas que dará origen al cuadro utilizando la función <span class="in">`expand.grid()`</span>. Lo que hace esta función es crear una base de datos con todas las combinaciones posibles de los vectores que introducimos en la función. </span>
-<span id="cb25-135"><a href="#cb25-135" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-138"><a href="#cb25-138" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-139"><a href="#cb25-139" aria-hidden="true" tabindex="-1"></a><span class="co"># Generamos combinaciones de coordenadas a </span></span>
-<span id="cb25-140"><a href="#cb25-140" aria-hidden="true" tabindex="-1"></a><span class="do">## partir de las coordenadas extremas</span></span>
-<span id="cb25-141"><a href="#cb25-141" aria-hidden="true" tabindex="-1"></a>cuadro <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x =</span> <span class="fu">c</span>(minX,</span>
-<span id="cb25-142"><a href="#cb25-142" aria-hidden="true" tabindex="-1"></a>                            maxX),</span>
-<span id="cb25-143"><a href="#cb25-143" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y =</span> <span class="fu">c</span>(minY,</span>
-<span id="cb25-144"><a href="#cb25-144" aria-hidden="true" tabindex="-1"></a>                            maxY))  <span class="sc">%&gt;%</span></span>
-<span id="cb25-145"><a href="#cb25-145" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.matrix</span>()</span>
-<span id="cb25-146"><a href="#cb25-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-147"><a href="#cb25-147" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimimos la tabla del cuadro</span></span>
-<span id="cb25-148"><a href="#cb25-148" aria-hidden="true" tabindex="-1"></a>cuadro</span>
-<span id="cb25-149"><a href="#cb25-149" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-150"><a href="#cb25-150" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-151"><a href="#cb25-151" aria-hidden="true" tabindex="-1"></a>Una vez que tenemos la matriz, ordenamos las coordenadas de manera que formen un cuadro cerrado , repitiendo la coordenada 1, de tal forma que sigan un caminito o trayectoria: </span>
-<span id="cb25-152"><a href="#cb25-152" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-155"><a href="#cb25-155" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-156"><a href="#cb25-156" aria-hidden="true" tabindex="-1"></a><span class="co"># Forma de ordenar las coordenadas de tal forma</span></span>
-<span id="cb25-157"><a href="#cb25-157" aria-hidden="true" tabindex="-1"></a><span class="do">## que generen una trayectoria que genere </span></span>
-<span id="cb25-158"><a href="#cb25-158" aria-hidden="true" tabindex="-1"></a><span class="do">## un cuadro</span></span>
-<span id="cb25-159"><a href="#cb25-159" aria-hidden="true" tabindex="-1"></a>cuadro <span class="ot">&lt;-</span> cuadro[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>),]</span>
-<span id="cb25-160"><a href="#cb25-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-161"><a href="#cb25-161" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-162"><a href="#cb25-162" aria-hidden="true" tabindex="-1"></a>Convertimos el cuadro en una lista para poder convertirlo después en un objeto geométrico poligonal, con el sistema de coordenadas de referencia <span class="in">`crs = 4326`</span> de latitud y longitud. </span>
-<span id="cb25-163"><a href="#cb25-163" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-166"><a href="#cb25-166" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-167"><a href="#cb25-167" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertimos a lista</span></span>
-<span id="cb25-168"><a href="#cb25-168" aria-hidden="true" tabindex="-1"></a>cuadro <span class="ot">&lt;-</span> <span class="fu">list</span>(cuadro)</span>
-<span id="cb25-169"><a href="#cb25-169" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertimos a objeto geografico</span></span>
-<span id="cb25-170"><a href="#cb25-170" aria-hidden="true" tabindex="-1"></a>cuadro <span class="ot">&lt;-</span> <span class="fu">st_polygon</span>(cuadro) <span class="sc">%&gt;%</span> <span class="fu">st_sfc</span>(<span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb25-171"><a href="#cb25-171" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-172"><a href="#cb25-172" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-173"><a href="#cb25-173" aria-hidden="true" tabindex="-1"></a>Ahora si, verifiquemos que el cuadro fue creado correctamente y exploremos cómo se ve. </span>
-<span id="cb25-174"><a href="#cb25-174" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-177"><a href="#cb25-177" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-178"><a href="#cb25-178" aria-hidden="true" tabindex="-1"></a><span class="co"># Checamos como se ve el cuadro</span></span>
-<span id="cb25-179"><a href="#cb25-179" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(colima) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-180"><a href="#cb25-180" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb25-181"><a href="#cb25-181" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPolygons</span>(<span class="at">opacity =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-182"><a href="#cb25-182" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPolygons</span>(<span class="at">data =</span> cuadro, </span>
-<span id="cb25-183"><a href="#cb25-183" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"red"</span>)</span>
-<span id="cb25-184"><a href="#cb25-184" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-185"><a href="#cb25-185" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-186"><a href="#cb25-186" aria-hidden="true" tabindex="-1"></a>!Perfecto! El cuadro rojo que creamos abarca al estado de Colima sin sus islas. </span>
-<span id="cb25-187"><a href="#cb25-187" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-188"><a href="#cb25-188" aria-hidden="true" tabindex="-1"></a>Pero ¿por qué el orden de coordenaas para cerrar el cuadro no es 1,2,3,4,1? pues porque necesitamos crear un cuadrado y según las coordenadas que nos dio la matriz ese sería el orden adecuado, si lo hacemos del 1 al 4 trazaríamos un moño sobre Colima, no un cuadro. (_Como se puede ver a continuación_).</span>
-<span id="cb25-189"><a href="#cb25-189" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-190"><a href="#cb25-190" aria-hidden="true" tabindex="-1"></a><span class="al">![](monito_colima.png)</span></span>
-<span id="cb25-191"><a href="#cb25-191" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-192"><a href="#cb25-192" aria-hidden="true" tabindex="-1"></a>Ahora, intersectamos el cuadro con el polígono se Colima a traves de la función <span class="in">`st_intersection(x, y)`</span>, la cual extrae del polígono <span class="in">`x`</span> lo que se intersecta con el polígono <span class="in">`y`</span>.</span>
-<span id="cb25-193"><a href="#cb25-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-194"><a href="#cb25-194" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-197"><a href="#cb25-197" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-198"><a href="#cb25-198" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraemos la parte del poligono de Colima que </span></span>
-<span id="cb25-199"><a href="#cb25-199" aria-hidden="true" tabindex="-1"></a><span class="do">## se intersecta con el cuadro que generamos </span></span>
-<span id="cb25-200"><a href="#cb25-200" aria-hidden="true" tabindex="-1"></a>colima_sin_islas <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(colima, cuadro)</span>
-<span id="cb25-201"><a href="#cb25-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-202"><a href="#cb25-202" aria-hidden="true" tabindex="-1"></a><span class="co"># Checamos que efectivamente solo tengamos el </span></span>
-<span id="cb25-203"><a href="#cb25-203" aria-hidden="true" tabindex="-1"></a><span class="do">## polígono territorial de Colima</span></span>
-<span id="cb25-204"><a href="#cb25-204" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(colima_sin_islas)</span>
-<span id="cb25-205"><a href="#cb25-205" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-206"><a href="#cb25-206" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-207"><a href="#cb25-207" aria-hidden="true" tabindex="-1"></a>Finalmente tenemos que regresar ese polígono al shape original. Para eso, primero sacamos de nuestra base de datos a Colima con islas y luego metemos a Colima sin islas. </span>
-<span id="cb25-208"><a href="#cb25-208" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-211"><a href="#cb25-211" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-212"><a href="#cb25-212" aria-hidden="true" tabindex="-1"></a><span class="co"># Le quitamos Colima</span></span>
-<span id="cb25-213"><a href="#cb25-213" aria-hidden="true" tabindex="-1"></a>bd <span class="ot">&lt;-</span> bd <span class="sc">%&gt;%</span> </span>
-<span id="cb25-214"><a href="#cb25-214" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(NOM_ENT <span class="sc">!=</span> <span class="st">"Colima"</span>)</span>
-<span id="cb25-215"><a href="#cb25-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-216"><a href="#cb25-216" aria-hidden="true" tabindex="-1"></a><span class="co"># Metemos el Colima sin islas. </span></span>
-<span id="cb25-217"><a href="#cb25-217" aria-hidden="true" tabindex="-1"></a>bd <span class="ot">&lt;-</span> <span class="fu">rbind</span>(bd, colima_sin_islas)</span>
-<span id="cb25-218"><a href="#cb25-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-219"><a href="#cb25-219" aria-hidden="true" tabindex="-1"></a><span class="co"># Y aquí podemos ver que Colima ya no tiene a las Islas Revillagigedo en nuestro mapa.</span></span>
-<span id="cb25-220"><a href="#cb25-220" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bd, <span class="at">max.plot =</span> <span class="dv">1</span>)</span>
-<span id="cb25-221"><a href="#cb25-221" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-222"><a href="#cb25-222" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-223"><a href="#cb25-223" aria-hidden="true" tabindex="-1"></a>Por último guardamos nuestro nuevo mapa.</span>
-<span id="cb25-224"><a href="#cb25-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-225"><a href="#cb25-225" aria-hidden="true" tabindex="-1"></a>**OJO** cuando trabajamos con archivos <span class="in">`.geojson`</span>, no nos es posible reescribirlos (salvo que ), así que tenemos que crear nuevos archivos para cada cambio que hagamos. </span>
-<span id="cb25-226"><a href="#cb25-226" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-227"><a href="#cb25-227" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb25-228"><a href="#cb25-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-229"><a href="#cb25-229" aria-hidden="true" tabindex="-1"></a><span class="co"># Guardar el nuevo archivo geográfico</span></span>
-<span id="cb25-230"><a href="#cb25-230" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span>(bd, </span>
-<span id="cb25-231"><a href="#cb25-231" aria-hidden="true" tabindex="-1"></a>  <span class="st">"01_Datos/Shapes/mpios_sin_revillagigedo.geojson"</span>)</span>
-<span id="cb25-232"><a href="#cb25-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-233"><a href="#cb25-233" aria-hidden="true" tabindex="-1"></a><span class="co"># # Si a fuerzas quieres sobre-escribir</span></span>
-<span id="cb25-234"><a href="#cb25-234" aria-hidden="true" tabindex="-1"></a><span class="co"># st_write(bd, </span></span>
-<span id="cb25-235"><a href="#cb25-235" aria-hidden="true" tabindex="-1"></a><span class="co">#          '01_Datos/Shapes/mpios_sin_revillagigedo.geojson',</span></span>
-<span id="cb25-236"><a href="#cb25-236" aria-hidden="true" tabindex="-1"></a><span class="co">#          layer_options = 'OVERWRITE=YES', </span></span>
-<span id="cb25-237"><a href="#cb25-237" aria-hidden="true" tabindex="-1"></a><span class="co">#          update = TRUE)</span></span>
-<span id="cb25-238"><a href="#cb25-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-239"><a href="#cb25-239" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-240"><a href="#cb25-240" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-241"><a href="#cb25-241" aria-hidden="true" tabindex="-1"></a>Para agilizar el proceso de cortar islas podemos _hacer una función_. Los datos de entrada que utilizaremos para nuestra función son _las coordenadas del cuadro y el shape que vamos a recortar_. </span>
-<span id="cb25-242"><a href="#cb25-242" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-245"><a href="#cb25-245" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-246"><a href="#cb25-246" aria-hidden="true" tabindex="-1"></a><span class="co"># Hacemos nuestra función</span></span>
-<span id="cb25-247"><a href="#cb25-247" aria-hidden="true" tabindex="-1"></a>recorte_cuadro <span class="ot">&lt;-</span> <span class="cf">function</span>(shp, </span>
-<span id="cb25-248"><a href="#cb25-248" aria-hidden="true" tabindex="-1"></a>                           minX, </span>
-<span id="cb25-249"><a href="#cb25-249" aria-hidden="true" tabindex="-1"></a>                           maxX,</span>
-<span id="cb25-250"><a href="#cb25-250" aria-hidden="true" tabindex="-1"></a>                           minY,</span>
-<span id="cb25-251"><a href="#cb25-251" aria-hidden="true" tabindex="-1"></a>                           maxY){</span>
-<span id="cb25-252"><a href="#cb25-252" aria-hidden="true" tabindex="-1"></a><span class="co"># Copiamos y adecuamos el código que escribimos antes</span></span>
-<span id="cb25-253"><a href="#cb25-253" aria-hidden="true" tabindex="-1"></a><span class="co"># Elaboramos la matriz de coordenadas que dará </span></span>
-<span id="cb25-254"><a href="#cb25-254" aria-hidden="true" tabindex="-1"></a><span class="do">##origen al cuadro</span></span>
-<span id="cb25-255"><a href="#cb25-255" aria-hidden="true" tabindex="-1"></a>  cuadro <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x =</span> <span class="fu">c</span>(minX,</span>
-<span id="cb25-256"><a href="#cb25-256" aria-hidden="true" tabindex="-1"></a>                              maxX),</span>
-<span id="cb25-257"><a href="#cb25-257" aria-hidden="true" tabindex="-1"></a>                        <span class="at">y =</span> <span class="fu">c</span>(minY,</span>
-<span id="cb25-258"><a href="#cb25-258" aria-hidden="true" tabindex="-1"></a>                              maxY))  <span class="sc">%&gt;%</span></span>
-<span id="cb25-259"><a href="#cb25-259" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.matrix</span>()</span>
-<span id="cb25-260"><a href="#cb25-260" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-261"><a href="#cb25-261" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ordenamos de manera cíclica el cuadro, y lo cerramos como lo hicimos anteriormente. </span></span>
-<span id="cb25-262"><a href="#cb25-262" aria-hidden="true" tabindex="-1"></a>  cuadro <span class="ot">&lt;-</span> cuadro[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>),]</span>
-<span id="cb25-263"><a href="#cb25-263" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-264"><a href="#cb25-264" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Lo convertimos en lista y después en un objeto geométrico poligonal con sistema de coordenadas de referencia crs = 4326 lat/long. </span></span>
-<span id="cb25-265"><a href="#cb25-265" aria-hidden="true" tabindex="-1"></a>  cuadro <span class="ot">&lt;-</span> <span class="fu">list</span>(cuadro)</span>
-<span id="cb25-266"><a href="#cb25-266" aria-hidden="true" tabindex="-1"></a>  cuadro <span class="ot">&lt;-</span> <span class="fu">st_polygon</span>(cuadro) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-267"><a href="#cb25-267" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_sfc</span>(<span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb25-268"><a href="#cb25-268" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-269"><a href="#cb25-269" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ahora si, ¡fuera islas!</span></span>
-<span id="cb25-270"><a href="#cb25-270" aria-hidden="true" tabindex="-1"></a>  edo_sin_islas <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(shp, cuadro)</span>
-<span id="cb25-271"><a href="#cb25-271" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-272"><a href="#cb25-272" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Especificamos lo que queremos que nos devuelva la función: </span></span>
-<span id="cb25-273"><a href="#cb25-273" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(edo_sin_islas)</span>
-<span id="cb25-274"><a href="#cb25-274" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb25-275"><a href="#cb25-275" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-276"><a href="#cb25-276" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-277"><a href="#cb25-277" aria-hidden="true" tabindex="-1"></a>Con nuestra nueva función ahorramos tiempo y podemos cortar las islas de Nayarit y Yucatán (por ejemplo) mucho más rápido. </span>
-<span id="cb25-278"><a href="#cb25-278" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-281"><a href="#cb25-281" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-282"><a href="#cb25-282" aria-hidden="true" tabindex="-1"></a><span class="co"># Remover las Islas Marias de Nayarit... </span></span>
-<span id="cb25-283"><a href="#cb25-283" aria-hidden="true" tabindex="-1"></a>nayarit <span class="ot">&lt;-</span> bd <span class="sc">%&gt;%</span> </span>
-<span id="cb25-284"><a href="#cb25-284" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(NOM_ENT <span class="sc">==</span> <span class="st">"Nayarit"</span>)</span>
-<span id="cb25-285"><a href="#cb25-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-286"><a href="#cb25-286" aria-hidden="true" tabindex="-1"></a>nayarit_sin_islas_marias <span class="ot">&lt;-</span> <span class="fu">recorte_cuadro</span>(</span>
-<span id="cb25-287"><a href="#cb25-287" aria-hidden="true" tabindex="-1"></a>  <span class="at">shp =</span> nayarit, </span>
-<span id="cb25-288"><a href="#cb25-288" aria-hidden="true" tabindex="-1"></a>  <span class="at">minX =</span> <span class="sc">-</span><span class="fl">105.7765</span>, </span>
-<span id="cb25-289"><a href="#cb25-289" aria-hidden="true" tabindex="-1"></a>  <span class="at">maxX =</span> <span class="sc">-</span><span class="fl">103.7209</span>, </span>
-<span id="cb25-290"><a href="#cb25-290" aria-hidden="true" tabindex="-1"></a>  <span class="at">minY =</span> <span class="fl">20.60322</span>, </span>
-<span id="cb25-291"><a href="#cb25-291" aria-hidden="true" tabindex="-1"></a>  <span class="at">maxY =</span> <span class="fl">23.0845</span>)</span>
-<span id="cb25-292"><a href="#cb25-292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-293"><a href="#cb25-293" aria-hidden="true" tabindex="-1"></a><span class="co"># Vemos que si funciona. </span></span>
-<span id="cb25-294"><a href="#cb25-294" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(nayarit_sin_islas_marias, <span class="at">max.plot =</span> <span class="dv">1</span>)</span>
-<span id="cb25-295"><a href="#cb25-295" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-296"><a href="#cb25-296" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-297"><a href="#cb25-297" aria-hidden="true" tabindex="-1"></a>Ahora vamos con Yucatán. </span>
-<span id="cb25-298"><a href="#cb25-298" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-301"><a href="#cb25-301" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-302"><a href="#cb25-302" aria-hidden="true" tabindex="-1"></a><span class="co"># Remover el arrecife Alacranes de Yucatan</span></span>
-<span id="cb25-303"><a href="#cb25-303" aria-hidden="true" tabindex="-1"></a>yucatan <span class="ot">&lt;-</span> bd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(NOM_ENT <span class="sc">==</span> <span class="st">"Yucatán"</span>)</span>
-<span id="cb25-304"><a href="#cb25-304" aria-hidden="true" tabindex="-1"></a>yucatan_sin_arrecife_alacranes <span class="ot">&lt;-</span> <span class="fu">recorte_cuadro</span>(</span>
-<span id="cb25-305"><a href="#cb25-305" aria-hidden="true" tabindex="-1"></a>  <span class="at">shp =</span> yucatan,                                 </span>
-<span id="cb25-306"><a href="#cb25-306" aria-hidden="true" tabindex="-1"></a>  <span class="at">minX =</span> <span class="sc">-</span><span class="fl">90.620039</span>,</span>
-<span id="cb25-307"><a href="#cb25-307" aria-hidden="true" tabindex="-1"></a>  <span class="at">maxX =</span> <span class="sc">-</span><span class="fl">87.414154</span>,</span>
-<span id="cb25-308"><a href="#cb25-308" aria-hidden="true" tabindex="-1"></a>  <span class="at">minY =</span> <span class="fl">19.584267</span>, </span>
-<span id="cb25-309"><a href="#cb25-309" aria-hidden="true" tabindex="-1"></a>  <span class="at">maxY =</span> <span class="fl">21.731110</span>)</span>
-<span id="cb25-310"><a href="#cb25-310" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-311"><a href="#cb25-311" aria-hidden="true" tabindex="-1"></a><span class="co"># Vemos que ya no tiene islas</span></span>
-<span id="cb25-312"><a href="#cb25-312" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(yucatan_sin_arrecife_alacranes, <span class="at">max.plot =</span> <span class="dv">1</span>)</span>
-<span id="cb25-313"><a href="#cb25-313" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-314"><a href="#cb25-314" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-315"><a href="#cb25-315" aria-hidden="true" tabindex="-1"></a>Finalmente generamos una nueva capa de datos sin las islas de Yucatán ni las de Nayarit. </span>
-<span id="cb25-316"><a href="#cb25-316" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-317"><a href="#cb25-317" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb25-318"><a href="#cb25-318" aria-hidden="true" tabindex="-1"></a>bd <span class="ot">&lt;-</span> bd <span class="sc">%&gt;%</span> </span>
-<span id="cb25-319"><a href="#cb25-319" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Quitamos los estados con islas</span></span>
-<span id="cb25-320"><a href="#cb25-320" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(NOM_ENT <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Yucatán"</span>, <span class="st">"Nayarit"</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-321"><a href="#cb25-321" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Metemos los nuevos sin islas</span></span>
-<span id="cb25-322"><a href="#cb25-322" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbind</span>(yucatan_sin_arrecife_alacranes, nayarit_sin_islas_marias) </span>
-<span id="cb25-323"><a href="#cb25-323" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-324"><a href="#cb25-324" aria-hidden="true" tabindex="-1"></a><span class="co"># Nos aseguramos de que todo haya funcionado bien </span></span>
-<span id="cb25-325"><a href="#cb25-325" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bd, <span class="at">max.plot =</span> <span class="dv">1</span>)</span>
-<span id="cb25-326"><a href="#cb25-326" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-327"><a href="#cb25-327" aria-hidden="true" tabindex="-1"></a><span class="co"># Guardamos el resultado en un nuevo archivo .geojson</span></span>
-<span id="cb25-328"><a href="#cb25-328" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span>(bd, <span class="st">"01_Datos/Shapes/mpios_con_menos_islas_aun.geojson"</span>)</span>
-<span id="cb25-329"><a href="#cb25-329" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-330"><a href="#cb25-330" aria-hidden="true" tabindex="-1"></a><span class="co"># # Igual, si a fuerzas quieres sobre-escribir</span></span>
-<span id="cb25-331"><a href="#cb25-331" aria-hidden="true" tabindex="-1"></a><span class="co"># st_write(bd, </span></span>
-<span id="cb25-332"><a href="#cb25-332" aria-hidden="true" tabindex="-1"></a><span class="co">#          '01_Datos/Shapes/mpios_con_menos_islas_aun.geojson',</span></span>
-<span id="cb25-333"><a href="#cb25-333" aria-hidden="true" tabindex="-1"></a><span class="co">#          layer_options = 'OVERWRITE=YES', </span></span>
-<span id="cb25-334"><a href="#cb25-334" aria-hidden="true" tabindex="-1"></a><span class="co">#          update = TRUE)</span></span>
-<span id="cb25-335"><a href="#cb25-335" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-336"><a href="#cb25-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-337"><a href="#cb25-337" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-338"><a href="#cb25-338" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-339"><a href="#cb25-339" aria-hidden="true" tabindex="-1"></a> **¡Y listo!** </span>
-<span id="cb25-340"><a href="#cb25-340" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb25-341"><a href="#cb25-341" aria-hidden="true" tabindex="-1"></a>Tenemos a los tres estados mapeados sin islas, listos para comunicar información correcta y sin datos que puedan generar confusión.</span>
-<span id="cb25-342"><a href="#cb25-342" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-343"><a href="#cb25-343" aria-hidden="true" tabindex="-1"></a>Este procedimiento es útil para ilustrar como podemos manipular bases de datos geográficas, las cuales, aparte del tratamiento normal que se puede hacer a través de los verbos <span class="in">`dplyr`</span> que aplican a todas las bases de datos, también involucran un tipo de manipulación espacial a partir de trabajar con las geomatrías que tienen asociadas.</span>
-<span id="cb25-344"><a href="#cb25-344" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-345"><a href="#cb25-345" aria-hidden="true" tabindex="-1"></a>Siempre es un buen ejercicio reflexionar antes de construir mapas y preguntarnos *¿Qué quiero comunicar? ¿Por qué quiero comunicar esto? ¿Cómo se relaciona la geografía con los datos que voy a utilizar? ¿Cómo mapeo mis datos de la manera más clara posible?* En este caso, desasociar islas deshabitadas tiene sentido pero, por ejemplo... _¿sería válido deshacernos de la isla de Cozumel en nuestro análisis, y en la cual vive la mayoría de la población del municipio?_ Son cosas que nuestra metodología de trabajo debe considerar. </span>
-<span id="cb25-346"><a href="#cb25-346" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb25-347"><a href="#cb25-347" aria-hidden="true" tabindex="-1"></a>**Recuerda usar el poder de los mapas responsablemente.** </span>
-<span id="cb25-348"><a href="#cb25-348" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-349"><a href="#cb25-349" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://media.giphy.com/media/l46Cnk4ZRTlfeI32o/giphy.gif)</span></span>
-<span id="cb25-350"><a href="#cb25-350" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-351"><a href="#cb25-351" aria-hidden="true" tabindex="-1"></a>*¡Gracias por leernos! :3*</span>
-</code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+  </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

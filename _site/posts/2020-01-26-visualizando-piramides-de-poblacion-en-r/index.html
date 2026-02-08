@@ -130,11 +130,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">Sobre mí</span></a>
+    <span class="nav-link">
+<span class="menu-text">about.qmd</span>
+    </span>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html"> 
+    <a class="nav-link" href="../../posts.qmd"> 
 <span class="menu-text">Posts</span></a>
   </li>  
 </ul>
@@ -151,6 +152,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.linkedin.com/in/jorge-juvenal-campos-ferreira-5532b7160/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.instagram.com/juvenalcampos.dataviz/"> <i class="bi bi-instagram" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://bsky.app/profile/juvenalcamposf.bsky.social"> <i class="bi bi-cloud" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -189,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Visualizando pirámides de población en R</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<h1 class="title">Visualizando pirámides de población en R</h1>
   <div class="quarto-categories">
     <div class="quarto-category">R</div>
     <div class="quarto-category">ggplot2</div>
@@ -574,8 +585,6 @@ Buenísimo👏🏼👏🏼👏🏼! Igual sería bueno una legend o geom_text pa
 <p><img src="FinalPiramide.png" class="img-fluid"></p>
 
 
-<!-- -->
-
 </section>
 </section>
 
@@ -650,60 +659,9 @@ Buenísimo👏🏼👏🏼👏🏼! Igual sería bueno una legend o geom_text pa
       });
       clipboardModal.on('success', onCopySuccess);
     }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
-    }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/juvenalcampos\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1029,382 +987,7 @@ Buenísimo👏🏼👏🏼👏🏼! Igual sería bueno una legend o geom_text pa
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb29" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Visualizando pirámides de población en R"</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Juvenal Campos"</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2020-01-26"</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [R, ggplot2, demografía, visualización]</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="an">tags:</span><span class="co"> [pirámides de población, R, ggplot2, INEGI, demografía]</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">fig.width=</span><span class="dv">9</span>, <span class="at">fig.height=</span><span class="dv">5</span>) </span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>Las pirámides de población (o _pirámide demográfica_, como le dicen los demógrafos) son un tipo de gráfica que nos permite analizar la distribución de la población por edades en una región determinada (municipio, estado o país).</span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>Desde el punto de vista gráfico, se trata de un doble histograma de frecuencias, dispuestos de manera horizontal, donde convencionalmente **se ponen los grupos de edad masculina a la izquierda y los de población femenina a la derecha**. En el eje _y_ (el de las ordenadas o el que va para arriba) se disponen los grupos de edad, mientras que en el eje _x_ (el de las abcisas, o el que va horizontal) van las cantidades de población. Para más información recomiendo leer este artículo de <span class="co">[</span><span class="ot">Wikipedia</span><span class="co">](https://es.wikipedia.org/wiki/Pirámide_de_población)</span>. </span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>Desde el punto de vista de visualización de datos en R y a pesar de la gran utilidad y amplio uso de este tipo de gráficas, no hay una función <span class="in">`geom_popPyramid()`</span> nativa en <span class="in">`ggplot2`</span> que nos permita hacer pirámides de población sin tanto dolor (aunque podríamos programarla 😏). Sin embargo, en esta entrada de blog, nos dispondremos a generar una de estas gráficas a partir de elementos ya conocidos de esta librería. </span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1. Antecedentes. </span></span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>El viernes pasado estaba intentando hacer una de estas gráficas de población en mi trabajo, siendo (como casi siempre) mi primer impulso buscar en Google _"como graficar pirámides de población en R"_. Estos son algunos de los tutoriales y artículos que me ayudaron: </span>
-<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html</span>
-<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>https://klein.uk/teaching/viz/datavis-pyramids/</span>
-<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>https://stackoverflow.com/questions/38268741/geom-bar-ggplot2-stacked-grouped-bar-plot-with-positive-and-negative-values-p</span>
-<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>https://stackoverflow.com/questions/4559229/drawing-pyramid-plot-using-r-and-ggplot2</span>
-<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a>Todos son muy buenos y sirven para complementar esta entrada. El problema que tuve al checarlos fué que 1) muchas funciones no estaban actualizadas y 2) las bases de datos eran inaccesibles, por lo que era imposible reproducir los ejemplos presentados. Es por eso que aquí presentamos una tercera opción (y en español :3) para aquellos que tengan la necesidad de hacer una gráfica de población en el futuro. </span>
-<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a><span class="fu"># 2. Descripción del problema. </span></span>
-<span id="cb29-35"><a href="#cb29-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-36"><a href="#cb29-36" aria-hidden="true" tabindex="-1"></a>Vamos a elaborar la pirámide de población del Estado de Morelos, México a partir de los datos reportados por la _Encuensta Intercensal 2015_ del INEGI en sus tabulados de Población. </span>
-<span id="cb29-37"><a href="#cb29-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-38"><a href="#cb29-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2.1. Descarga de los datos. </span></span>
-<span id="cb29-39"><a href="#cb29-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-40"><a href="#cb29-40" aria-hidden="true" tabindex="-1"></a>Descargamos los datos de población de la página de la encuesta intercensal 2015. </span>
-<span id="cb29-41"><a href="#cb29-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-42"><a href="#cb29-42" aria-hidden="true" tabindex="-1"></a>La liga de descarga es la siguiente: </span>
-<span id="cb29-43"><a href="#cb29-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-44"><a href="#cb29-44" aria-hidden="true" tabindex="-1"></a>https://www.inegi.org.mx/contenidos/programas/intercensal/2015/tabulados/01_poblacion_mor.xls</span>
-<span id="cb29-45"><a href="#cb29-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-46"><a href="#cb29-46" aria-hidden="true" tabindex="-1"></a>(En caso de que algún gobierno austero decida eliminar las bases de datos de INEGI por algún motivo en los próximos años, igualmente guardaré una <span class="co">[</span><span class="ot">copia en mi Github</span><span class="co">](https://github.com/JuveCampos/juveBlog/raw/master/Pirámide%20de%20Población/mor_pop.xls)</span> de los datos).</span>
-<span id="cb29-47"><a href="#cb29-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-48"><a href="#cb29-48" aria-hidden="true" tabindex="-1"></a>_**Nota 1.** Se supone que el lector sabe descargar librerias del CRAN._ </span>
-<span id="cb29-49"><a href="#cb29-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-52"><a href="#cb29-52" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb29-53"><a href="#cb29-53" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
-<span id="cb29-54"><a href="#cb29-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Descarga de los datos.</span></span>
-<span id="cb29-55"><a href="#cb29-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(curl)</span>
-<span id="cb29-56"><a href="#cb29-56" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb29-57"><a href="#cb29-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-58"><a href="#cb29-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-59"><a href="#cb29-59" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
-<span id="cb29-60"><a href="#cb29-60" aria-hidden="true" tabindex="-1"></a>curl<span class="sc">::</span><span class="fu">curl_download</span>(<span class="at">url =</span> <span class="st">"https://www.inegi.org.mx/contenidos/programas/intercensal/2015/tabulados/01_poblacion_mor.xls"</span>, <span class="at">destfile =</span> <span class="st">"mor_pop.xls"</span>)</span>
-<span id="cb29-61"><a href="#cb29-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-62"><a href="#cb29-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-65"><a href="#cb29-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb29-66"><a href="#cb29-66" aria-hidden="true" tabindex="-1"></a><span class="co"># Leemos datos</span></span>
-<span id="cb29-67"><a href="#cb29-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Por tamaño de localidad</span></span>
-<span id="cb29-68"><a href="#cb29-68" aria-hidden="true" tabindex="-1"></a>bd <span class="ot">&lt;-</span> <span class="fu">read_xls</span>(<span class="st">"mor_pop.xls"</span>, <span class="at">sheet =</span> <span class="dv">2</span>, <span class="at">skip =</span> <span class="dv">6</span>)</span>
-<span id="cb29-69"><a href="#cb29-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-70"><a href="#cb29-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-71"><a href="#cb29-71" aria-hidden="true" tabindex="-1"></a>La función anterior descargará el archivo en nuestro directorio de trabajo. La hoja 2 es la que contiene la población _Por tamaño de localidad_ y las 6 líneas que se saltaron contienen el encabezado de logotipos que INEGI le pone a muchas de sus tablas. </span>
-<span id="cb29-72"><a href="#cb29-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-73"><a href="#cb29-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2.2. Procesado de la información. </span></span>
-<span id="cb29-74"><a href="#cb29-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-75"><a href="#cb29-75" aria-hidden="true" tabindex="-1"></a>Necesitamos obtener una tabla adecuada para realizar nuestra gráfica, tal como se explica en el siguiente esquema: </span>
-<span id="cb29-76"><a href="#cb29-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-77"><a href="#cb29-77" aria-hidden="true" tabindex="-1"></a><span class="al">![](TablaFinal.png)</span>{width=80%}</span>
-<span id="cb29-78"><a href="#cb29-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-79"><a href="#cb29-79" aria-hidden="true" tabindex="-1"></a>Este esquema nos permite declarar una columna única de una sola base de datos, y declarar estas columnas dentro de los estéticos globales del ggplot como se ve más adelante.</span>
-<span id="cb29-80"><a href="#cb29-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-81"><a href="#cb29-81" aria-hidden="true" tabindex="-1"></a>Para lograr esto, haremos el siguiente procesado de la información a través de la función <span class="in">`tidyr::pivot_longer()`</span>: </span>
-<span id="cb29-82"><a href="#cb29-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-83"><a href="#cb29-83" aria-hidden="true" tabindex="-1"></a><span class="al">![](TablaPivote.png)</span></span>
-<span id="cb29-84"><a href="#cb29-84" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb29-85"><a href="#cb29-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-86"><a href="#cb29-86" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, message=FALSE, cache=FALSE, warning=FALSE}</span></span>
-<span id="cb29-87"><a href="#cb29-87" aria-hidden="true" tabindex="-1"></a><span class="co"># Librerias</span></span>
-<span id="cb29-88"><a href="#cb29-88" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb29-89"><a href="#cb29-89" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb29-90"><a href="#cb29-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-91"><a href="#cb29-91" aria-hidden="true" tabindex="-1"></a><span class="co"># Procesamos datos</span></span>
-<span id="cb29-92"><a href="#cb29-92" aria-hidden="true" tabindex="-1"></a>pop <span class="ot">&lt;-</span> bd <span class="sc">%&gt;%</span></span>
-<span id="cb29-93"><a href="#cb29-93" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtramos los renglones vacios, </span></span>
-<span id="cb29-94"><a href="#cb29-94" aria-hidden="true" tabindex="-1"></a><span class="co"># los renglones donde el Tamaño de localidad` es el Total y </span></span>
-<span id="cb29-95"><a href="#cb29-95" aria-hidden="true" tabindex="-1"></a><span class="co"># los `Grupos quinquenales de edad` son todos "Total"    </span></span>
-<span id="cb29-96"><a href="#cb29-96" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Estimador) <span class="sc">&amp;</span></span>
-<span id="cb29-97"><a href="#cb29-97" aria-hidden="true" tabindex="-1"></a>           Estimador <span class="sc">==</span> <span class="st">"Valor"</span> <span class="sc">&amp;</span></span>
-<span id="cb29-98"><a href="#cb29-98" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">Tamaño de localidad</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"Total"</span> <span class="sc">&amp;</span></span>
-<span id="cb29-99"><a href="#cb29-99" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">Grupos quinquenales de edad</span><span class="st">`</span> <span class="sc">!=</span> <span class="st">"Total"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb29-100"><a href="#cb29-100" aria-hidden="true" tabindex="-1"></a><span class="co"># Hacemos pivot longer rotando las columnas hombres y mujeres    </span></span>
-<span id="cb29-101"><a href="#cb29-101" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"Hombres"</span>, <span class="st">"Mujeres"</span>),</span>
-<span id="cb29-102"><a href="#cb29-102" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Sexo"</span>,</span>
-<span id="cb29-103"><a href="#cb29-103" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Poblacion por Sexo"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb29-104"><a href="#cb29-104" aria-hidden="true" tabindex="-1"></a><span class="co"># Nos quedamos con columnas utiles  </span></span>
-<span id="cb29-105"><a href="#cb29-105" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="st">`</span><span class="at">Entidad federativa</span><span class="st">`</span>, <span class="st">`</span><span class="at">Grupos quinquenales de edad</span><span class="st">`</span>, </span>
-<span id="cb29-106"><a href="#cb29-106" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Población total</span><span class="st">`</span>, Sexo, <span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span>)</span>
-<span id="cb29-107"><a href="#cb29-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-108"><a href="#cb29-108" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-109"><a href="#cb29-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-110"><a href="#cb29-110" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = TRUE}</span></span>
-<span id="cb29-111"><a href="#cb29-111" aria-hidden="true" tabindex="-1"></a><span class="co"># Checamos la base </span></span>
-<span id="cb29-112"><a href="#cb29-112" aria-hidden="true" tabindex="-1"></a>pop</span>
-<span id="cb29-113"><a href="#cb29-113" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-114"><a href="#cb29-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-115"><a href="#cb29-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-116"><a href="#cb29-116" aria-hidden="true" tabindex="-1"></a>Ahora que tenemos la base como la necesitamos, procedemos a hacer la gráfica. </span>
-<span id="cb29-117"><a href="#cb29-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-118"><a href="#cb29-118" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2.3. Graficando con `ggplot()`.</span></span>
-<span id="cb29-119"><a href="#cb29-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-120"><a href="#cb29-120" aria-hidden="true" tabindex="-1"></a>Para graficar utilizamos la función <span class="in">`ggplot()`</span>.</span>
-<span id="cb29-121"><a href="#cb29-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-122"><a href="#cb29-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## Primera versión: utilizando `geom_col()`.</span></span>
-<span id="cb29-123"><a href="#cb29-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-124"><a href="#cb29-124" aria-hidden="true" tabindex="-1"></a>La primera versión que realizaremos será utilizando la función <span class="in">`geom_col()`</span>. Esta función nos permite realizar gráficas de barras en R. </span>
-<span id="cb29-125"><a href="#cb29-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-126"><a href="#cb29-126" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
-<span id="cb29-127"><a href="#cb29-127" aria-hidden="true" tabindex="-1"></a><span class="do">### Grafica ----</span></span>
-<span id="cb29-128"><a href="#cb29-128" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pop, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Grupos quinquenales de edad</span><span class="st">`</span>,</span>
-<span id="cb29-129"><a href="#cb29-129" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span>,</span>
-<span id="cb29-130"><a href="#cb29-130" aria-hidden="true" tabindex="-1"></a>                <span class="at">fill =</span> Sexo)) <span class="sc">+</span></span>
-<span id="cb29-131"><a href="#cb29-131" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">data =</span> <span class="fu">subset</span>(pop, Sexo <span class="sc">==</span> <span class="st">"Hombres"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb29-132"><a href="#cb29-132" aria-hidden="true" tabindex="-1"></a>             <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span> <span class="ot">=</span> <span class="sc">-</span><span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span>),</span>
-<span id="cb29-133"><a href="#cb29-133" aria-hidden="true" tabindex="-1"></a>              <span class="at">width =</span> <span class="fl">0.5</span>, <span class="at">fill =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb29-134"><a href="#cb29-134" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">data =</span> <span class="fu">subset</span>(pop, Sexo <span class="sc">==</span> <span class="st">"Mujeres"</span>),</span>
-<span id="cb29-135"><a href="#cb29-135" aria-hidden="true" tabindex="-1"></a>           <span class="at">width =</span> <span class="fl">0.5</span>, <span class="at">fill =</span> <span class="st">"pink"</span>) <span class="sc">+</span> </span>
-<span id="cb29-136"><a href="#cb29-136" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span>
-<span id="cb29-137"><a href="#cb29-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-138"><a href="#cb29-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-139"><a href="#cb29-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-140"><a href="#cb29-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-141"><a href="#cb29-141" aria-hidden="true" tabindex="-1"></a><span class="al">![](unnamed-chunk-5-1.png)</span></span>
-<span id="cb29-142"><a href="#cb29-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-143"><a href="#cb29-143" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">b</span><span class="ot"> style </span><span class="op">=</span> <span class="st">'color:red; text-align:centered;'</span><span class="dt">&gt;</span>Nótese las escalas del eje _x_<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span></span>
-<span id="cb29-144"><a href="#cb29-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-145"><a href="#cb29-145" aria-hidden="true" tabindex="-1"></a>Ahora, tenemos que enfocarnos en la parte del eje de población. Primero que nada, tenemos que hacer un poco de análisis. </span>
-<span id="cb29-146"><a href="#cb29-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-149"><a href="#cb29-149" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb29-150"><a href="#cb29-150" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores maximos de población: </span></span>
-<span id="cb29-151"><a href="#cb29-151" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(pop<span class="sc">$</span><span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span>)</span>
-<span id="cb29-152"><a href="#cb29-152" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-153"><a href="#cb29-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-154"><a href="#cb29-154" aria-hidden="true" tabindex="-1"></a>El máximo de población es 88,967 personas (correspondiente a Mujeres morelenses entre 20 a 24 años). Para el eje <span class="in">`x`</span>, vamos a poner escalas cada 20,000 personas (para que sean unas 5 marcas en las escalas). </span>
-<span id="cb29-155"><a href="#cb29-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-158"><a href="#cb29-158" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb29-159"><a href="#cb29-159" aria-hidden="true" tabindex="-1"></a><span class="co"># BREAKS - DEFINEN LA POSICIÓN </span></span>
-<span id="cb29-160"><a href="#cb29-160" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtenemos los puntos donde se van a poner las escalas de la población. </span></span>
-<span id="cb29-161"><a href="#cb29-161" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100000</span>, <span class="at">by =</span> <span class="dv">20000</span>)</span>
-<span id="cb29-162"><a href="#cb29-162" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">100000</span>, <span class="sc">-</span><span class="dv">20000</span>, <span class="at">by =</span> <span class="dv">20000</span>)</span>
-<span id="cb29-163"><a href="#cb29-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-164"><a href="#cb29-164" aria-hidden="true" tabindex="-1"></a><span class="co"># Secuencia de puntos donde se van a poner las escalas del eje x</span></span>
-<span id="cb29-165"><a href="#cb29-165" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">100000</span>, <span class="sc">-</span><span class="dv">20000</span>, <span class="at">by =</span> <span class="dv">20000</span>), </span>
-<span id="cb29-166"><a href="#cb29-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100000</span>, <span class="at">by =</span> <span class="dv">20000</span>))</span>
-<span id="cb29-167"><a href="#cb29-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-168"><a href="#cb29-168" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-169"><a href="#cb29-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-170"><a href="#cb29-170" aria-hidden="true" tabindex="-1"></a>Como vemos arriba, es una secuencia que va desde -100,000 hasta 100,000. Esto implica que, dentro de la gráfica, <span class="in">`ggplot()`</span> va a poner las etiquetas en los puntos marcados arriba, como puede verse en la siguiente imágen: </span>
-<span id="cb29-171"><a href="#cb29-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-172"><a href="#cb29-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-173"><a href="#cb29-173" aria-hidden="true" tabindex="-1"></a>Ahora, pongamosle las etiquetas en los puntos que determinamos arriba, a través de la función </span>
-<span id="cb29-174"><a href="#cb29-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-177"><a href="#cb29-177" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb29-178"><a href="#cb29-178" aria-hidden="true" tabindex="-1"></a><span class="co"># LABELS - DEFINEN EL CONTENIDO</span></span>
-<span id="cb29-179"><a href="#cb29-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-180"><a href="#cb29-180" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">100000</span>, <span class="sc">-</span><span class="dv">20000</span>, <span class="at">by =</span> <span class="dv">20000</span>) <span class="sc">*</span> <span class="sc">-</span><span class="dv">1</span>, </span>
-<span id="cb29-181"><a href="#cb29-181" aria-hidden="true" tabindex="-1"></a>  <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100000</span>, <span class="at">by =</span> <span class="dv">20000</span>)) </span>
-<span id="cb29-182"><a href="#cb29-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-183"><a href="#cb29-183" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-184"><a href="#cb29-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-185"><a href="#cb29-185" aria-hidden="true" tabindex="-1"></a>Para este caso, las etiquetas son casi iguales que los quiebres que calculamos arriba, con la diferencia de que la parte de la población masculina tienen que ser positivos, no negativos (por eso los multiplicamos por -1). </span>
-<span id="cb29-186"><a href="#cb29-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-187"><a href="#cb29-187" aria-hidden="true" tabindex="-1"></a>Ahora, incorporamos esto en la gráfica que ya hicimos arriba a través de la función <span class="in">`scale_y_continuous()`</span>.</span>
-<span id="cb29-188"><a href="#cb29-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-189"><a href="#cb29-189" aria-hidden="true" tabindex="-1"></a>Empezamos declarando los elementos estéticos. Los estéticos globales que vamos a usar son el <span class="in">`x`</span>, el <span class="in">`y`</span>, y el <span class="in">`fill`</span>. <span class="in">`x`</span> nos determinará la variable categórica que irá en el eje x, <span class="in">`y`</span> la variable numérica que irá en el eje <span class="in">`y`</span> y <span class="in">`fill`</span> la variable categórica que clasifica a los datos en dos categorías, <span class="in">`Hombres`</span> y <span class="in">`Mujeres`</span>, asignando un color distinto a cada tipo de dato. </span>
-<span id="cb29-190"><a href="#cb29-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-191"><a href="#cb29-191" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
-<span id="cb29-192"><a href="#cb29-192" aria-hidden="true" tabindex="-1"></a><span class="co"># No correr! Abajo está completo.</span></span>
-<span id="cb29-193"><a href="#cb29-193" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pop, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Grupos quinquenales de edad</span><span class="st">`</span>,</span>
-<span id="cb29-194"><a href="#cb29-194" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span>,</span>
-<span id="cb29-195"><a href="#cb29-195" aria-hidden="true" tabindex="-1"></a>                <span class="at">fill =</span> Sexo))</span>
-<span id="cb29-196"><a href="#cb29-196" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-197"><a href="#cb29-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-198"><a href="#cb29-198" aria-hidden="true" tabindex="-1"></a>Después añadimos las gráficas de columnas mediante la función <span class="in">`geom_col()`</span> con subconjuntos de los datos filtrando por hombres y mujeres. Después hacemos un cambio de ejes y al final añadimos las etiquetas en los ejes de las gráficas. A continuación el código completo. </span>
-<span id="cb29-199"><a href="#cb29-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-200"><a href="#cb29-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
-<span id="cb29-201"><a href="#cb29-201" aria-hidden="true" tabindex="-1"></a><span class="do">### Grafica ----</span></span>
-<span id="cb29-202"><a href="#cb29-202" aria-hidden="true" tabindex="-1"></a>(plt <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pop, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Grupos quinquenales de edad</span><span class="st">`</span>,</span>
-<span id="cb29-203"><a href="#cb29-203" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span>,</span>
-<span id="cb29-204"><a href="#cb29-204" aria-hidden="true" tabindex="-1"></a>                <span class="at">fill =</span> Sexo)) <span class="sc">+</span></span>
-<span id="cb29-205"><a href="#cb29-205" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Seccion de HOMBRES</span></span>
-<span id="cb29-206"><a href="#cb29-206" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">data =</span> <span class="fu">subset</span>(pop, Sexo <span class="sc">==</span> <span class="st">"Hombres"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb29-207"><a href="#cb29-207" aria-hidden="true" tabindex="-1"></a>             <span class="co"># Convertimos los datos de los Hombres en negativos</span></span>
-<span id="cb29-208"><a href="#cb29-208" aria-hidden="true" tabindex="-1"></a>             <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span> <span class="ot">=</span> <span class="sc">-</span><span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span>),</span>
-<span id="cb29-209"><a href="#cb29-209" aria-hidden="true" tabindex="-1"></a>         <span class="at">width =</span> <span class="fl">0.5</span>, <span class="at">fill =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb29-210"><a href="#cb29-210" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Seccion de MUJERES</span></span>
-<span id="cb29-211"><a href="#cb29-211" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">data =</span> <span class="fu">subset</span>(pop, Sexo <span class="sc">==</span> <span class="st">"Mujeres"</span>),</span>
-<span id="cb29-212"><a href="#cb29-212" aria-hidden="true" tabindex="-1"></a>         <span class="at">width =</span> <span class="fl">0.5</span>, <span class="at">fill =</span> <span class="st">"pink"</span>) <span class="sc">+</span> </span>
-<span id="cb29-213"><a href="#cb29-213" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Cambio de ejes de coordenadas</span></span>
-<span id="cb29-214"><a href="#cb29-214" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> </span>
-<span id="cb29-215"><a href="#cb29-215" aria-hidden="true" tabindex="-1"></a>     <span class="fu">scale_y_continuous</span>(</span>
-<span id="cb29-216"><a href="#cb29-216" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">100000</span>, <span class="sc">-</span><span class="dv">20000</span>, <span class="at">by =</span> <span class="dv">20000</span>), </span>
-<span id="cb29-217"><a href="#cb29-217" aria-hidden="true" tabindex="-1"></a>                <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100000</span>, <span class="at">by =</span> <span class="dv">20000</span>)),</span>
-<span id="cb29-218"><a href="#cb29-218" aria-hidden="true" tabindex="-1"></a>     <span class="at">labels =</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">100000</span>, <span class="sc">-</span><span class="dv">20000</span>, <span class="at">by =</span> <span class="dv">20000</span>) <span class="sc">*</span> <span class="sc">-</span><span class="dv">1</span>, </span>
-<span id="cb29-219"><a href="#cb29-219" aria-hidden="true" tabindex="-1"></a>                <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100000</span>, <span class="at">by =</span> <span class="dv">20000</span>))) )</span>
-<span id="cb29-220"><a href="#cb29-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-221"><a href="#cb29-221" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-222"><a href="#cb29-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-223"><a href="#cb29-223" aria-hidden="true" tabindex="-1"></a><span class="al">![](unnamed-chunk-10-1.png)</span></span>
-<span id="cb29-224"><a href="#cb29-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-225"><a href="#cb29-225" aria-hidden="true" tabindex="-1"></a>Ya a partir de aquí lo que procede es personalizar el tema y las etiquetas. </span>
-<span id="cb29-226"><a href="#cb29-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-227"><a href="#cb29-227" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2.4. Segunda versión: utilizando `geom_linerange()`.</span></span>
-<span id="cb29-228"><a href="#cb29-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-229"><a href="#cb29-229" aria-hidden="true" tabindex="-1"></a>Otra versión muy común de las gráficas de pirámides de población consiste en poner los grupos de edad en el centro de la gráfica. Esto no es posible de realizar con las barras normales de <span class="in">`ggplot`</span>, por lo que utilizaremos un elemento gráfico llamado <span class="in">`geom_linerange()`</span>, el cual nos permite representar de manera gráfica intervalos con inicio y final. </span>
-<span id="cb29-230"><a href="#cb29-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-231"><a href="#cb29-231" aria-hidden="true" tabindex="-1"></a>La única diferencia entre el metodo anterior y el que viene a continuación, consiste en 1) Cambiar el <span class="in">`geom_col()`</span> por un <span class="in">`geom_linerange()`</span>, incluir dentro el <span class="in">`aes(ymin, ymax)`</span> y 3) también introducir como etiquetas de texto en el centro de la gráfica con <span class="in">`geom_label()`</span>.</span>
-<span id="cb29-232"><a href="#cb29-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-233"><a href="#cb29-233" aria-hidden="true" tabindex="-1"></a>Igualmente, hay que programar un <span class="in">`desplazamiento`</span> de las barras a la derecha y a la izquierda, para dejar el espacio para las etiquetas que van a ir en el centro. Para la gráfica que queremos hacer dejaremos un desplazamiento de 10,000 unidades de población (la magnitud de este desplazamiento depende de los datos del eje _y_, en este caso de los números de población). </span>
-<span id="cb29-234"><a href="#cb29-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-235"><a href="#cb29-235" aria-hidden="true" tabindex="-1"></a>Se escogió 10,000 como desplazamiento porque así cabe bien el texto de las categorias de edad. </span>
-<span id="cb29-236"><a href="#cb29-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-239"><a href="#cb29-239" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb29-240"><a href="#cb29-240" aria-hidden="true" tabindex="-1"></a><span class="do">### Grafica ----</span></span>
-<span id="cb29-241"><a href="#cb29-241" aria-hidden="true" tabindex="-1"></a>desplazamiento <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb29-242"><a href="#cb29-242" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-243"><a href="#cb29-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-244"><a href="#cb29-244" aria-hidden="true" tabindex="-1"></a>Para este caso modificaremos ligeramente las etiquetas: </span>
-<span id="cb29-245"><a href="#cb29-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-248"><a href="#cb29-248" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb29-249"><a href="#cb29-249" aria-hidden="true" tabindex="-1"></a><span class="co"># BREAKS - DEFINEN LA POSICION</span></span>
-<span id="cb29-250"><a href="#cb29-250" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">180000</span>, <span class="dv">0</span>, <span class="at">by =</span> <span class="dv">30000</span>) <span class="sc">-</span> desplazamiento,</span>
-<span id="cb29-251"><a href="#cb29-251" aria-hidden="true" tabindex="-1"></a>                <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">180000</span>, <span class="at">by =</span> <span class="dv">30000</span>) <span class="sc">+</span> desplazamiento)</span>
-<span id="cb29-252"><a href="#cb29-252" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-253"><a href="#cb29-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-254"><a href="#cb29-254" aria-hidden="true" tabindex="-1"></a>Estas serán las nuevas coordenadas dentro del eje X en las que se van a colocar las nuevas etiquetas. Es lo mismo que con las anteriores, solo que sumandole/restándole el desplazamiento. </span>
-<span id="cb29-255"><a href="#cb29-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-258"><a href="#cb29-258" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb29-259"><a href="#cb29-259" aria-hidden="true" tabindex="-1"></a><span class="co"># LABELS - DEFINEN EL CONTENIDO</span></span>
-<span id="cb29-260"><a href="#cb29-260" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">rev</span>(<span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">180000</span>, <span class="at">by =</span> <span class="dv">30000</span>)), </span>
-<span id="cb29-261"><a href="#cb29-261" aria-hidden="true" tabindex="-1"></a>  <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">180000</span>, <span class="at">by =</span> <span class="dv">30000</span>))</span>
-<span id="cb29-262"><a href="#cb29-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-263"><a href="#cb29-263" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-264"><a href="#cb29-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-265"><a href="#cb29-265" aria-hidden="true" tabindex="-1"></a>Ahora si, hacemos la gráfica: </span>
-<span id="cb29-266"><a href="#cb29-266" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-267"><a href="#cb29-267" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
-<span id="cb29-268"><a href="#cb29-268" aria-hidden="true" tabindex="-1"></a><span class="co"># Graficamos</span></span>
-<span id="cb29-269"><a href="#cb29-269" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pop, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Grupos quinquenales de edad</span><span class="st">`</span>,</span>
-<span id="cb29-270"><a href="#cb29-270" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span>,</span>
-<span id="cb29-271"><a href="#cb29-271" aria-hidden="true" tabindex="-1"></a>                <span class="at">fill =</span> Sexo)) <span class="sc">+</span></span>
-<span id="cb29-272"><a href="#cb29-272" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_linerange</span>(<span class="at">data =</span> <span class="fu">subset</span>(pop, Sexo <span class="sc">==</span> <span class="st">"Hombres"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb29-273"><a href="#cb29-273" aria-hidden="true" tabindex="-1"></a>                   <span class="co"># Convertimos los datos de los Hombres en negativos</span></span>
-<span id="cb29-274"><a href="#cb29-274" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span> <span class="ot">=</span> <span class="sc">-</span><span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span>),</span>
-<span id="cb29-275"><a href="#cb29-275" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">ymin =</span> <span class="sc">-</span>desplazamiento, </span>
-<span id="cb29-276"><a href="#cb29-276" aria-hidden="true" tabindex="-1"></a>                     <span class="at">ymax =</span> <span class="sc">-</span>desplazamiento <span class="sc">+</span><span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span>),</span>
-<span id="cb29-277"><a href="#cb29-277" aria-hidden="true" tabindex="-1"></a>                 <span class="at">size =</span> <span class="dv">5</span>, </span>
-<span id="cb29-278"><a href="#cb29-278" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb29-279"><a href="#cb29-279" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_linerange</span>(<span class="at">data =</span> <span class="fu">subset</span>(pop, Sexo <span class="sc">==</span> <span class="st">"Mujeres"</span>),</span>
-<span id="cb29-280"><a href="#cb29-280" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">ymin =</span> desplazamiento, </span>
-<span id="cb29-281"><a href="#cb29-281" aria-hidden="true" tabindex="-1"></a>                     <span class="at">ymax =</span> desplazamiento  <span class="sc">+</span><span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span>),</span>
-<span id="cb29-282"><a href="#cb29-282" aria-hidden="true" tabindex="-1"></a>                 <span class="at">size =</span> <span class="dv">5</span>, </span>
-<span id="cb29-283"><a href="#cb29-283" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">"pink"</span>) <span class="sc">+</span></span>
-<span id="cb29-284"><a href="#cb29-284" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Cambiamos el orden de los ejes de la graficas </span></span>
-<span id="cb29-285"><a href="#cb29-285" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()  <span class="sc">+</span></span>
-<span id="cb29-286"><a href="#cb29-286" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_y_continuous</span>(</span>
-<span id="cb29-287"><a href="#cb29-287" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">180000</span>, <span class="dv">0</span>, <span class="at">by =</span> <span class="dv">30000</span>) <span class="sc">-</span> desplazamiento,</span>
-<span id="cb29-288"><a href="#cb29-288" aria-hidden="true" tabindex="-1"></a>                <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">180000</span>, <span class="at">by =</span> <span class="dv">30000</span>) <span class="sc">+</span> desplazamiento),</span>
-<span id="cb29-289"><a href="#cb29-289" aria-hidden="true" tabindex="-1"></a>     <span class="at">labels =</span> <span class="fu">c</span>(<span class="fu">rev</span>(<span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">180000</span>, <span class="at">by =</span> <span class="dv">30000</span>)),</span>
-<span id="cb29-290"><a href="#cb29-290" aria-hidden="true" tabindex="-1"></a>               <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">180000</span>, <span class="at">by =</span> <span class="dv">30000</span>))) <span class="sc">+</span></span>
-<span id="cb29-291"><a href="#cb29-291" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Eliminamos el texto del eje x volteado</span></span>
-<span id="cb29-292"><a href="#cb29-292" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> .<span class="dv">5</span>),</span>
-<span id="cb29-293"><a href="#cb29-293" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb29-294"><a href="#cb29-294" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb29-295"><a href="#cb29-295" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">+</span>   <span class="co"># Centre plot title</span></span>
-<span id="cb29-296"><a href="#cb29-296" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Aniadimos la escala de texto en el centro. </span></span>
-<span id="cb29-297"><a href="#cb29-297" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Grupos quinquenales de edad</span><span class="st">`</span>, </span>
-<span id="cb29-298"><a href="#cb29-298" aria-hidden="true" tabindex="-1"></a>                  <span class="at">y =</span> <span class="dv">0</span>, </span>
-<span id="cb29-299"><a href="#cb29-299" aria-hidden="true" tabindex="-1"></a>                  <span class="at">label =</span> <span class="st">`</span><span class="at">Grupos quinquenales de edad</span><span class="st">`</span>),</span>
-<span id="cb29-300"><a href="#cb29-300" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Caracteristicas del texto             </span></span>
-<span id="cb29-301"><a href="#cb29-301" aria-hidden="true" tabindex="-1"></a>             <span class="at">family =</span> <span class="st">"Arial"</span>,</span>
-<span id="cb29-302"><a href="#cb29-302" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="fl">3.5</span>, </span>
-<span id="cb29-303"><a href="#cb29-303" aria-hidden="true" tabindex="-1"></a>             <span class="at">label.padding =</span> <span class="fu">unit</span>(<span class="fl">0.0</span>, <span class="st">"lines"</span>), </span>
-<span id="cb29-304"><a href="#cb29-304" aria-hidden="true" tabindex="-1"></a>             <span class="at">label.size =</span> <span class="dv">0</span>,</span>
-<span id="cb29-305"><a href="#cb29-305" aria-hidden="true" tabindex="-1"></a>             <span class="at">label.r =</span> <span class="fu">unit</span>(<span class="fl">0.0</span>, <span class="st">"lines"</span>), </span>
-<span id="cb29-306"><a href="#cb29-306" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> <span class="st">"#FFFFFF"</span>, </span>
-<span id="cb29-307"><a href="#cb29-307" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.9</span>, </span>
-<span id="cb29-308"><a href="#cb29-308" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"#5D646F"</span>)</span>
-<span id="cb29-309"><a href="#cb29-309" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-310"><a href="#cb29-310" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-311"><a href="#cb29-311" aria-hidden="true" tabindex="-1"></a><span class="al">![](unnamed-chunk-14-1.png)</span></span>
-<span id="cb29-312"><a href="#cb29-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-313"><a href="#cb29-313" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2.5. ¿Qué sigue? </span></span>
-<span id="cb29-314"><a href="#cb29-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-315"><a href="#cb29-315" aria-hidden="true" tabindex="-1"></a>Lo que sigue a continuación es embellecer la gráfica modificando los temas: fondo de la gráfica, tipo de letra, colores, etc. Igualmente, añadir formato a los números, poner títulos, subtítulos y pies de página, modificar los colores (quizá el rosa para mujeres y azul para hombres no parezca tan adecuado), entre alguna otra función añadida que nos interese agregar. </span>
-<span id="cb29-316"><a href="#cb29-316" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-317"><a href="#cb29-317" aria-hidden="true" tabindex="-1"></a>Una de las ventajas de hacer visualizaciones en código es que es difícil solo la primera vez. Una vez que ya tenemos el código, podemos tenerlo guardado para hacer otras gráficas cuando salgan nuevos datos de población ( _alguien dijo censo 2020?_) o que podemos utilizarlo para graficar otros datos (por ejemplo, pirámides para municipios dentro de un estado o de otros estados, o por tamaños de comunidad). O ya de plano construir una aplicación en _Shiny_ para que el usuario haga las pirámides de población que quiera. Explora las posibilidades. </span>
-<span id="cb29-318"><a href="#cb29-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-319"><a href="#cb29-319" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2.6 Ejemplo reproducible. </span></span>
-<span id="cb29-320"><a href="#cb29-320" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-321"><a href="#cb29-321" aria-hidden="true" tabindex="-1"></a>Tras la publicación de esta entrada de post, recibí un par de comentarios muy acertados: </span>
-<span id="cb29-322"><a href="#cb29-322" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-323"><a href="#cb29-323" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">blockquote</span><span class="ot"> class</span><span class="op">=</span><span class="st">"twitter-tweet"</span><span class="dt">&gt;&lt;</span><span class="kw">p</span><span class="ot"> lang</span><span class="op">=</span><span class="st">"es"</span><span class="ot"> dir</span><span class="op">=</span><span class="st">"ltr"</span><span class="dt">&gt;</span>Recomendaciones: tu último grupo de edad agrupa demasiada población, separaría 75-79, 80-84 y 85+. Recomiendo también prorratear la población con edad No especificada. Finalmente, para quien quiera comparar estructuras lo ideal es usar proporciones, no volumen.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span><span class="dv">&amp;mdash;</span> El Mau (@mochis22) <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://twitter.com/mochis22/status/1222153482703998976?ref_src=twsrc%5Etfw"</span><span class="dt">&gt;</span>January 28, 2020<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;/</span><span class="kw">blockquote</span><span class="dt">&gt;</span> <span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> async src</span><span class="op">=</span><span class="st">"https://platform.twitter.com/widgets.js"</span><span class="ot"> charset</span><span class="op">=</span><span class="st">"utf-8"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb29-324"><a href="#cb29-324" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-325"><a href="#cb29-325" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">blockquote</span><span class="ot"> class</span><span class="op">=</span><span class="st">"twitter-tweet"</span><span class="dt">&gt;&lt;</span><span class="kw">p</span><span class="ot"> lang</span><span class="op">=</span><span class="st">"es"</span><span class="ot"> dir</span><span class="op">=</span><span class="st">"ltr"</span><span class="dt">&gt;</span>Buenísimo👏🏼👏🏼👏🏼! Igual sería bueno una legend o geom_text para saber qué significa los colores rosas y azules, no? Jejeje<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span><span class="dv">&amp;mdash;</span> Claudio Pacheco (@claudiodanielpc) <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://twitter.com/claudiodanielpc/status/1222012861150646272?ref_src=twsrc%5Etfw"</span><span class="dt">&gt;</span>January 28, 2020<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;/</span><span class="kw">blockquote</span><span class="dt">&gt;</span> <span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> async src</span><span class="op">=</span><span class="st">"https://platform.twitter.com/widgets.js"</span><span class="ot"> charset</span><span class="op">=</span><span class="st">"utf-8"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb29-326"><a href="#cb29-326" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-327"><a href="#cb29-327" aria-hidden="true" tabindex="-1"></a>Por lo tanto, y para no reescribir todo de nuevo, anexo un ejemplo reproducible que añade las sugerencias mencionadas arriba. </span>
-<span id="cb29-328"><a href="#cb29-328" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-329"><a href="#cb29-329" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-330"><a href="#cb29-330" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-331"><a href="#cb29-331" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval=FALSE}</span></span>
-<span id="cb29-332"><a href="#cb29-332" aria-hidden="true" tabindex="-1"></a><span class="co"># Descarga de los datos.</span></span>
-<span id="cb29-333"><a href="#cb29-333" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(curl)</span>
-<span id="cb29-334"><a href="#cb29-334" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb29-335"><a href="#cb29-335" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb29-336"><a href="#cb29-336" aria-hidden="true" tabindex="-1"></a>curl<span class="sc">::</span><span class="fu">curl_download</span>(<span class="at">url =</span> <span class="st">"https://www.inegi.org.mx/contenidos/programas/intercensal/2015/tabulados/01_poblacion_mor.xls"</span>, <span class="at">destfile =</span> <span class="st">"mor_pop.xls"</span>)</span>
-<span id="cb29-337"><a href="#cb29-337" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-338"><a href="#cb29-338" aria-hidden="true" tabindex="-1"></a><span class="co"># Leemos datos</span></span>
-<span id="cb29-339"><a href="#cb29-339" aria-hidden="true" tabindex="-1"></a><span class="co"># Por tamaño de localidad</span></span>
-<span id="cb29-340"><a href="#cb29-340" aria-hidden="true" tabindex="-1"></a>mor <span class="ot">&lt;-</span> <span class="fu">read_xls</span>(<span class="st">"mor_pop.xls"</span>, <span class="at">sheet =</span> <span class="dv">2</span>, <span class="at">skip =</span> <span class="dv">6</span>)</span>
-<span id="cb29-341"><a href="#cb29-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-342"><a href="#cb29-342" aria-hidden="true" tabindex="-1"></a><span class="co"># Procesado de los datos</span></span>
-<span id="cb29-343"><a href="#cb29-343" aria-hidden="true" tabindex="-1"></a>pop <span class="ot">&lt;-</span> mor <span class="sc">%&gt;%</span></span>
-<span id="cb29-344"><a href="#cb29-344" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Filtramos los renglones vacios,</span></span>
-<span id="cb29-345"><a href="#cb29-345" aria-hidden="true" tabindex="-1"></a>  <span class="co"># los renglones donde el Tamaño de localidad` es el Total y</span></span>
-<span id="cb29-346"><a href="#cb29-346" aria-hidden="true" tabindex="-1"></a>  <span class="co"># los `Grupos quinquenales de edad` son todos "Total"    </span></span>
-<span id="cb29-347"><a href="#cb29-347" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Estimador) <span class="sc">&amp;</span></span>
-<span id="cb29-348"><a href="#cb29-348" aria-hidden="true" tabindex="-1"></a>           Estimador <span class="sc">==</span> <span class="st">"Valor"</span> <span class="sc">&amp;</span></span>
-<span id="cb29-349"><a href="#cb29-349" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">Tamaño de localidad</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"Total"</span> <span class="sc">&amp;</span></span>
-<span id="cb29-350"><a href="#cb29-350" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">Grupos quinquenales de edad</span><span class="st">`</span> <span class="sc">!=</span> <span class="st">"Total"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb29-351"><a href="#cb29-351" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">totH =</span> <span class="fu">sum</span>(Hombres),</span>
-<span id="cb29-352"><a href="#cb29-352" aria-hidden="true" tabindex="-1"></a>         <span class="at">totM =</span> <span class="fu">sum</span>(Mujeres)) <span class="sc">%&gt;%</span></span>
-<span id="cb29-353"><a href="#cb29-353" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Hombres =</span> (Hombres<span class="sc">/</span>totH)<span class="sc">*</span><span class="dv">100</span>,</span>
-<span id="cb29-354"><a href="#cb29-354" aria-hidden="true" tabindex="-1"></a>         <span class="at">Mujeres =</span> (Mujeres<span class="sc">/</span>totM)<span class="sc">*</span><span class="dv">100</span></span>
-<span id="cb29-355"><a href="#cb29-355" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb29-356"><a href="#cb29-356" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>totH, <span class="sc">-</span>totM) <span class="sc">%&gt;%</span></span>
-<span id="cb29-357"><a href="#cb29-357" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Hacemos pivot longer rotando las columnas hombres y mujeres    </span></span>
-<span id="cb29-358"><a href="#cb29-358" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"Hombres"</span>, <span class="st">"Mujeres"</span>),</span>
-<span id="cb29-359"><a href="#cb29-359" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Sexo"</span>,</span>
-<span id="cb29-360"><a href="#cb29-360" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Poblacion por Sexo"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb29-361"><a href="#cb29-361" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Nos quedamos con columnas utiles  </span></span>
-<span id="cb29-362"><a href="#cb29-362" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="st">`</span><span class="at">Entidad federativa</span><span class="st">`</span>, <span class="st">`</span><span class="at">Grupos quinquenales de edad</span><span class="st">`</span>,</span>
-<span id="cb29-363"><a href="#cb29-363" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Población total</span><span class="st">`</span>, Sexo, <span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb29-364"><a href="#cb29-364" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(<span class="st">`</span><span class="at">Grupos quinquenales de edad</span><span class="st">`</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"75 años y más"</span>,<span class="st">"No especificado"</span>)))</span>
-<span id="cb29-365"><a href="#cb29-365" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-366"><a href="#cb29-366" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-367"><a href="#cb29-367" aria-hidden="true" tabindex="-1"></a><span class="co"># Elaboracion de la grafica</span></span>
-<span id="cb29-368"><a href="#cb29-368" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pop, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Grupos quinquenales de edad</span><span class="st">`</span>,</span>
-<span id="cb29-369"><a href="#cb29-369" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span>,</span>
-<span id="cb29-370"><a href="#cb29-370" aria-hidden="true" tabindex="-1"></a>                <span class="at">fill =</span> Sexo)) <span class="sc">+</span></span>
-<span id="cb29-371"><a href="#cb29-371" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data =</span> <span class="fu">subset</span>(pop, Sexo <span class="sc">==</span> <span class="st">"Hombres"</span>) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span> <span class="ot">=</span> <span class="sc">-</span><span class="st">`</span><span class="at">Poblacion por Sexo</span><span class="st">`</span>),</span>
-<span id="cb29-372"><a href="#cb29-372" aria-hidden="true" tabindex="-1"></a>           <span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">width =</span> <span class="fl">0.5</span>, <span class="at">fill =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb29-373"><a href="#cb29-373" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data =</span> <span class="fu">subset</span>(pop, Sexo <span class="sc">==</span> <span class="st">"Mujeres"</span>),</span>
-<span id="cb29-374"><a href="#cb29-374" aria-hidden="true" tabindex="-1"></a>           <span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">width =</span> <span class="fl">0.5</span>, <span class="at">fill =</span> <span class="st">"pink"</span>) <span class="sc">+</span></span>
-<span id="cb29-375"><a href="#cb29-375" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb29-376"><a href="#cb29-376" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_tufte</span>() <span class="sc">+</span></span>
-<span id="cb29-377"><a href="#cb29-377" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"Arial"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">20</span>),</span>
-<span id="cb29-378"><a href="#cb29-378" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"Arial"</span>),</span>
-<span id="cb29-379"><a href="#cb29-379" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"Arial"</span>)</span>
-<span id="cb29-380"><a href="#cb29-380" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb29-381"><a href="#cb29-381" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Pirámide Poblacional de Morelos, 2015"</span>,</span>
-<span id="cb29-382"><a href="#cb29-382" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">""</span>,</span>
-<span id="cb29-383"><a href="#cb29-383" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Hombres                        Mujeres"</span>,</span>
-<span id="cb29-384"><a href="#cb29-384" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Fuente: INEGI. Encuesta intercensal 2015. Tabulados de Población </span><span class="sc">\n</span><span class="st">Se omiten personas de 75 años y más, por venir aglomeradas en un mismo grupo de edad."</span>) <span class="sc">+</span></span>
-<span id="cb29-385"><a href="#cb29-385" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">12</span>, <span class="dv">12</span>, <span class="at">by =</span> <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">paste0</span>(<span class="fu">c</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">12</span>, <span class="dv">0</span>, <span class="at">by =</span> <span class="dv">2</span>)<span class="sc">*-</span><span class="dv">1</span>, <span class="fu">seq</span>(<span class="dv">2</span>, <span class="dv">12</span>, <span class="at">by =</span> <span class="dv">2</span>)), <span class="st">"%"</span>))</span>
-<span id="cb29-386"><a href="#cb29-386" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-387"><a href="#cb29-387" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span> <span class="st">"ppMorelos.png"</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
-<span id="cb29-388"><a href="#cb29-388" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb29-389"><a href="#cb29-389" aria-hidden="true" tabindex="-1"></a><span class="al">![](FinalPiramide.png)</span></span>
-</code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+  </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
