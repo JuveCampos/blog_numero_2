@@ -20,8 +20,7 @@ toc: false
      ============================================ -->
 <section class="hero-section">
   <div class="carousel-container" aria-hidden="true">
-    <div class="carousel-slide active" style="background-image: url('images/carousel/IMG_9785.jpg')"></div>
-    <div class="carousel-slide" style="background-image: url('images/carousel/IMG_7831.jpg')"></div>
+    <div class="carousel-slide active" style="background-image: url('images/carousel/IMG_7831.jpg')"></div>
     <div class="carousel-slide" style="background-image: url('images/carousel/IMG_7548.jpg')"></div>
     <div class="carousel-slide" style="background-image: url('images/carousel/IMG_6747.jpg')"></div>
     <div class="carousel-slide" style="background-image: url('images/carousel/IMG_5463.jpg')"></div>

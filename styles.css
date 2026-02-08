@@ -167,26 +167,31 @@ body.has-hero main.content {
   display: block !important;
 }
 
-/* Padding lateral para páginas de blog posts */
-main.content {
-  padding-left: 24px !important;
-  padding-right: 24px !important;
-}
-
-@media (min-width: 992px) {
-  main.content {
-    padding-left: max(24px, calc((100vw - 1100px) / 2)) !important;
-    padding-right: max(24px, calc((100vw - 1100px) / 2)) !important;
-  }
-}
-
-/* Asegurar que el contenido del post use todo el ancho disponible */
-body:not(.has-hero) main.content > * {
+/* ---- Blog post individual: ancho completo ---- */
+/* Forzar que el main del post ocupe todo el ancho del grid */
+body:not(.has-hero) .page-columns > main {
+  grid-column: body-start / body-end !important;
+  width: 100% !important;
   max-width: 100% !important;
 }
 
-body:not(.has-hero) .page-columns > main {
-  grid-column: page-start / page-end !important;
+/* Todos los hijos del main en posts individuales: ancho completo */
+body:not(.has-hero) main.content > * {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Contenedor del contenido: centrado y con ancho legible */
+body:not(.has-hero):not(.quarto-listing-page) main.content {
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  padding: 24px 32px !important;
+}
+
+@media (min-width: 768px) {
+  body:not(.has-hero):not(.quarto-listing-page) main.content {
+    padding: 24px 48px !important;
+  }
 }
 
 /* No aplicar padding extra en la homepage full-width */
@@ -353,7 +358,7 @@ body:not(.has-hero) .theme-toggle-btn:hover {
 
 .hero-section {
   position: relative;
-  min-height: 60vh;
+  min-height: 72vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -861,35 +866,48 @@ h5.no-anchor.card-title.listing-title {
 
 /* ---- Listing page (posts.html) layout fixes ---- */
 
-/* Padding lateral para el contenido del listing */
-body:not(.has-hero) .page-layout-full #quarto-content {
-  padding-left: 24px !important;
-  padding-right: 24px !important;
+/* En la listing page, usar flexbox para sidebar + contenido */
+body:not(.has-hero) .page-layout-full #quarto-content.page-columns {
+  display: flex !important;
+  flex-wrap: wrap;
+  padding: 0 24px !important;
+  gap: 32px;
 }
 
-/* Asegurar que el sidebar no se encime con el contenido */
+/* Main del listing: ocupa el espacio disponible */
+body:not(.has-hero) .page-layout-full main.content {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  padding: 24px 0 !important;
+  margin: 0 !important;
+}
+
+/* Sidebar de categorías: fijo a la derecha */
 body:not(.has-hero) .page-layout-full #quarto-margin-sidebar {
+  flex: 0 0 220px !important;
+  position: sticky;
+  top: 80px;
+  align-self: flex-start;
   padding-top: 24px;
-  padding-right: 16px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
 }
 
-/* El título y subtitle del listing page */
+/* Título del listing visible */
 body:not(.has-hero) .page-layout-full #title-block-header {
   display: block !important;
   padding-top: 32px;
-  padding-left: 16px;
+  width: 100%;
 }
 
-/* Padding lateral para el grid de cards en la listing page */
-body:not(.has-hero) .quarto-listing-container-grid {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-/* Acciones del listing (sort, filter) */
-body:not(.has-hero) .listing-actions-group {
-  padding-left: 16px;
-  padding-right: 16px;
+/* En mobile, sidebar arriba */
+@media (max-width: 991px) {
+  body:not(.has-hero) .page-layout-full #quarto-margin-sidebar {
+    flex: 0 0 100% !important;
+    position: static;
+    max-height: none;
+  }
 }
 
 /* ============================================================
