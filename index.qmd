@@ -1,14 +1,189 @@
 ---
-title: "Juve Blog"
+pagetitle: "Jorge Juvenal Campos Ferreira — Ciencia de Datos"
 listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
+  - id: articulos-recientes
+    contents: posts
+    sort: "date desc"
+    type: grid
+    max-items: 6
+    grid-columns: 3
+    image-height: 200px
+    categories: false
+    fields: [image, date, title, description, categories]
 page-layout: full
-title-block-banner: true
+toc: false
 ---
 
-Bienvenido a mi blog personal. Aquí encontrarás tutoriales de R, análisis de datos, visualizaciones y proyectos personales.
+```{=html}
+<!-- ============================================
+     HERO CAROUSEL
+     ============================================ -->
+<section class="hero-section">
+  <div class="carousel-container" aria-hidden="true">
+    <div class="carousel-slide active" style="background-image: url('images/carousel/IMG_9785.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('images/carousel/IMG_7831.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('images/carousel/IMG_7548.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('images/carousel/IMG_6747.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('images/carousel/IMG_5463.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('images/carousel/IMG_5412.jpg')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-name">Jorge Juvenal<br>Campos Ferreira</h1>
+    <p class="hero-tagline">Ciencia de datos · Periodismo de datos · Docencia</p>
+    <a href="#socios" class="scroll-indicator" aria-label="Desplazar hacia abajo">
+      <span>Conoce mi trabajo</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </a>
+  </div>
+  <div class="carousel-dots"></div>
+</section>
+
+<!-- ============================================
+     SOCIOS Y COLABORADORES
+     ============================================ -->
+<section id="socios" class="section section-alt">
+  <div class="section-container">
+    <h2 class="section-title">Socios y colaboradores</h2>
+    <p class="section-subtitle">Organizaciones con las que colaboro</p>
+    <div class="partners-grid">
+
+      <a href="https://claveigualdad.org" class="partner-card glass-card"
+         target="_blank" rel="noopener noreferrer">
+        <img class="partner-logo" src="https://images.squarespace-cdn.com/content/v1/68813d1432161302fea0b0c4/5a29bbab-56fa-45a6-82e4-e104094c7893/clave_logo.png" alt="Logo Clave Igualdad">
+        <span class="partner-name">Clave Igualdad</span>
+      </a>
+
+      <a href="https://mexicocomovamos.mx" class="partner-card glass-card"
+         target="_blank" rel="noopener noreferrer">
+        <img class="partner-logo" src="https://ap-cdn.sfo3.cdn.digitaloceanspaces.com/uploads/2022/05/Logo-Mexico-Como-Vamos.png" alt="Logo México, ¿Cómo Vamos?">
+        <span class="partner-name">México, ¿Cómo Vamos?</span>
+      </a>
+
+      <a href="https://tec.mx/es/ciencias-sociales" class="partner-card glass-card"
+         target="_blank" rel="noopener noreferrer">
+        <img class="partner-logo tec-logo" src="https://tec.mx/themes/custom/emulsify_tec/images/logo-tec-fafafa.svg" alt="Logo Tec de Monterrey">
+        <span class="partner-name">Tec de Monterrey</span>
+      </a>
+
+      <a href="https://novagob.org" class="partner-card glass-card"
+         target="_blank" rel="noopener noreferrer">
+        <img class="partner-logo novagob-logo" src="https://novagob.org/wp-content/uploads/2025/03/novagob.brand_imagotipo_grey-2.png" alt="Logo Fundación Novagob">
+        <span class="partner-name">Fundación Novagob</span>
+      </a>
+
+      <a href="https://atiempo.tv/author/juvenal-campos/" class="partner-card glass-card"
+         target="_blank" rel="noopener noreferrer">
+        <img class="partner-logo" src="https://i0.wp.com/atiempo.tv/wp-content/uploads/2024/02/Logo-atiempo-SEMANARIO-01-1.png?fit=1510%2C694&ssl=1" alt="Logo ATiempo.TV">
+        <span class="partner-name">ATiempo.TV</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PROYECTOS DESTACADOS
+     ============================================ -->
+<section id="proyectos" class="section">
+  <div class="section-container">
+    <h2 class="section-title">Proyectos destacados</h2>
+    <p class="section-subtitle">Una selección de mi trabajo reciente</p>
+    <div class="projects-grid">
+
+      <!-- Proyecto 1: Índice de Progreso Social -->
+      <a href="https://mexicocomovamos.mx/indice-de-progreso-social/" class="project-card glass-card" target="_blank" rel="noopener noreferrer">
+        <img class="project-img" src="https://mexicocomovamos.mx/wp-content/uploads/2025/11/ips25-portada-alta.jpg" alt="Índice de Progreso Social">
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">Índice</span>
+            <span class="tag">Calidad de vida</span>
+          </div>
+          <h3 class="project-title">Índice de progreso social</h3>
+          <p class="project-desc">
+            Elaborado como parte del equipo de México, ¿Cómo vamos?, el Índice de Progreso Social es una medida que permite medir la calidad de vida de las personas en las 32 entidades de México.
+          </p>
+          <span class="project-link">Ver proyecto →</span>
+        </div>
+      </a>
+
+      <!-- Proyecto 2: Artículos ATiempo.TV -->
+      <a href="https://atiempo.tv/author/juvenal-campos/" class="project-card glass-card" target="_blank" rel="noopener noreferrer">
+        <img class="project-img" src="https://i0.wp.com/atiempo.tv/wp-content/uploads/2026/02/Juvenal.jpg.jpeg?resize=1024%2C576&ssl=1" alt="Apuntes de datos en ATiempo.TV">
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">Periodismo de datos</span>
+            <span class="tag">IA</span>
+          </div>
+          <h3 class="project-title">Apuntes de datos en ATiempo.TV</h3>
+          <p class="project-desc">
+            Publicaciones sobre IA y análisis de datos publicados en ATiempo.TV, medio digital de Coahuila, México.
+          </p>
+          <span class="project-link">Ver proyecto →</span>
+        </div>
+      </a>
+
+      <!-- Proyecto 3: Presentaciones -->
+      <a href="https://juvecampos.github.io/presentaciones/" class="project-card glass-card" target="_blank" rel="noopener noreferrer">
+        <img class="project-img" src="images/proyectos/prez.png" alt="Presentaciones">
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">Docencia</span>
+            <span class="tag">Presentaciones</span>
+          </div>
+          <h3 class="project-title">Presentaciones</h3>
+          <p class="project-desc">
+            Repositorio de presentaciones elaboradas para clases, eventos y conferencias.
+          </p>
+          <span class="project-link">Ver proyecto →</span>
+        </div>
+      </a>
+
+      <!-- Proyecto 4: Índice de Ciudades Sostenibles -->
+      <a href="https://ics.novagob.mx" class="project-card glass-card" target="_blank" rel="noopener noreferrer">
+        <img class="project-img" src="images/proyectos/ics.png" alt="Índice de Ciudades Sostenibles 2024">
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">Índice</span>
+            <span class="tag">ODS</span>
+          </div>
+          <h3 class="project-title">Índice de ciudades sostenibles 2024</h3>
+          <p class="project-desc">
+            El Índice de Ciudades Sostenibles y el Índice de Estados Sostenibles miden el avance de las ciudades y las entidades federativas de México hacia el cumplimiento de los Objetivos de Desarrollo Sostenible.
+          </p>
+          <span class="project-link">Ver proyecto →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+```
+
+<!-- ============================================
+     ARTÍCULOS / BLOG (Quarto Listing)
+     ============================================ -->
+
+::::: {.section .blog-section .section-alt #articulos}
+:::: {.section-container}
+
+```{=html}
+<h2 class="section-title">Artículos recientes</h2>
+<p class="section-subtitle">Tutoriales, análisis y reflexiones sobre ciencia de datos</p>
+```
+
+::: {#articulos-recientes}
+:::
+
+```{=html}
+<div class="blog-cta-wrapper">
+  <a href="posts.html" class="btn-primary-outline">Ver todos los artículos →</a>
+</div>
+```
+
+::::
+:::::

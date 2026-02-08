@@ -1,0 +1,18 @@
+---
+title: "¿Cómo ganamos y en qué gastamos los mexicanos?"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2023-07-31"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2023/07/pexels-monstera-5849559.jpg?resize=1000%2C587&ssl=1"
+description: "La Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH) es una herramienta crucial para entender la economía y el nivel de vida de México. El pasado miércoles 26 de julio, el Instituto Nacion..."
+---
+
+![¿Cómo ganamos y en qué gastamos los mexicanos?](https://i0.wp.com/atiempo.tv/wp-content/uploads/2023/07/pexels-monstera-5849559.jpg?resize=1000%2C587&ssl=1)
+
+La Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH) es una herramienta crucial para entender la economía y el nivel de vida de México. El pasado miércoles 26 de julio, el Instituto Nacional de Estadística y Geografía (INEGI) presentó la edición 2022 de esta encuesta, la cual se realiza cada dos años y desempeña un papel central para la investigación económica y social del país y, por su relevancia, se puede evaluar la política social y económica del Gobierno actual.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/articulos-de-semanario/como-ganamos-y-en-que-gastamos-los-mexicanos/){target="_blank" rel="noopener noreferrer"}

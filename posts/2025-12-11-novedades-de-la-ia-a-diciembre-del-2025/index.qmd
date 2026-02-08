@@ -1,0 +1,18 @@
+---
+title: "Novedades de la IA a diciembre del 2025"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2025-12-11"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2025/12/image-3.jpeg?resize=1000%2C546&ssl=1"
+description: "En los últimos cuatro meses, todas las compañías de IA han lanzado versiones mejoradas de sus modelos de chat, la construcción de centros de datos ha explotado y se han multiplicado los debates sobre..."
+---
+
+![Novedades de la IA a diciembre del 2025](https://i0.wp.com/atiempo.tv/wp-content/uploads/2025/12/image-3.jpeg?resize=1000%2C546&ssl=1)
+
+En los últimos cuatro meses, todas las compañías de IA han lanzado versiones mejoradas de sus modelos de chat, la construcción de centros de datos ha explotado y se han multiplicado los debates sobre el impacto social y económico de la IA, mientras crecen las señales de una posible burbuja económica derivada de la inversión desmedida en este tipo de tecnología.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/articulos-de-semanario/apuntes-de-datos-articulos-de-semanario/novedades-de-la-ia-a-diciembre-del-2025/){target="_blank" rel="noopener noreferrer"}

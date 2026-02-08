@@ -1,0 +1,18 @@
+---
+title: "TerapIA psicológica: cuando la IA llega al diván"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2025-09-11"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2025/09/maxresdefault.jpeg?resize=1000%2C563&ssl=1"
+description: "La idea de que una máquina proporcione terapia psicológica no es nueva; los primeros intentos de programas de computadora con este fin datan de 1966 con el programa ELIZA del MIT, pasando por COGNIsof..."
+---
+
+![TerapIA psicológica: cuando la IA llega al diván](https://i0.wp.com/atiempo.tv/wp-content/uploads/2025/09/maxresdefault.jpeg?resize=1000%2C563&ssl=1)
+
+La idea de que una máquina proporcione terapia psicológica no es nueva; los primeros intentos de programas de computadora con este fin datan de 1966 con el programa ELIZA del MIT, pasando por COGNIsoft en los noventa, Beating the Blues en los 2000, los diversos intentos con Machine-Learning y Procesamiento de Lenguaje Natural en los últimos 10 años hasta llegar a la época actual de los grandes modelos de lenguaje de uso general, como Chat GPT, Claude o Grok. Con la pandemia en 2020 y la urgente demanda de apoyo emocional generada por el aislamiento y la enfermedad, se aceleró la adopción de apps y soluciones de salud mental y de terapia remota, haciendo más natural la búsqueda de apoyo psicológico a través de medios digitales.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/articulos-de-semanario/apuntes-de-datos-articulos-de-semanario/terapia-psicologica-cuando-la-ia-llega-al-divan/){target="_blank" rel="noopener noreferrer"}

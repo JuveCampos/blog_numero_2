@@ -1,0 +1,18 @@
+---
+title: "El agua en Coahuila: un vistazo a los datos de lluvia, sequía y presión del recurso"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2022-07-15"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2022/07/El-agua-en-Coahuila.jpg?resize=1000%2C525&ssl=1"
+description: "La situación del agua en el norte del país es conocida de sobra por toda la población. Los estados de esta parte del país tienen extensas zonas áridas y semiáridas, la precipitación es mucho menor que..."
+---
+
+![El agua en Coahuila: un vistazo a los datos de lluvia, sequía y presión del recurso](https://i0.wp.com/atiempo.tv/wp-content/uploads/2022/07/El-agua-en-Coahuila.jpg?resize=1000%2C525&ssl=1)
+
+La situación del agua en el norte del país es conocida de sobra por toda la población. Los estados de esta parte del país tienen extensas zonas áridas y semiáridas, la precipitación es mucho menor que en comparación con el sur del país y la radiación solar es bastante más alta que en el resto de los estados (recordemos que se encuentran a la misma latitud que el desierto del Sahara).
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/columnista/apuntes-de-datos/el-agua-en-coahuila-un-vistazo-a-los-datos-de-lluvia-sequia-y-presion-del-recurso/){target="_blank" rel="noopener noreferrer"}

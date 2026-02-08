@@ -1,0 +1,18 @@
+---
+title: "¿De qué mueren las personas en Coahuila? Un análisis desde los datos"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2022-08-12"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2022/08/De-que-mueren-las-personas-en-Coahuila-juvenal-campos-.jpg?resize=1000%2C563&ssl=1"
+description: "El 27 de julio pasado el INEGI liberó el reporte de datos preliminares de fallecimientos a nivel nacional durante 2021. Este reporte de datos es relevante para conocer las causas de las muertes entre..."
+---
+
+![¿De qué mueren las personas en Coahuila? Un análisis desde los datos](https://i0.wp.com/atiempo.tv/wp-content/uploads/2022/08/De-que-mueren-las-personas-en-Coahuila-juvenal-campos-.jpg?resize=1000%2C563&ssl=1)
+
+El 27 de julio pasado el INEGI liberó el reporte de datos preliminares de fallecimientos a nivel nacional durante 2021. Este reporte de datos es relevante para conocer las causas de las muertes entre la población estatal.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/columnista/apuntes-de-datos/de-que-mueren-las-personas-en-coahuila-un-analisis-desde-los-datos/){target="_blank" rel="noopener noreferrer"}

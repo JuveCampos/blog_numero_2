@@ -1,0 +1,18 @@
+---
+title: "Los escándalos de Grok y el estado de la IA a mediados del 2025"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2025-07-23"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2025/07/Elon-Musk-presenta-Grok-4-y-promete-una-IA-mas-potente-que-superara-a-OpenAI-y-Google-2.jpg?resize=900%2C506&ssl=1"
+description: "Esta semana, el mundo de la inteligencia artificial ha sido sacudido por el lanzamiento de Grok 4, el modelo de IA de última generación de la empresa xAI (fundada por Elon Musk). Musk presentó a Grok..."
+---
+
+![Los escándalos de Grok y el estado de la IA a mediados del 2025](https://i0.wp.com/atiempo.tv/wp-content/uploads/2025/07/Elon-Musk-presenta-Grok-4-y-promete-una-IA-mas-potente-que-superara-a-OpenAI-y-Google-2.jpg?resize=900%2C506&ssl=1)
+
+Esta semana, el mundo de la inteligencia artificial ha sido sacudido por el lanzamiento de Grok 4, el modelo de IA de última generación de la empresa xAI (fundada por Elon Musk). Musk presentó a Grok 4 con bombos y platillos, calificándolo como “la IA más inteligente del mundo”, supuestamente capaz de rendir a nivel de doctorado en prácticamente cualquier disciplina.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/articulos-de-semanario/apuntes-de-datos-articulos-de-semanario/los-escandalos-de-grok-y-el-estado-de-la-ia-a-mediados-del-2025/){target="_blank" rel="noopener noreferrer"}

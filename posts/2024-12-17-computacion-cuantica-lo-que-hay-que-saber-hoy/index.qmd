@@ -1,0 +1,18 @@
+---
+title: "Computación cuántica: lo que hay que saber hoy"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2024-12-17"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2024/12/936_quantum_computing_and_quantum_developments.jpg?resize=1000%2C571&ssl=1"
+description: "Así como hace 10 años se hablaba del Big Data como la gran revolución tecnológica de la época, hace cinco del blockchain y como revolucionaría el sistema financiero, y ahora hablamos de la Inteligenci..."
+---
+
+![Computación cuántica: lo que hay que saber hoy](https://i0.wp.com/atiempo.tv/wp-content/uploads/2024/12/936_quantum_computing_and_quantum_developments.jpg?resize=1000%2C571&ssl=1)
+
+Así como hace 10 años se hablaba del Big Data como la gran revolución tecnológica de la época, hace cinco del blockchain y como revolucionaría el sistema financiero, y ahora hablamos de la Inteligencia Artificial y cómo impactará nuestra manera de trabajar, se prevé que en los próximos años el tema a discutir será la computación cuántica.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/articulos-de-semanario/computacion-cuantica-lo-que-hay-que-saber-hoy/){target="_blank" rel="noopener noreferrer"}

@@ -1,0 +1,18 @@
+---
+title: "Datos para entender la tragedia del metro de la Ciudad de México"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2023-01-16"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2023/01/accidente-linea3-metro-cdmx-suspenden-sudirector-operaciones.jpg?resize=1000%2C664&ssl=1"
+description: "El metro de la Ciudad de México es un sistema de transporte público masivo. Que ha sido vital para el desarrollo y el crecimiento de la capital del país. A través de sus 12 líneas y 195 estaciones, el..."
+---
+
+![Datos para entender la tragedia del metro de la Ciudad de México](https://i0.wp.com/atiempo.tv/wp-content/uploads/2023/01/accidente-linea3-metro-cdmx-suspenden-sudirector-operaciones.jpg?resize=1000%2C664&ssl=1)
+
+El metro de la Ciudad de México es un sistema de transporte público masivo. Que ha sido vital para el desarrollo y el crecimiento de la capital del país. A través de sus 12 líneas y 195 estaciones, el metro transporta diariamente a más de 5 millones de usuarios. Brindando un servicio de transporte incluyente y accesible, reduciendo el tráfico vehicular y la contaminación de la ciudad.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/columnista/datos-para-entender-la-tragedia-del-metro-de-la-ciudad-de-mexico/){target="_blank" rel="noopener noreferrer"}

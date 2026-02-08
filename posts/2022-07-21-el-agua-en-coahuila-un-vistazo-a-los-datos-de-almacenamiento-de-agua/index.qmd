@@ -1,0 +1,18 @@
+---
+title: "El agua en Coahuila: un vistazo a los datos de almacenamiento de agua"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2022-07-21"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2022/07/El-agua-en-Coahuila_-un-vistazo-a-los-datos-de-almacenamiento-de-agua-1.jpg?resize=1000%2C667&ssl=1"
+description: "El análisis de la semana pasada consistió en revisar la situación del estado de Coahuila desde un aspecto físico: su ubicación en el norte del país, las condiciones de sequía a las que se enfrenta, la..."
+---
+
+![El agua en Coahuila: un vistazo a los datos de almacenamiento de agua](https://i0.wp.com/atiempo.tv/wp-content/uploads/2022/07/El-agua-en-Coahuila_-un-vistazo-a-los-datos-de-almacenamiento-de-agua-1.jpg?resize=1000%2C667&ssl=1)
+
+El análisis de la semana pasada consistió en revisar la situación del estado de Coahuila desde un aspecto físico: su ubicación en el norte del país, las condiciones de sequía a las que se enfrenta, la disminución de lluvia de los últimos 5 años y la presión hídrica que presenta. La columna de hoy se centrará en las condiciones de sus reservorios de agua: las presas y los acuíferos y los almacenamientos domésticos.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/columnista/apuntes-de-datos/el-agua-en-coahuila-un-vistazo-a-los-datos-de-almacenamiento-de-agua/){target="_blank" rel="noopener noreferrer"}

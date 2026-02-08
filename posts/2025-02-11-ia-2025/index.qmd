@@ -1,0 +1,18 @@
+---
+title: "IA 2025"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2025-02-11"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2025/02/IA.png?resize=1000%2C563&ssl=1"
+description: "En estos días, escribir sobre las novedades en el campo de la Inteligencia artificial es complicado; los grandes jugadores se la pasan sacando novedades todos los días y los modelos mejoran en tema de..."
+---
+
+![IA 2025](https://i0.wp.com/atiempo.tv/wp-content/uploads/2025/02/IA.png?resize=1000%2C563&ssl=1)
+
+En estos días, escribir sobre las novedades en el campo de la Inteligencia artificial es complicado; los grandes jugadores se la pasan sacando novedades todos los días y los modelos mejoran en tema de meses, por lo que escribir hoy es nota vieja en materia de semanas. Este año (que apenas lleva un mes) ya está siendo marcado por avances disruptivos y fuertes inversiones, en donde la inteligencia artificial (IA) se posiciona una vez más como el epicentro de la transformación tecnológica global. Durante los últimos días, destacados actores del sector han anunciado novedades que reconfiguran tanto el desarrollo tecnológico como el ecosistema económico y ético de la industria.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/articulos-de-semanario/apuntes-de-datos-articulos-de-semanario/ia-2025/){target="_blank" rel="noopener noreferrer"}

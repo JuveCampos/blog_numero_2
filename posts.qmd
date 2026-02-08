@@ -1,11 +1,16 @@
 ---
-title: "Todas las publicaciones"
+title: "Blog"
+subtitle: "Tutoriales, análisis y reflexiones sobre ciencia de datos"
 listing:
   contents: posts
   sort: "date desc"
-  type: default
+  type: grid
+  grid-columns: 3
+  image-height: 200px
   categories: true
   sort-ui: true
   filter-ui: true
+  fields: [image, date, title, description, categories]
 page-layout: full
+toc: false
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Visualizando pirámides de población en R"
+image: "images/piramide.png"
 author: "Juvenal Campos"
 date: "2020-01-26"
 categories: [R, ggplot2, demografía, visualización]

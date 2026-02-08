@@ -1,0 +1,18 @@
+---
+title: "A lo imposible nadie esta obligado: El caso de CompraNet"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2022-07-28"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2022/07/compranet-.jpg?resize=761%2C427&ssl=1"
+description: "CompraNet es el sistema electrónico de información pública gubernamental en materia de contrataciones públicas. En este sistema se gestionan de manera electrónica las adquisiciones, los arrendamientos..."
+---
+
+![A lo imposible nadie esta obligado: El caso de CompraNet](https://i0.wp.com/atiempo.tv/wp-content/uploads/2022/07/compranet-.jpg?resize=761%2C427&ssl=1)
+
+CompraNet es el sistema electrónico de información pública gubernamental en materia de contrataciones públicas. En este sistema se gestionan de manera electrónica las adquisiciones, los arrendamientos, los servicios y las obras públicas adquiridas con el dinero de los impuestos.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/columnista/apuntes-de-datos/a-lo-posible-nadie-esta-obligado-el-caso-de-compranet/){target="_blank" rel="noopener noreferrer"}

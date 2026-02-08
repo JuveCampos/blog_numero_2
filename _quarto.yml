@@ -1,35 +1,41 @@
 project:
   type: website
+  resources:
+    - images/**
 
 website:
-  title: "Juve Blog"
-  description: "Blog y portafolio de trabajo"
-  
+  title: "Jorge Juvenal Campos Ferreira"
+  description: "Ciencia de datos · Periodismo de datos · Docencia"
+
   navbar:
+    pinned: true
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: Inicio
       - href: posts.qmd
-        text: Posts
+        text: Blog
     right:
       - icon: github
         href: https://github.com/JuveCampos
+        aria-label: GitHub
       - icon: twitter
         href: https://twitter.com/JuvenalCamposF
+        aria-label: Twitter
       - icon: linkedin
         href: https://www.linkedin.com/in/jorge-juvenal-campos-ferreira-5532b7160/
+        aria-label: LinkedIn
+      - icon: instagram
+        href: https://www.instagram.com/juvenalcampos.dataviz/
+        aria-label: Instagram
 
-  page-footer:
-    center: "Blog personal de Jorge Juvenal Campos Ferreira"
-    
 format:
   html:
     theme: cosmo
     css: styles.css
+    include-after-body:
+      - includes/after-body.html
     toc: true
     code-fold: false
-    code-tools: true
     highlight-style: github
     lang: es
 

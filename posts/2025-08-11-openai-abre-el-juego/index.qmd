@@ -1,0 +1,18 @@
+---
+title: "OpenAI abre el juego"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2025-08-11"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2025/08/chatgpt.jpeg?resize=1000%2C668&ssl=1"
+description: "La empresa OpenAI, creadora de Chat GPT y una de las protagonistas de la actual ola de Inteligencia Artificial, decidió dar dos golpes en la misma semana. Por un lado, el martes 5 de agosto la empresa..."
+---
+
+![OpenAI abre el juego](https://i0.wp.com/atiempo.tv/wp-content/uploads/2025/08/chatgpt.jpeg?resize=1000%2C668&ssl=1)
+
+La empresa OpenAI, creadora de Chat GPT y una de las protagonistas de la actual ola de Inteligencia Artificial, decidió dar dos golpes en la misma semana. Por un lado, el martes 5 de agosto la empresa liberó GPT-OSS, una familia de modelos de pesos abiertos que cualquier persona puede descargar y ejecutar en su propia computadora de manera local y, dos días después, presentó GPT-5, la nueva versión de su principal modelo que la compañía describe como su sistema “más inteligente, rápido y útil” hasta la fecha. En esta nueva etapa, la IA se prepara para vivir tanto en la nube como para vivir instalada localmente en la computadora y el celular.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/articulos-de-semanario/apuntes-de-datos-articulos-de-semanario/openai-abre-el-juego/){target="_blank" rel="noopener noreferrer"}

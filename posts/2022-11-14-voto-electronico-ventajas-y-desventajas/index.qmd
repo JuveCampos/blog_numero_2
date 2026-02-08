@@ -1,0 +1,18 @@
+---
+title: "Voto electrónico: ventajas y desventajas"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2022-11-14"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2022/11/voto.jpg?resize=1000%2C666&ssl=1"
+description: "El tema de la reforma electoral se encuentra actualmente en el centro de la polémica y la conversación en México. Entre los cambios que esta plantea se encuentran la reducción de diputados y senadores..."
+---
+
+![Voto electrónico: ventajas y desventajas](https://i0.wp.com/atiempo.tv/wp-content/uploads/2022/11/voto.jpg?resize=1000%2C666&ssl=1)
+
+El tema de la reforma electoral se encuentra actualmente en el centro de la polémica y la conversación en México. Entre los cambios que esta plantea se encuentran la reducción de diputados y senadores, el cambio de nombre del INE a INEC (Instituto Nacional de Elecciones y Consultas). La elección de autoridades electorales elegidas por el voto popular, la reducción del dinero a partidos y al instituto electoral. Así como eliminar los organismos electorales locales y la implementación del voto electrónico. Dejando de lado que tan buenas o malas son los demás cambios planteados, en esta columna nos centraremos en discutir el voto electrónico. Sus ventajas, desventajas y experiencias a lo largo del mundo.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/columnista/voto-electronico-ventajas-y-desventajas/){target="_blank" rel="noopener noreferrer"}

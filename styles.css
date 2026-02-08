@@ -1,24 +1,1130 @@
-/* Custom styles for Juvenal's blog */
+/* ============================================================
+   STYLES.CSS — Propuesta de rediseño juvenalcampos.com
+   Tema: Minimalista, glassmorphism, light/dark mode
+   ============================================================ */
 
-.navbar-brand {
+/* ---------- Fuente ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES — TEMAS
+   ============================================================ */
+
+:root {
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* --- Tema claro (default) --- */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f7;
+  --bg-tertiary: #e8e8ed;
+  --text-primary: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --text-tertiary: #86868b;
+  --accent: #0071e3;
+  --accent-hover: #0077ed;
+  --accent-light: rgba(0, 113, 227, 0.08);
+  --border-color: rgba(0, 0, 0, 0.06);
+
+  /* Glass / Cards */
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(255, 255, 255, 0.2);
+  --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.3);
+  --glass-blur: blur(20px);
+
+  /* Navbar */
+  --navbar-bg: rgba(255, 255, 255, 0.85);
+  --navbar-border: rgba(0, 0, 0, 0.06);
+  --navbar-text: #1d1d1f;
+
+  /* Footer */
+  --footer-bg: #1d1d1f;
+  --footer-text: #f5f5f7;
+  --footer-muted: #86868b;
+
+  /* Tags */
+  --tag-bg: rgba(0, 113, 227, 0.08);
+  --tag-color: #0071e3;
+
+  /* Spacing & Transitions */
+  --section-spacing: 120px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Tema oscuro --- */
+[data-theme="dark"] {
+  --bg-primary: #000000;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1c1c1e;
+  --text-primary: #f5f5f7;
+  --text-secondary: #a1a1a6;
+  --text-tertiary: #6e6e73;
+  --accent: #2997ff;
+  --accent-hover: #40a9ff;
+  --accent-light: rgba(41, 151, 255, 0.1);
+  --border-color: rgba(255, 255, 255, 0.06);
+
+  --card-bg: rgba(28, 28, 30, 0.7);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --glass-bg: rgba(28, 28, 30, 0.6);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.06);
+
+  --navbar-bg: rgba(0, 0, 0, 0.85);
+  --navbar-border: rgba(255, 255, 255, 0.06);
+  --navbar-text: #f5f5f7;
+
+  --footer-bg: #111111;
+  --footer-text: #f5f5f7;
+  --footer-muted: #6e6e73;
+
+  --tag-bg: rgba(41, 151, 255, 0.12);
+  --tag-color: #2997ff;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary) !important;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color var(--transition), color var(--transition);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Override contenedores de Quarto en page-layout: full */
+.page-layout-full .content,
+.page-layout-full .page-columns {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.page-layout-full #quarto-content {
+  padding-top: 0 !important;
+}
+
+/* Ocultar el title-block si se genera */
+.page-layout-full #title-block-header {
+  display: none !important;
+}
+
+/* Forzar ancho completo en todos los contenedores de Quarto/Bootstrap */
+.page-layout-full .container,
+.page-layout-full .container-fluid,
+.page-layout-full .container-sm,
+.page-layout-full .container-md,
+.page-layout-full .container-lg,
+.page-layout-full .container-xl,
+.page-layout-full .container-xxl {
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.page-layout-full #quarto-content > * {
+  max-width: 100% !important;
+}
+
+.quarto-listing-container-grid {
+  max-width: 100% !important;
+}
+
+/* Forzar ancho completo en el grid de Quarto (page-columns) — SOLO homepage */
+body.has-hero .page-columns > main,
+body.has-hero .page-columns > main > *,
+body.has-hero .page-columns > footer,
+body.has-hero main.content > *,
+.hero-section,
+.section,
+.custom-footer,
+.blog-section,
+#articulos,
+body.has-hero #quarto-content > * {
+  grid-column: screen-start / screen-end !important;
+  max-width: none !important;
+}
+
+/* Footer siempre full-width en todas las páginas */
+.custom-footer {
+  grid-column: screen-start / screen-end !important;
+  max-width: none !important;
+}
+
+/* Anular el grid de page-columns en el main (solo homepage) */
+body.has-hero main.content {
+  display: block !important;
+}
+
+/* Padding lateral para páginas de blog posts */
+main.content {
+  padding-left: 48px !important;
+  padding-right: 48px !important;
+}
+
+@media (min-width: 992px) {
+  main.content {
+    padding-left: max(48px, calc((100vw - 900px) / 2)) !important;
+    padding-right: max(48px, calc((100vw - 900px) / 2)) !important;
+  }
+}
+
+/* No aplicar padding extra en la homepage full-width */
+.page-layout-full main.content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* ============================================================
+   TIPOGRAFÍA
+   ============================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary) !important;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: 400;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+
+/* Base: navbar sólida (para páginas sin hero) */
+.navbar {
+  background-color: var(--navbar-bg) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid var(--navbar-border) !important;
+  transition: all var(--transition) !important;
+  padding: 10px 0 !important;
+}
+
+.navbar .navbar-brand {
   font-weight: 600;
+  color: var(--navbar-text) !important;
+  font-size: 1.05rem;
 }
 
-.listing-title {
-  color: #2c3e50;
+.navbar .nav-link {
+  color: var(--navbar-text) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  transition: opacity var(--transition);
 }
 
-.listing-description {
-  color: #7f8c8d;
+.navbar .nav-link:hover {
+  opacity: 1;
 }
+
+.navbar .bi {
+  color: var(--navbar-text) !important;
+}
+
+/* --- Hero pages: navbar transparente --- */
+body.has-hero .navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: none !important;
+}
+
+body.has-hero .navbar.scrolled {
+  background-color: var(--navbar-bg) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid var(--navbar-border) !important;
+}
+
+/* Texto blanco sobre el hero */
+body.has-hero .navbar:not(.scrolled) .navbar-brand,
+body.has-hero .navbar:not(.scrolled) .nav-link,
+body.has-hero .navbar:not(.scrolled) .bi {
+  color: #ffffff !important;
+}
+
+body.has-hero .navbar:not(.scrolled) .navbar-toggler-icon {
+  filter: invert(1) brightness(2);
+}
+
+/* Cuando se scrollea, restaurar colores del tema */
+body.has-hero .navbar.scrolled .navbar-brand,
+body.has-hero .navbar.scrolled .nav-link,
+body.has-hero .navbar.scrolled .bi {
+  color: var(--navbar-text) !important;
+}
+
+/* Forzar negro en tema claro para navbar */
+:root:not([data-theme="dark"]) .navbar.scrolled .navbar-brand,
+:root:not([data-theme="dark"]) .navbar.scrolled .nav-link,
+:root:not([data-theme="dark"]) body:not(.has-hero) .navbar .navbar-brand,
+:root:not([data-theme="dark"]) body:not(.has-hero) .navbar .nav-link {
+  color: #1d1d1f !important;
+}
+
+/* ============================================================
+   THEME TOGGLE BUTTON
+   ============================================================ */
+
+.theme-toggle-btn {
+  background: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: inherit;
+  transition: all var(--transition);
+  padding: 0;
+  margin-left: 16px;
+  flex-shrink: 0;
+}
+
+/* Toggle estilo cuando navbar tiene fondo */
+.navbar.scrolled .theme-toggle-btn,
+body:not(.has-hero) .theme-toggle-btn {
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.navbar.scrolled .theme-toggle-btn:hover,
+body:not(.has-hero) .theme-toggle-btn:hover {
+  background: var(--accent-light);
+}
+
+.theme-toggle-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background-color: #0a0e1a;
+}
+
+/* --- Carousel --- */
+.carousel-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+/* Dots de navegación */
+.carousel-dots {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all var(--transition);
+}
+
+.carousel-dot.active {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.carousel-dot:hover {
+  border-color: #ffffff;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 24px;
+}
+
+.hero-name {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-tagline {
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+  margin-bottom: 52px;
+  letter-spacing: 0.02em;
+}
+
+/* Scroll indicator / CTA */
+.scroll-indicator {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color var(--transition);
+  animation: hero-float 3s ease-in-out infinite;
+}
+
+.scroll-indicator:hover {
+  color: #ffffff;
+}
+
+.scroll-indicator svg {
+  transition: transform var(--transition);
+}
+
+.scroll-indicator:hover svg {
+  transform: translateY(3px);
+}
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* ============================================================
+   SECCIONES — BASE
+   ============================================================ */
+
+.section {
+  padding: var(--section-spacing) 0;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-alt {
+  background-color: var(--bg-secondary);
+}
+
+/* ============================================================
+   GLASS CARD — BASE
+   ============================================================ */
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition);
+  overflow: hidden;
+}
+
+.glass-card:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-4px);
+}
+
+/* ============================================================
+   SOCIOS Y COLABORADORES
+   ============================================================ */
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  text-decoration: none;
+  color: var(--text-primary);
+  min-height: 160px;
+  text-align: center;
+}
+
+.partner-card:hover {
+  text-decoration: none;
+}
+
+.partner-logo {
+  max-width: 140px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 14px;
+  transition: filter var(--transition), opacity var(--transition);
+}
+
+/* Logo del Tec: SVG blanco, invertir en modo claro */
+.partner-logo.tec-logo {
+  filter: brightness(0);
+}
+[data-theme="dark"] .partner-logo.tec-logo {
+  filter: brightness(1);
+}
+
+/* Novagob: logo gris, ajustar en dark mode */
+[data-theme="dark"] .partner-logo.novagob-logo {
+  filter: brightness(1.5);
+}
+
+.partner-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color var(--transition);
+  line-height: 1.3;
+}
+
+.partner-card:hover .partner-name {
+  color: var(--accent);
+}
+
+/* ============================================================
+   PROYECTOS DESTACADOS
+   ============================================================ */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.project-card {
+  overflow: hidden;
+}
+
+.project-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--border-color);
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.03);
+}
+
+/* Card como link: quitar estilos de anchor */
+a.project-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.project-card:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-info {
+  padding: 24px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: var(--tag-bg);
+  color: var(--tag-color);
+  letter-spacing: 0.01em;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.project-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.55;
+}
+
+.project-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.project-link:hover {
+  color: var(--accent-hover);
+}
+
+/* ============================================================
+   BLOG SECTION — QUARTO LISTING OVERRIDES
+   ============================================================ */
+
+.blog-section {
+  background-color: var(--bg-secondary);
+  padding-top: var(--section-spacing) !important;
+  padding-bottom: var(--section-spacing) !important;
+}
+
+/* Contenedor del listing */
+.blog-section .section-container {
+  max-width: 1400px;
+}
+
+/* ---- Grid cards de Quarto — IDÉNTICO a project-card glass-card ---- */
+.quarto-grid-item .card,
+.quarto-listing .card {
+  background: var(--card-bg) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--card-shadow) !important;
+  transition: all var(--transition) !important;
+  overflow: hidden !important;
+}
+
+.quarto-grid-item .card:hover,
+.quarto-listing .card:hover {
+  box-shadow: var(--card-shadow-hover) !important;
+  transform: translateY(-4px) !important;
+}
+
+/* Imagen superior */
+.quarto-grid-item .card-img-top,
+.quarto-listing .card-img-top {
+  border-radius: 0 !important;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.quarto-grid-item .card-img-top img,
+.quarto-listing .card-img-top img {
+  border-radius: 0 !important;
+  object-fit: cover;
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.quarto-grid-item .card:hover .card-img-top img {
+  transform: scale(1.03);
+}
+
+/* Body de la card — igual que .project-info */
+.quarto-grid-item .card-body,
+.quarto-listing .card-body {
+  padding: 24px !important;
+  background: transparent !important;
+}
+
+/* Títulos — rojo para mayor visibilidad */
+.quarto-grid-item .listing-title,
+.quarto-grid-item .card-title,
+.quarto-grid-item h5,
+.quarto-listing .listing-title,
+.quarto-listing .card-title,
+.quarto-listing h5,
+h5.no-anchor.card-title.listing-title {
+  color: #c0392b !important;
+  font-family: var(--font-primary) !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+  line-height: 1.3 !important;
+  margin-bottom: 8px !important;
+}
+
+/* Descripción — como .project-desc */
+.quarto-grid-item .listing-description,
+.quarto-listing .listing-description {
+  color: var(--text-secondary) !important;
+  font-size: 0.92rem !important;
+  line-height: 1.55 !important;
+}
+
+/* Tags/categorías — como .tag (pill azul) */
+.quarto-grid-item .listing-category .listing-category-item,
+.quarto-listing .listing-category .listing-category-item,
+.quarto-grid-item .card .listing-category-item {
+  background: var(--tag-bg) !important;
+  color: var(--tag-color) !important;
+  border-radius: 100px !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 4px 12px !important;
+  letter-spacing: 0.01em;
+}
+
+/* Fecha */
+.quarto-grid-item .listing-date,
+.quarto-listing .card .listing-date {
+  color: var(--text-tertiary) !important;
+  font-size: 0.82rem !important;
+}
+
+/* Link wrapper */
+.quarto-grid-link {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.quarto-grid-link:hover {
+  text-decoration: none !important;
+}
+
+/* Blog CTA */
+.blog-cta-wrapper {
+  text-align: center;
+  margin-top: 60px;
+  padding-bottom: 20px;
+}
+
+.btn-primary-outline {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all var(--transition);
+}
+
+.btn-primary-outline:hover {
+  background-color: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 113, 227, 0.3);
+}
+
+[data-theme="dark"] .btn-primary-outline:hover {
+  box-shadow: 0 4px 16px rgba(41, 151, 255, 0.3);
+}
+
+/* ============================================================
+   LISTING PAGE (posts.qmd) — FILTROS
+   ============================================================ */
+
+.quarto-listing-filter input,
+.quarto-listing-sort select {
+  border-radius: 8px !important;
+  border: 1px solid var(--border-color) !important;
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  padding: 8px 16px !important;
+  font-family: var(--font-primary) !important;
+  transition: border-color var(--transition);
+}
+
+.quarto-listing-filter input:focus,
+.quarto-listing-sort select:focus {
+  border-color: var(--accent) !important;
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-light) !important;
+}
+
+/* Sidebar de categorías */
+.quarto-listing-category .category {
+  color: var(--text-secondary) !important;
+  transition: color var(--transition);
+  font-family: var(--font-primary) !important;
+}
+
+.quarto-listing-category .category:hover,
+.quarto-listing-category .category.active {
+  color: var(--accent) !important;
+}
+
+/* ---- Listing page (posts.html) layout fixes ---- */
+
+/* Padding lateral para el contenido del listing */
+body:not(.has-hero) .page-layout-full #quarto-content {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+/* Asegurar que el sidebar no se encime con el contenido */
+body:not(.has-hero) .page-layout-full #quarto-margin-sidebar {
+  padding-top: 24px;
+  padding-right: 16px;
+}
+
+/* El título y subtitle del listing page */
+body:not(.has-hero) .page-layout-full #title-block-header {
+  display: block !important;
+  padding-top: 32px;
+  padding-left: 16px;
+}
+
+/* Padding lateral para el grid de cards en la listing page */
+body:not(.has-hero) .quarto-listing-container-grid {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Acciones del listing (sort, filter) */
+body:not(.has-hero) .listing-actions-group {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* ============================================================
+   FOOTER PERSONALIZADO
+   ============================================================ */
+
+/* Ocultar el footer por defecto de Quarto */
+.nav-footer {
+  display: none !important;
+}
+
+.custom-footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 64px 0 0;
+  /* Abarcar todo el ancho del grid de Quarto */
+  grid-column: screen-start / screen-end !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.footer-inner {
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+}
+
+.footer-brand h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--footer-text);
+}
+
+.footer-brand p {
+  color: var(--footer-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 360px;
+}
+
+.footer-links h4 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+  color: var(--footer-muted);
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: var(--footer-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.75;
+  transition: opacity var(--transition), color var(--transition);
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 40px auto 0;
+  padding: 20px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--footer-muted);
+}
+
+.footer-bottom a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-social a {
+  color: var(--footer-text);
+  opacity: 0.6;
+  transition: opacity var(--transition), color var(--transition);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.footer-social a:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* ============================================================
+   CODE BLOCKS
+   ============================================================ */
 
 code {
-  color: #e74c3c;
-  background-color: #f8f9fa;
+  font-size: 0.88em;
+  color: var(--accent);
+  background-color: var(--accent-light);
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
-.highlight {
-  background-color: #fff3cd;
-  padding: 0.2em 0.4em;
-  border-radius: 0.25rem;
+pre {
+  background-color: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-spacing: 80px;
+  }
+
+  .hero-section {
+    min-height: 85vh;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .partner-card {
+    padding: 24px 16px;
+    min-height: 130px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-name {
+    font-size: 2rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.95rem;
+  }
+}
+
+/* ============================================================
+   ACCESSIBILITY — REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .section {
+    opacity: 1;
+    transform: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
 }

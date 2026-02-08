@@ -1,0 +1,18 @@
+---
+title: "Análisis de datos: los temas clave del Primer Debate Presidencial en México"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2024-04-08"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2024/04/Juvenal.jpg?resize=869%2C1024&ssl=1"
+description: "El domingo 7 de abril se llevó a cabo el primer debate entre las dos candidatas y el candidato a la Presidencia de la República. De acuerdo con su programación (este artículo fue escrito antes de dich..."
+---
+
+![Análisis de datos: los temas clave del Primer Debate Presidencial en México](https://i0.wp.com/atiempo.tv/wp-content/uploads/2024/04/Juvenal.jpg?resize=869%2C1024&ssl=1)
+
+El domingo 7 de abril se llevó a cabo el primer debate entre las dos candidatas y el candidato a la Presidencia de la República. De acuerdo con su programación (este artículo fue escrito antes de dicho evento), el debate abordará las temáticas de educación y salud, transparencia, combate a la corrupción, no discriminación, grupos vulnerables y violencia contra las mujeres. Para conocer un poco el panorama de dichas temáticas, revisaremos algunos de los datos alusivos a estos temas y que están disponibles de manera pública.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/articulos-de-semanario/analisis-de-datos-los-temas-clave-del-primer-debate-presidencial-en-mexico/){target="_blank" rel="noopener noreferrer"}

@@ -1,0 +1,18 @@
+---
+title: "Ajustando las estadísticas de homicidios"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2024-05-20"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2024/05/crime_scene.jpg?resize=1000%2C563&ssl=1"
+description: "Para evaluar la situación de seguridad de un país o de un estado, una de las métricas a las que se suele recurrir a la cifra de tasa de mortalidad por homicidios por cada 100 mil habitantes; cálculo q..."
+---
+
+![Ajustando las estadísticas de homicidios](https://i0.wp.com/atiempo.tv/wp-content/uploads/2024/05/crime_scene.jpg?resize=1000%2C563&ssl=1)
+
+Para evaluar la situación de seguridad de un país o de un estado, una de las métricas a las que se suele recurrir a la cifra de tasa de mortalidad por homicidios por cada 100 mil habitantes; cálculo que nos permite conocer que tan negativa es la situación de seguridad en una zona o región del país, ya que normaliza el número de homicidios entre el total de la población de cada lugar, haciendo que esta métrica sea comparable entre las diferentes entidades.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/nacional/ajustando-las-estadisticas-de-homicidios/){target="_blank" rel="noopener noreferrer"}

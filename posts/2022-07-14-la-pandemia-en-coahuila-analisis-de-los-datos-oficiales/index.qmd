@@ -1,0 +1,18 @@
+---
+title: "La pandemia en Coahuila. Análisis de los datos oficiales"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2022-07-14"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2022/07/La-pandemia-en-Coahuila.jpg?resize=1000%2C525&ssl=1"
+description: "A inicios del mes de junio, y casi cinco meses después de la ola de COVID generada por la variante ómicron, se empezaron a detectar nuevamente aumentos de los casos en todas las entidades del país. Es..."
+---
+
+![La pandemia en Coahuila. Análisis de los datos oficiales](https://i0.wp.com/atiempo.tv/wp-content/uploads/2022/07/La-pandemia-en-Coahuila.jpg?resize=1000%2C525&ssl=1)
+
+A inicios del mes de junio, y casi cinco meses después de la ola de COVID generada por la variante ómicron, se empezaron a detectar nuevamente aumentos de los casos en todas las entidades del país. Esto quedó constatado por el aumento de búsquedas de COVID en Google, por el aumento de las notificaciones de contagio en Twitter por parte de famosos y conocidos personales y por los mismos datos oficiales levantados por CONACYT y por la Secretaría de Salud.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/columnista/apuntes-de-datos/la-pandemia-en-coahuila-analisis-de-los-datos-oficiales/){target="_blank" rel="noopener noreferrer"}

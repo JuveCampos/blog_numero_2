@@ -1,0 +1,18 @@
+---
+title: "¿Mi trabajo está en peligro por la IA?"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2026-02-03"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2026/02/Juvenal.jpg.jpeg?resize=1000%2C563&ssl=1"
+description: "Hablar de inteligencia artificial es hablar de un campo que cambia a toda velocidad. En muy poco tiempo, las herramientas basadas en estos modelos se han colado en oficinas y aulas de México —y del mu..."
+---
+
+![¿Mi trabajo está en peligro por la IA?](https://i0.wp.com/atiempo.tv/wp-content/uploads/2026/02/Juvenal.jpg.jpeg?resize=1000%2C563&ssl=1)
+
+Hablar de inteligencia artificial es hablar de un campo que cambia a toda velocidad. En muy poco tiempo, las herramientas basadas en estos modelos se han colado en oficinas y aulas de México —y del mundo— para ayudar, acelerar y, en muchos casos, transformar las tareas cotidianas de miles de personas. Pasamos de la primera ola de 2022, cuando un chat nos sorprendía por responder “bien” preguntas generales (aunque hoy esas respuestas ya nos parezcan robóticas, incompletas y hasta torpes), a la era de los bots y los agentes: sistemas capaces no sólo de contestar, sino de ejecutar acciones y operar —cada vez más— nuestras computadoras y celulares para automatizar y optimizar lo más rutinario y tedioso del trabajo diario.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/articulos-de-semanario/apuntes-de-datos-articulos-de-semanario/inteligencia-artificial-en-el-trabajo/){target="_blank" rel="noopener noreferrer"}

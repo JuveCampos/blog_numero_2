@@ -1,0 +1,18 @@
+---
+title: "ChatGPT: La última novedad del año en Inteligencia Artificial"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2022-12-12"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2022/12/pexels-tara-winstead-8386440.jpg?resize=1000%2C667&ssl=1"
+description: "Esta semana dejaremos de hablar de la Copa del Mundo para enfocarnos en uno de los que posiblemente sean los últimos avances de tecnología e inteligencia artificial del año: el modelo ChatGPT. Y digo..."
+---
+
+![ChatGPT: La última novedad del año en Inteligencia Artificial](https://i0.wp.com/atiempo.tv/wp-content/uploads/2022/12/pexels-tara-winstead-8386440.jpg?resize=1000%2C667&ssl=1)
+
+Esta semana dejaremos de hablar de la Copa del Mundo para enfocarnos en uno de los que posiblemente sean los últimos avances de tecnología e inteligencia artificial del año: el modelo ChatGPT. Y digo “quizá” porque los avances se están dando tan rápido este año que quizá surja algun avance relevante en las próximas semanas.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/columnista/chatgpt-la-ultima-novedad-del-ano-en-inteligencia-artificial/){target="_blank" rel="noopener noreferrer"}
