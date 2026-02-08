@@ -169,15 +169,24 @@ body.has-hero main.content {
 
 /* Padding lateral para páginas de blog posts */
 main.content {
-  padding-left: 48px !important;
-  padding-right: 48px !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
 }
 
 @media (min-width: 992px) {
   main.content {
-    padding-left: max(48px, calc((100vw - 900px) / 2)) !important;
-    padding-right: max(48px, calc((100vw - 900px) / 2)) !important;
+    padding-left: max(24px, calc((100vw - 1100px) / 2)) !important;
+    padding-right: max(24px, calc((100vw - 1100px) / 2)) !important;
   }
+}
+
+/* Asegurar que el contenido del post use todo el ancho disponible */
+body:not(.has-hero) main.content > * {
+  max-width: 100% !important;
+}
+
+body:not(.has-hero) .page-columns > main {
+  grid-column: page-start / page-end !important;
 }
 
 /* No aplicar padding extra en la homepage full-width */
@@ -344,7 +353,7 @@ body:not(.has-hero) .theme-toggle-btn:hover {
 
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1053,7 +1062,7 @@ pre code {
   }
 
   .hero-section {
-    min-height: 85vh;
+    min-height: 50vh;
   }
 
   .section-title {
