@@ -186,3 +186,54 @@ toc: false
 
 ::::
 :::::
+
+```{=html}
+<!-- ============================================
+     CONTACTO — Netlify Forms
+     ============================================ -->
+<section id="contacto" class="section contact-section">
+  <div class="section-container">
+    <h2 class="section-title">Contacto</h2>
+    <p class="section-subtitle">¿Tienes alguna pregunta o propuesta? Escríbeme</p>
+
+    <form
+      name="contacto"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/gracias.html"
+      class="contact-form"
+    >
+      <input type="hidden" name="form-name" value="contacto" />
+      <p class="honeypot-field">
+        <label>No llenes esto: <input name="bot-field" /></label>
+      </p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="tu@email.com" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="asunto">Asunto</label>
+        <input type="text" id="asunto" name="asunto" required placeholder="¿Sobre qué quieres hablar?" />
+      </div>
+
+      <div class="form-group">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="6" required placeholder="Escribe tu mensaje aquí..."></textarea>
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="btn-submit">Enviar mensaje</button>
+      </div>
+    </form>
+  </div>
+</section>
+```

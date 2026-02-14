@@ -4117,6 +4117,11 @@ Hacer un blog es una idea que había estado rondandome la cabeza durante ya un a
     document.body.classList.add('has-hero');
   }
 
+  /* Detect listing page (posts.html) */
+  if (document.querySelector('.quarto-listing')) {
+    document.body.classList.add('quarto-listing-page');
+  }
+
   /* Listen for system theme changes */
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
     if (!localStorage.getItem(THEME_KEY)) {
@@ -4130,6 +4135,9 @@ Hacer un blog es una idea que había estado rondandome la cabeza durante ya un a
     /* Re-check hero (in case DOM wasn't ready for the first check) */
     if (document.querySelector('.hero-section')) {
       document.body.classList.add('has-hero');
+    }
+    if (document.querySelector('.quarto-listing')) {
+      document.body.classList.add('quarto-listing-page');
     }
 
     /* -- Create theme toggle button -- */

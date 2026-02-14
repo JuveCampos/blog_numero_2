@@ -1,0 +1,14 @@
+---
+title: "Mensaje enviado"
+toc: false
+---
+
+```{=html}
+<div style="text-align: center; padding: 80px 24px; max-width: 600px; margin: 0 auto;">
+  <h2 style="font-size: 2rem; margin-bottom: 16px;">Gracias por tu mensaje</h2>
+  <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 40px;">
+    Tu mensaje fue enviado correctamente. Te responderé lo antes posible.
+  </p>
+  <a href="/" class="btn-primary-outline">Volver al inicio</a>
+</div>
+```

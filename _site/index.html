@@ -157,6 +157,10 @@ window.Quarto = {
     <a class="nav-link" href="./posts.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html#contacto"> 
+<span class="menu-text">Contacto</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -202,8 +206,7 @@ window.Quarto = {
      ============================================ -->
 <section class="hero-section">
   <div class="carousel-container" aria-hidden="true">
-    <div class="carousel-slide active" style="background-image: url('images/carousel/IMG_9785.jpg')"></div>
-    <div class="carousel-slide" style="background-image: url('images/carousel/IMG_7831.jpg')"></div>
+    <div class="carousel-slide active" style="background-image: url('images/carousel/IMG_7831.jpg')"></div>
     <div class="carousel-slide" style="background-image: url('images/carousel/IMG_7548.jpg')"></div>
     <div class="carousel-slide" style="background-image: url('images/carousel/IMG_6747.jpg')"></div>
     <div class="carousel-slide" style="background-image: url('images/carousel/IMG_5463.jpg')"></div>
@@ -522,6 +525,47 @@ TerapIA psicológica: cuando la IA llega al diván
 </div>
 </div>
 </section>
+<!-- ============================================
+     CONTACTO — Netlify Forms
+     ============================================ -->
+<section id="contacto" class="section contact-section">
+  <div class="section-container">
+    <h2 class="section-title anchored">Contacto</h2>
+    <p class="section-subtitle">¿Tienes alguna pregunta o propuesta? Escríbeme</p>
+
+    <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/gracias.html" class="contact-form">
+      <input type="hidden" name="form-name" value="contacto">
+      <p class="honeypot-field">
+        <label>No llenes esto: <input name="bot-field"></label>
+      </p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required="" placeholder="Tu nombre">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required="" placeholder="tu@email.com">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="asunto">Asunto</label>
+        <input type="text" id="asunto" name="asunto" required="" placeholder="¿Sobre qué quieres hablar?">
+      </div>
+
+      <div class="form-group">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="6" required="" placeholder="Escribe tu mensaje aquí..."></textarea>
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="btn-submit">Enviar mensaje</button>
+      </div>
+    </form>
+  </div>
+</section>
 
 
 
@@ -621,6 +665,11 @@ TerapIA psicológica: cuando la IA llega al diván
     document.body.classList.add('has-hero');
   }
 
+  /* Detect listing page (posts.html) */
+  if (document.querySelector('.quarto-listing')) {
+    document.body.classList.add('quarto-listing-page');
+  }
+
   /* Listen for system theme changes */
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
     if (!localStorage.getItem(THEME_KEY)) {
@@ -634,6 +683,9 @@ TerapIA psicológica: cuando la IA llega al diván
     /* Re-check hero (in case DOM wasn't ready for the first check) */
     if (document.querySelector('.hero-section')) {
       document.body.classList.add('has-hero');
+    }
+    if (document.querySelector('.quarto-listing')) {
+      document.body.classList.add('quarto-listing-page');
     }
 
     /* -- Create theme toggle button -- */
