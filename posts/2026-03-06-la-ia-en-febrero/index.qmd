@@ -1,0 +1,18 @@
+---
+title: "Febrero 2026 en la IA: nuevos modelos, agentes de escritorio y una advertencia viral"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2026-03-06"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2026/02/image-15.jpeg?resize=1000%2C563&ssl=1"
+description: "Febrero trajo novedades clave en IA: GPT 5.2, Claude Opus 4.6, Google Genie para escenarios 3D y Seedance con video generativo de alto nivel."
+---
+
+![Febrero 2026 en la IA: nuevos modelos, agentes de escritorio y una advertencia viral](https://i0.wp.com/atiempo.tv/wp-content/uploads/2026/02/image-15.jpeg?resize=1000%2C563&ssl=1)
+
+**El mes de febrero está trayendo temas muy interesantes para el ecosistema de la IA.** En estos días están saliendo nuevos modelos; como GPT 5.2 y Claude Opus 4.6, ambos con capacidades mejoradas de escritura de código. En el terreno de la producción audiovisual, Google Genie permite a sus usuarios recrear escenarios 3D a partir de imágenes, con claras implicaciones en el mundo de los videojuegos, mientras la empresa china Seedance mostró increíbles escenas de cine generadas por su modelo de generación de video.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/nacional/la-ia-en-febrero/){target="_blank" rel="noopener noreferrer"}

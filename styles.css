@@ -1129,28 +1129,74 @@ body:not(.has-hero) .page-layout-full #title-block-header {
 }
 
 /* ============================================================
-   CODE BLOCKS
+   CODE BLOCKS — Siempre fondo claro, inmune al modo oscuro
    ============================================================ */
 
 code {
   font-size: 0.88em;
-  color: var(--accent);
-  background-color: var(--accent-light);
+  color: #0071e3;
+  background-color: rgba(0, 113, 227, 0.08);
   padding: 2px 6px;
   border-radius: 4px;
 }
 
 pre {
-  background-color: var(--bg-secondary) !important;
-  border: 1px solid var(--border-color) !important;
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
   border-radius: 12px !important;
   padding: 20px !important;
+  overflow-x: auto !important;
 }
 
 pre code {
-  background: none;
+  background: none !important;
   padding: 0;
-  color: var(--text-primary);
+  color: #1d1d1f !important;
+}
+
+/* Syntax highlighting — forzar colores legibles en fondo blanco */
+pre code span.al { color: #ff0000; } /* Alert */
+pre code span.an { color: #60a0b0; font-weight: bold; } /* Annotation */
+pre code span.at { color: #7d9029; } /* Attribute */
+pre code span.bn { color: #40a070; } /* BaseN */
+pre code span.bu { color: #1d1d1f; } /* BuiltIn */
+pre code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+pre code span.ch { color: #4070a0; } /* Char */
+pre code span.cn { color: #880000; } /* Constant */
+pre code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+pre code span.cv { color: #60a0b0; font-weight: bold; } /* CommentVar */
+pre code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+pre code span.dt { color: #902000; } /* DataType */
+pre code span.dv { color: #40a070; } /* DecVal */
+pre code span.er { color: #ff0000; font-weight: bold; } /* Error */
+pre code span.ex { color: #1d1d1f; } /* Extension */
+pre code span.fl { color: #40a070; } /* Float */
+pre code span.fu { color: #06287e; } /* Function */
+pre code span.im { color: #007020; font-weight: bold; } /* Import */
+pre code span.in { color: #60a0b0; font-weight: bold; } /* Information */
+pre code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+pre code span.op { color: #666666; } /* Operator */
+pre code span.pp { color: #bc7a00; } /* Preprocessor */
+pre code span.re { color: #1d1d1f; } /* RegionMarker */
+pre code span.sc { color: #4070a0; } /* SpecialChar */
+pre code span.ss { color: #bb6688; } /* SpecialString */
+pre code span.st { color: #4070a0; } /* String */
+pre code span.va { color: #19177c; } /* Variable */
+pre code span.vs { color: #4070a0; } /* VerbatimString */
+pre code span.wa { color: #60a0b0; font-weight: bold; } /* Warning */
+
+/* Quarto code cell containers */
+div.sourceCode {
+  background-color: #ffffff !important;
+  border-radius: 12px !important;
+}
+
+/* Botón "copiar" sobre fondo claro */
+.code-copy-button {
+  color: #6e6e73 !important;
+}
+.code-copy-button:hover {
+  color: #1d1d1f !important;
 }
 
 /* ============================================================
