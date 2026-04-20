@@ -43,6 +43,24 @@ toc: false
 </section>
 
 <!-- ============================================
+     SOBRE MÍ
+     ============================================ -->
+<section id="sobre-mi" class="section">
+  <div class="section-container">
+    <h2 class="section-title">Sobre mí</h2>
+    <p class="section-subtitle">Ciencia de datos aplicada, periodismo y docencia</p>
+    <p style="max-width: 720px; margin: 0 auto 32px; text-align: center; line-height: 1.7; font-size: 1.05rem;">
+      Ingeniero en Irrigación por <em>Chapingo</em> y Maestro en Economía por <em>El Colegio de México</em>.
+      Trabajo entre la ciencia de datos aplicada, el periodismo de datos y la docencia
+      universitaria — usando datos públicos para entender (y ayudar a explicar) lo que pasa en México.
+    </p>
+    <div class="blog-cta-wrapper">
+      <a href="about.html" class="btn-primary-outline">Conocer más sobre mí →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
      SOCIOS Y COLABORADORES
      ============================================ -->
 <section id="socios" class="section section-alt">

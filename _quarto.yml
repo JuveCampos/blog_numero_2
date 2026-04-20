@@ -1,5 +1,9 @@
 project:
   type: website
+  render:
+    - "*.qmd"
+    - "posts/**/*.qmd"
+    - "!CLAUDE.md"
   resources:
     - images/**
 
@@ -14,6 +18,8 @@ website:
         text: Inicio
       - href: posts.qmd
         text: Blog
+      - href: about.qmd
+        text: Sobre mí
       - href: index.qmd#contacto
         text: Contacto
     right:
@@ -23,6 +29,9 @@ website:
       - icon: twitter
         href: https://twitter.com/JuvenalCamposF
         aria-label: Twitter
+      - icon: bluesky
+        href: https://bsky.app/profile/juvenalcamposf.bsky.social
+        aria-label: Bluesky
       - icon: linkedin
         href: https://www.linkedin.com/in/jorge-juvenal-campos-ferreira-5532b7160/
         aria-label: LinkedIn

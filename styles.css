@@ -263,6 +263,19 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--navbar-text) !important;
 }
 
+/* Bluesky: el ícono no está en esta versión de Bootstrap Icons,
+   lo inyectamos con mask-image para que herede currentColor. */
+.navbar .bi-bluesky::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  vertical-align: -0.125em;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.575 3.497 6.182 3.254-4.517.752-8.438 2.589-3.077 9.11 5.883 6.734 8.391-.4 9.271-3.218.88 2.818 2.39 9.628 9.27 3.218 5.36-6.52 1.44-8.358-3.076-9.11 2.607.243 5.397-.627 6.182-3.254.246-.828.624-5.788.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C18.046 4.748 15.087 8.687 14 10.8h-2z'/></svg>") no-repeat center / contain;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.575 3.497 6.182 3.254-4.517.752-8.438 2.589-3.077 9.11 5.883 6.734 8.391-.4 9.271-3.218.88 2.818 2.39 9.628 9.27 3.218 5.36-6.52 1.44-8.358-3.076-9.11 2.607.243 5.397-.627 6.182-3.254.246-.828.624-5.788.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C18.046 4.748 15.087 8.687 14 10.8h-2z'/></svg>") no-repeat center / contain;
+}
+
 /* --- Hero pages: navbar transparente --- */
 body.has-hero .navbar {
   position: fixed !important;
