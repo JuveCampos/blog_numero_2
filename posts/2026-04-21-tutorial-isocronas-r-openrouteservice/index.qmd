@@ -1,0 +1,40 @@
+---
+title: "Tutorial: isócronas con R y OpenRouteService"
+subtitle: "RI3002B.501 — Análisis y estrategias de política exterior"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2026-04-21"
+categories:
+  - Docencia
+  - Tutorial
+  - R
+  - Mapas
+image: "portada.png"
+description: "Qué son las isócronas, cómo generarlas en R con el paquete openrouteservice y visualizarlas sobre un mapa interactivo de leaflet. Incluye ejemplos con múltiples modos de transporte y varios puntos de la CDMX."
+---
+
+Una **isócrona** es el polígono que delimita el área a la que se puede llegar desde un punto de origen en un tiempo determinado, usando un medio de transporte específico. A diferencia de un buffer circular, respeta la red vial real: calles, sentidos, velocidades y barreras naturales.
+
+En este tutorial —pensado para la sesión de la clase **Análisis y estrategias de política exterior**— vemos cómo generar isócronas en R usando el paquete `openrouteservice`, basado en datos de OpenStreetMap, y visualizarlas con `leaflet`. Incluye tres ejemplos:
+
+- Isócronas de 10 y 20 minutos en automóvil desde un punto de partida.
+- Comparación de 15 minutos en auto, bicicleta y caminando.
+- 10 puntos emblemáticos del centro de la CDMX y la detección de intersecciones entre sus isócronas.
+
+El tutorial completo, con código y mapas interactivos, está embebido abajo. También puedes abrirlo en una pestaña nueva.
+
+```{=html}
+<div style="position: relative; width: 100%; margin: 1rem 0;">
+  <iframe
+    src="tutorial_isocronas.html"
+    title="Tutorial: isócronas con R y OpenRouteService"
+    loading="lazy"
+    style="width: 100%; height: 800px; border: 1px solid #e1e4e8; border-radius: 12px; background: #fff;">
+  </iframe>
+</div>
+
+<p style="text-align: center; margin-top: .5rem;">
+  <a href="tutorial_isocronas.html" target="_blank" rel="noopener" class="btn-primary-outline">
+    Abrir el tutorial en una pestaña nueva →
+  </a>
+</p>
+```
