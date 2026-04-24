@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Sobre mí – Juve Blog</title>
+<title>Sobre mí – Jorge Juvenal Campos Ferreira</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -80,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Juve Blog</span>
+    <span class="navbar-title">Jorge Juvenal Campos Ferreira</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Buscar"></div>
@@ -91,40 +90,44 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./posts.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./about.html" aria-current="page"> 
 <span class="menu-text">Sobre mí</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts.html"> 
-<span class="menu-text">Posts</span></a>
+    <a class="nav-link" href="./index.html#contacto"> 
+<span class="menu-text">Contacto</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/JuveCampos"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/JuveCampos"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/JuvenalCamposF"> <i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/JuvenalCamposF"> <i class="bi bi-twitter" role="img" aria-label="Twitter">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/jorge-juvenal-campos-ferreira-5532b7160/"> <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://bsky.app/profile/juvenalcamposf.bsky.social"> <i class="bi bi-bluesky" role="img" aria-label="Bluesky">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.instagram.com/juvenalcampos.dataviz/"> <i class="bi bi-instagram" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/jorge-juvenal-campos-ferreira-5532b7160/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://bsky.app/profile/juvenalcamposf.bsky.social"> <i class="bi bi-cloud" role="img">
+    <a class="nav-link" href="https://www.instagram.com/juvenalcampos.dataviz/"> <i class="bi bi-instagram" role="img" aria-label="Instagram">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -164,18 +167,362 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<style>
+.polaroid {
+  display: inline-block;
+  background: #fff;
+  padding: 14px 14px 44px 14px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.18), 0 2px 6px rgba(0,0,0,.10);
+  transition: transform .3s ease;
+  margin: 0;
+  max-width: 260px;
+  transform: rotate(var(--rot, 0deg));
+}
+.polaroid:hover { transform: rotate(0deg) scale(1.02); }
+.polaroid img { display: block; width: 100%; height: auto; }
+.polaroid figcaption {
+  text-align: center;
+  font-family: "Caveat", "Bradley Hand", "Segoe Script", cursive;
+  color: #444;
+  margin: 10px 4px 0;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+.polaroid.hero     { float: right; max-width: 320px; margin: 0 0 1.5rem 1.75rem; }
+.polaroid.chinelos { float: left;                     margin: .25rem 1.75rem 1rem 0; }
+
+.photo-gallery {
+  margin: 4rem auto 2rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(128,128,128,.2);
+}
+.gallery-title {
+  text-align: center;
+  font-family: "Caveat", "Bradley Hand", "Segoe Script", cursive;
+  font-size: 2rem;
+  color: inherit;
+  margin-bottom: 2rem;
+}
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem 1.75rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+.gallery-grid .polaroid { max-width: 210px; }
+
+@media (max-width: 640px) {
+  .polaroid.hero,
+  .polaroid.chinelos {
+    float: none;
+    display: block;
+    max-width: 260px;
+    margin: 0 auto 1.5rem;
+  }
+  .gallery-grid { gap: 2rem 1rem; }
+  .gallery-grid .polaroid { max-width: 160px; }
+}
+</style>
+<div class="{=html}">
+<figure class="polaroid hero figure" style="--rot: 3deg;">
+<img src="images/about/observatorio.jpg" alt="Jorge en el Observatorio Griffith, Los Ángeles" class="figure-img">
+<figcaption>
+Griffith Observatory · LA
+</figcaption>
+</figure>
+</div>
 <p>Hola.</p>
-<p>Yo soy Juvenal Campos, y este es mi blog personal.</p>
-<p>Soy Ingeniero en Irrigación de <em>Chapingo</em> y Maestro en Economía por <em>El Colegio de México</em>, y actualmente trabajo en el <em>Laboratorio Nacional de Políticas Públicas</em> del <em>CIDE</em> como investigador asociado.</p>
-<p>Soy originario del Estado de Morelos, me gusta brincar chinelo, comer Cecina de Yeca y decir “si pues” cantadito. Mi pueblo se llama Ocuituco, y se encuentra en la región de los altos de Morelos, pegado al volcán Popocatépetl en esa parte del estado en la que ya no hace calor y tampoco tenemos albercas.</p>
-<p>Mis hobbies son caminar, jugar videojuegos (Pokémon, Final Fantasy, Halo y Smash Bros), ir a correr/gimnasio, ver los Youtubes (un día sacaré mi canal de algo) y moverle al R, al HTML y al CSS (y de vez en cuando, al Python y al JS). También de vez en mes me veo alguna serie de Netflix o de Anime japonés.</p>
-<p>Este es mi blog personal, lo escribo principalmente motivado en la necesidad de dejar de ser solo un consumidor de contenido para pasar a generarlo. En esta página subiré proyectos personales, tutoriales de R, reseñas de libros, de juegos y de anime (aunque principalmente me enfocaré mas en el R) y bloguearé también de cosas de mi vida personal, así tipo diario.</p>
+<p>Yo soy Jorge Juvenal Campos Ferreira, y este es mi blog personal.</p>
+<p>Soy <strong>Ingeniero en Irrigación</strong> por la <em>Universidad Autónoma Chapingo</em> y <strong>Maestro en Economía</strong> por <em>El Colegio de México</em>. Actualmente mi trabajo se reparte entre la ciencia de datos aplicada, el periodismo de datos y la docencia universitaria:</p>
+<ul>
+<li>Hago ciencia de datos para problemas públicos y privados en <a href="https://claveigualdad.org"><strong>Clave Igualdad</strong></a>.</li>
+<li>Colaboro con <a href="https://mexicocomovamos.mx"><strong>México, ¿Cómo Vamos?</strong></a> en proyectos como el <a href="https://mexicocomovamos.mx/indice-de-progreso-social/">Índice de Progreso Social</a>.</li>
+<li>Doy clases en el <a href="https://tec.mx"><strong>Tec de Monterrey</strong></a>.</li>
+<li>Apoyo a la <a href="https://novagob.org"><strong>Fundación Novagob</strong></a> en el <a href="https://ics.novagob.mx">Índice de Ciudades Sostenibles</a> y el Índice de Estados Sostenibles.</li>
+<li>Escribo la columna <strong>Apuntes de datos</strong> en <a href="https://atiempo.tv/author/juvenal-campos/"><strong>ATiempo.TV</strong></a>, medio digital de Coahuila.</li>
+</ul>
+<div class="{=html}">
+<figure class="polaroid chinelos figure" style="--rot: -4deg;">
+<img src="images/about/chinelos.jpg" alt="Chinelos de Morelos" class="figure-img">
+<figcaption>
+Chinelos de Morelos
+</figcaption>
+</figure>
+</div>
+<p>Soy originario del Estado de Morelos, me gusta brincar chinelo, comer Cecina de Yeca y decir “sí pues” cantadito. Mi pueblo se llama Ocuituco y se encuentra en la región de los altos de Morelos, pegado al volcán Popocatépetl, en esa parte del estado en la que ya no hace calor y tampoco tenemos albercas.</p>
+<p>Mis hobbies son caminar, jugar videojuegos (Pokémon, la saga <strong>Persona</strong> de Atlus, Halo y Smash Bros), ir a correr/gimnasio, ver YouTube (un día sacaré mi canal de algo) y moverle al R, al HTML y al CSS (y de vez en cuando, al Python y al JS). También de vez en mes me veo alguna serie de Netflix o de anime japonés.</p>
+<p>Este blog lo escribo principalmente motivado por la necesidad de dejar de ser solo un consumidor de contenido para pasar a generarlo. Aquí subo proyectos personales, tutoriales de R, análisis con datos públicos y, de vez en cuando, cosas de mi vida.</p>
+<p>Si quieres escribirme para colaborar, dar clase o simplemente platicar sobre datos, puedes hacerlo por <a href="mailto:juvenal@claveigualdad.org">correo</a> o desde la <a href="index.html#contacto">sección de contacto</a>.</p>
 <p>Bienvenidos.</p>
 <p><strong>Jorge Juvenal Campos Ferreira.</strong></p>
+<section class="photo-gallery">
+  <h3 class="gallery-title anchored">Otros momentos</h3>
+  <div class="gallery-grid">
+    <figure class="polaroid figure" style="--rot: -3deg;">
+      <img src="images/about/stanford.jpg" alt="Stanford University" class="figure-img">
+      <figcaption>Stanford</figcaption>
+    </figure>
+    <figure class="polaroid figure" style="--rot: 2.5deg;">
+      <img src="images/about/mcv.jpg" alt="Evento de México, ¿Cómo Vamos?" class="figure-img">
+      <figcaption>México, ¿Cómo&nbsp;Vamos?</figcaption>
+    </figure>
+    <figure class="polaroid figure" style="--rot: 3.5deg;">
+      <img src="images/about/mercado.jpg" alt="Feria de Tepalcingo" class="figure-img">
+      <figcaption>Feria de Tepalcingo</figcaption>
+    </figure>
+    <figure class="polaroid figure" style="--rot: -2.5deg;">
+      <img src="images/about/billete.jpg" alt="Visita al MIDE" class="figure-img">
+      <figcaption>Visita al MIDE</figcaption>
+    </figure>
+  </div>
+</section>
+<p><small style="display:block; margin-top:3rem; color:#888; font-size:.85rem;"> Foto de chinelos: <a href="https://commons.wikimedia.org/wiki/File:Chinelos_de_Morelos.JPG">Areygadas</a>, Wikimedia Commons · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. </small></p>
 
 
 
 </main> <!-- /main -->
+<!-- ============================================================
+     FOOTER PERSONALIZADO
+     ============================================================ -->
+<footer class="custom-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Jorge Juvenal Campos Ferreira</h3>
+        <p>
+          Científico de datos especializado en datos públicos y privados
+          para la solución de problemas. Periodismo de datos y docencia.
+        </p>
+      </div>
+      <div class="footer-links">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="posts.html">Blog</a></li>
+          <li><a href="index.html#socios">Colaboradores</a></li>
+          <li><a href="index.html#proyectos">Proyectos</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://github.com/JuveCampos" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://twitter.com/JuvenalCamposF" target="_blank" rel="noopener">Twitter / X</a></li>
+          <li><a href="https://www.linkedin.com/in/jorge-juvenal-campos-ferreira-5532b7160/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://bsky.app/profile/juvenalcamposf.bsky.social" target="_blank" rel="noopener">Bluesky</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Jorge Juvenal Campos Ferreira. Todos los derechos reservados.</span>
+      <div class="footer-social">
+        <a href="https://github.com/JuveCampos" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+        </a>
+        <a href="https://twitter.com/JuvenalCamposF" target="_blank" rel="noopener" aria-label="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/jorge-juvenal-campos-ferreira-5532b7160/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+        </a>
+        <a href="https://bsky.app/profile/juvenalcamposf.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.575 3.497 6.182 3.254-4.517.752-8.438 2.589-3.077 9.11 5.883 6.734 8.391-.4 9.271-3.218.88 2.818 2.39 9.628 9.27 3.218 5.36-6.52 1.44-8.358-3.076-9.11 2.607.243 5.397-.627 6.182-3.254.246-.828.624-5.788.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C18.046 4.748 15.087 8.687 14 10.8h-2z"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT — Theme toggle, navbar scroll, animations
+     ============================================================ -->
+<script>
+(function() {
+  'use strict';
+
+  /* ---- SVG Icons ---- */
+  var sunIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+  var moonIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+
+  var THEME_KEY = 'jcf-theme-preference';
+
+  /* ---- Theme Management ---- */
+  function getSystemTheme() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    var btn = document.getElementById('theme-toggle');
+    if (btn) {
+      btn.innerHTML = theme === 'dark' ? sunIcon : moonIcon;
+      btn.setAttribute('aria-label',
+        theme === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
+    }
+  }
+
+  function setTheme(theme) {
+    localStorage.setItem(THEME_KEY, theme);
+    applyTheme(theme);
+  }
+
+  /* Apply immediately to prevent flash of wrong theme */
+  var storedTheme = localStorage.getItem(THEME_KEY);
+  applyTheme(storedTheme || getSystemTheme());
+
+  /* Detect hero page immediately */
+  if (document.querySelector('.hero-section')) {
+    document.body.classList.add('has-hero');
+  }
+
+  /* Detect listing page (posts.html) */
+  if (document.querySelector('.quarto-listing')) {
+    document.body.classList.add('quarto-listing-page');
+  }
+
+  /* Listen for system theme changes */
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+    if (!localStorage.getItem(THEME_KEY)) {
+      applyTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+
+  /* ---- DOM Ready ---- */
+  document.addEventListener('DOMContentLoaded', function() {
+
+    /* Re-check hero (in case DOM wasn't ready for the first check) */
+    if (document.querySelector('.hero-section')) {
+      document.body.classList.add('has-hero');
+    }
+    if (document.querySelector('.quarto-listing')) {
+      document.body.classList.add('quarto-listing-page');
+    }
+
+    /* -- Create theme toggle button -- */
+    var toggle = document.createElement('button');
+    toggle.id = 'theme-toggle';
+    toggle.className = 'theme-toggle-btn';
+    toggle.setAttribute('aria-label', 'Cambiar tema');
+    toggle.addEventListener('click', function() {
+      var current = document.documentElement.getAttribute('data-theme') || 'light';
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    /* Insert into navbar (right side, next to social icons) */
+    var navRight = document.querySelector('.navbar-nav.ms-auto')
+                || document.querySelector('.navbar .navbar-nav:last-child');
+    if (navRight) {
+      var li = document.createElement('li');
+      li.className = 'nav-item d-flex align-items-center ms-2';
+      li.appendChild(toggle);
+      navRight.appendChild(li);
+    } else {
+      var navContainer = document.querySelector('.navbar .container-fluid')
+                      || document.querySelector('.navbar .container');
+      if (navContainer) {
+        navContainer.appendChild(toggle);
+      }
+    }
+
+    /* Set initial icon */
+    var currentTheme = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+    applyTheme(currentTheme);
+
+    /* -- Navbar scroll effect (only on hero pages) -- */
+    var navbar = document.querySelector('.navbar');
+    if (navbar && document.body.classList.contains('has-hero')) {
+      function onScroll() {
+        if (window.scrollY > 60) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    /* -- Section reveal animation (IntersectionObserver) -- */
+    var sections = document.querySelectorAll('.section');
+    if (sections.length > 0 && 'IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      sections.forEach(function(section) {
+        observer.observe(section);
+      });
+    } else {
+      /* Fallback: show all sections immediately */
+      sections.forEach(function(s) { s.classList.add('visible'); });
+    }
+
+    /* -- Hero Carousel -- */
+    var slides = document.querySelectorAll('.carousel-slide');
+    var dotsContainer = document.querySelector('.carousel-dots');
+    if (slides.length > 1 && dotsContainer) {
+      var currentSlide = 0;
+      var carouselInterval;
+
+      /* Create dots */
+      slides.forEach(function(_, i) {
+        var dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Imagen ' + (i + 1));
+        dot.addEventListener('click', function() {
+          goToSlide(i);
+          resetInterval();
+        });
+        dotsContainer.appendChild(dot);
+      });
+
+      var dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+      function goToSlide(n) {
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+        currentSlide = n;
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+      }
+
+      function nextSlide() {
+        goToSlide((currentSlide + 1) % slides.length);
+      }
+
+      function resetInterval() {
+        clearInterval(carouselInterval);
+        carouselInterval = setInterval(nextSlide, 5000);
+      }
+
+      /* Auto-play: cambiar cada 5 segundos */
+      carouselInterval = setInterval(nextSlide, 5000);
+    }
+
+    /* -- Smooth scroll for anchor links -- */
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          var navbarHeight = navbar ? navbar.offsetHeight : 0;
+          var targetPos = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 20;
+          window.scrollTo({ top: targetPos, behavior: 'smooth' });
+        }
+      });
+    });
+
+  });
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -248,7 +595,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/juvenalcampos\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -576,19 +923,6 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>Blog personal de Jorge Juvenal Campos Ferreira</p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
-  </div>
-</footer>
 
 
 

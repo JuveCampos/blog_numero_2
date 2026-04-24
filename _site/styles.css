@@ -263,6 +263,19 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--navbar-text) !important;
 }
 
+/* Bluesky: el ícono no está en esta versión de Bootstrap Icons,
+   lo inyectamos con mask-image para que herede currentColor. */
+.navbar .bi-bluesky::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  vertical-align: -0.125em;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.575 3.497 6.182 3.254-4.517.752-8.438 2.589-3.077 9.11 5.883 6.734 8.391-.4 9.271-3.218.88 2.818 2.39 9.628 9.27 3.218 5.36-6.52 1.44-8.358-3.076-9.11 2.607.243 5.397-.627 6.182-3.254.246-.828.624-5.788.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C18.046 4.748 15.087 8.687 14 10.8h-2z'/></svg>") no-repeat center / contain;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.575 3.497 6.182 3.254-4.517.752-8.438 2.589-3.077 9.11 5.883 6.734 8.391-.4 9.271-3.218.88 2.818 2.39 9.628 9.27 3.218 5.36-6.52 1.44-8.358-3.076-9.11 2.607.243 5.397-.627 6.182-3.254.246-.828.624-5.788.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C18.046 4.748 15.087 8.687 14 10.8h-2z'/></svg>") no-repeat center / contain;
+}
+
 /* --- Hero pages: navbar transparente --- */
 body.has-hero .navbar {
   position: fixed !important;
@@ -1129,28 +1142,74 @@ body:not(.has-hero) .page-layout-full #title-block-header {
 }
 
 /* ============================================================
-   CODE BLOCKS
+   CODE BLOCKS — Siempre fondo claro, inmune al modo oscuro
    ============================================================ */
 
 code {
   font-size: 0.88em;
-  color: var(--accent);
-  background-color: var(--accent-light);
+  color: #0071e3;
+  background-color: rgba(0, 113, 227, 0.08);
   padding: 2px 6px;
   border-radius: 4px;
 }
 
 pre {
-  background-color: var(--bg-secondary) !important;
-  border: 1px solid var(--border-color) !important;
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
   border-radius: 12px !important;
   padding: 20px !important;
+  overflow-x: auto !important;
 }
 
 pre code {
-  background: none;
+  background: none !important;
   padding: 0;
-  color: var(--text-primary);
+  color: #1d1d1f !important;
+}
+
+/* Syntax highlighting — forzar colores legibles en fondo blanco */
+pre code span.al { color: #ff0000; } /* Alert */
+pre code span.an { color: #60a0b0; font-weight: bold; } /* Annotation */
+pre code span.at { color: #7d9029; } /* Attribute */
+pre code span.bn { color: #40a070; } /* BaseN */
+pre code span.bu { color: #1d1d1f; } /* BuiltIn */
+pre code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+pre code span.ch { color: #4070a0; } /* Char */
+pre code span.cn { color: #880000; } /* Constant */
+pre code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+pre code span.cv { color: #60a0b0; font-weight: bold; } /* CommentVar */
+pre code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+pre code span.dt { color: #902000; } /* DataType */
+pre code span.dv { color: #40a070; } /* DecVal */
+pre code span.er { color: #ff0000; font-weight: bold; } /* Error */
+pre code span.ex { color: #1d1d1f; } /* Extension */
+pre code span.fl { color: #40a070; } /* Float */
+pre code span.fu { color: #06287e; } /* Function */
+pre code span.im { color: #007020; font-weight: bold; } /* Import */
+pre code span.in { color: #60a0b0; font-weight: bold; } /* Information */
+pre code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+pre code span.op { color: #666666; } /* Operator */
+pre code span.pp { color: #bc7a00; } /* Preprocessor */
+pre code span.re { color: #1d1d1f; } /* RegionMarker */
+pre code span.sc { color: #4070a0; } /* SpecialChar */
+pre code span.ss { color: #bb6688; } /* SpecialString */
+pre code span.st { color: #4070a0; } /* String */
+pre code span.va { color: #19177c; } /* Variable */
+pre code span.vs { color: #4070a0; } /* VerbatimString */
+pre code span.wa { color: #60a0b0; font-weight: bold; } /* Warning */
+
+/* Quarto code cell containers */
+div.sourceCode {
+  background-color: #ffffff !important;
+  border-radius: 12px !important;
+}
+
+/* Botón "copiar" sobre fondo claro */
+.code-copy-button {
+  color: #6e6e73 !important;
+}
+.code-copy-button:hover {
+  color: #1d1d1f !important;
 }
 
 /* ============================================================
