@@ -4,7 +4,8 @@ description: >
   Detecta artículos nuevos de Juvenal en ATiempo.TV y crea sus cross-posts
   en posts/ siguiendo la plantilla estandarizada del blog. Usar cuando el
   usuario pida "agregar/reincorporar artículos de ATiempo", "sincronizar con
-  ATiempo" o mencione que hay artículos nuevos de su autoría en ATiempo.TV.
+  ATiempo" o mencione que hay artículos nuevos de su autoría en ATiempo.TV
+  u otro medio externo (Grupo Animal, México Cómo Vamos, etc.).
 ---
 
 # Cross-posts de ATiempo.TV
@@ -79,6 +80,22 @@ Reglas:
 - Las categorías son exactamente `ATiempo.TV` y `Periodismo de datos`
   (son chips visibles en el listado del blog).
 - La descripción termina con `...` si se truncó.
+
+## Otros medios (Grupo Animal, etc.)
+
+La misma plantilla aplica para artículos publicados en otros medios; solo
+cambia:
+
+- **Categorías**: el nombre del medio reemplaza a `ATiempo.TV` (ej.
+  `Grupo Animal`) + `Periodismo de datos`. Ojo: una categoría nueva se
+  vuelve chip de filtro visible en /posts.html inmediatamente.
+- **Enlace final**: `[**Continúa leyendo en <Medio> →**](<URL>)...`
+- **Imagen**: si el `og:image` del medio es una tarjeta genérica/vieja
+  (pasó con Grupo Animal: card de 2022 en artículo de 2026), usar la
+  primera figura del cuerpo del artículo en su lugar.
+- El usuario normalmente proporciona la URL directa (no hay página de
+  autor que rastrear); referencia:
+  `posts/2026-05-19-magisterio-mexicano-mercado-laboral/index.qmd`.
 
 ## Paso 4 — Renderizar y verificar
 
