@@ -1,0 +1,21 @@
+<!-- ============================================================
+     ANTI-FOUC: aplicar el tema ANTES del primer pintado.
+     Debe vivir en el <head>; si se aplica al final del body la
+     página pinta primero en claro y "parpadea" al cambiar a oscuro.
+     ============================================================ -->
+<script>
+(function() {
+  try {
+    var stored = localStorage.getItem('jcf-theme-preference');
+    var theme = stored ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+</script>
+
+<!-- Conexión anticipada a Google Fonts (styles.css las importa) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

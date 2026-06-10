@@ -4,6 +4,9 @@ project:
     - "*.qmd"
     - "posts/**/*.qmd"
     - "!CLAUDE.md"
+    # Borradores locales (gitignorados): no forman parte del sitio
+    - "!lecturas_nuevas/"
+    - "!propuestas/"
   resources:
     - images/**
 
@@ -43,6 +46,8 @@ format:
   html:
     theme: cosmo
     css: styles.css
+    include-in-header:
+      - includes/in-header.html
     include-after-body:
       - includes/after-body.html
     toc: true

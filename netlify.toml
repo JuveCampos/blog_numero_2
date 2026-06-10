@@ -1,3 +1,21 @@
 [build]
   command = "wget -qO /tmp/quarto.tar.gz https://github.com/quarto-dev/quarto-cli/releases/download/v1.7.32/quarto-1.7.32-linux-amd64.tar.gz && tar -xzf /tmp/quarto.tar.gz -C /tmp && /tmp/quarto-1.7.32/bin/quarto render"
   publish = "_site"
+
+# ============================================================
+# Encabezados de seguridad (sitio estático: riesgo bajo, pero
+# estos encabezados son gratis y cubren lo básico)
+# ============================================================
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Caché larga para imágenes (cambian poco; 1 semana)
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

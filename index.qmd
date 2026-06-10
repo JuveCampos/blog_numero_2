@@ -12,6 +12,12 @@ listing:
     fields: [image, date, title, description, categories]
 page-layout: full
 toc: false
+format:
+  html:
+    include-in-header:
+      - includes/in-header.html
+      - text: |
+          <link rel="preload" as="image" href="images/carousel/IMG_7831.jpg" fetchpriority="high">
 ---
 
 ```{=html}
@@ -20,11 +26,13 @@ toc: false
      ============================================ -->
 <section class="hero-section">
   <div class="carousel-container" aria-hidden="true">
+    <!-- Solo la primera imagen carga de inmediato (con preload en el head);
+         las demás se cargan vía JS (data-bg) cuando la página ya pintó. -->
     <div class="carousel-slide active" style="background-image: url('images/carousel/IMG_7831.jpg')"></div>
-    <div class="carousel-slide" style="background-image: url('images/carousel/IMG_7548.jpg')"></div>
-    <div class="carousel-slide" style="background-image: url('images/carousel/IMG_6747.jpg')"></div>
-    <div class="carousel-slide" style="background-image: url('images/carousel/IMG_5463.jpg')"></div>
-    <div class="carousel-slide" style="background-image: url('images/carousel/IMG_5412.jpg')"></div>
+    <div class="carousel-slide" data-bg="images/carousel/IMG_7548.jpg"></div>
+    <div class="carousel-slide" data-bg="images/carousel/IMG_6747.jpg"></div>
+    <div class="carousel-slide" data-bg="images/carousel/IMG_5463.jpg"></div>
+    <div class="carousel-slide" data-bg="images/carousel/IMG_5412.jpg"></div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -71,31 +79,31 @@ toc: false
 
       <a href="https://claveigualdad.org" class="partner-card glass-card"
          target="_blank" rel="noopener noreferrer">
-        <img class="partner-logo" src="https://images.squarespace-cdn.com/content/v1/68813d1432161302fea0b0c4/5a29bbab-56fa-45a6-82e4-e104094c7893/clave_logo.png" alt="Logo Clave Igualdad">
+        <img class="partner-logo clave-logo" src="images/socios/clave_igualdad.webp" alt="Logo Clave Igualdad" loading="lazy" decoding="async">
         <span class="partner-name">Clave Igualdad</span>
       </a>
 
       <a href="https://mexicocomovamos.mx" class="partner-card glass-card"
          target="_blank" rel="noopener noreferrer">
-        <img class="partner-logo" src="https://ap-cdn.sfo3.cdn.digitaloceanspaces.com/uploads/2022/05/Logo-Mexico-Como-Vamos.png" alt="Logo México, ¿Cómo Vamos?">
+        <img class="partner-logo" src="images/socios/mexico_como_vamos.png" alt="Logo México, ¿Cómo Vamos?" loading="lazy" decoding="async">
         <span class="partner-name">México, ¿Cómo Vamos?</span>
       </a>
 
       <a href="https://tec.mx/es/ciencias-sociales" class="partner-card glass-card"
          target="_blank" rel="noopener noreferrer">
-        <img class="partner-logo tec-logo" src="https://tec.mx/themes/custom/emulsify_tec/images/logo-tec-fafafa.svg" alt="Logo Tec de Monterrey">
+        <img class="partner-logo tec-logo" src="images/socios/tec_monterrey.svg" alt="Logo Tec de Monterrey" loading="lazy" decoding="async">
         <span class="partner-name">Tec de Monterrey</span>
       </a>
 
       <a href="https://novagob.org" class="partner-card glass-card"
          target="_blank" rel="noopener noreferrer">
-        <img class="partner-logo novagob-logo" src="https://novagob.org/wp-content/uploads/2025/03/novagob.brand_imagotipo_grey-2.png" alt="Logo Fundación Novagob">
+        <img class="partner-logo novagob-logo" src="images/socios/novagob.png" alt="Logo Fundación Novagob" loading="lazy" decoding="async">
         <span class="partner-name">Fundación Novagob</span>
       </a>
 
       <a href="https://atiempo.tv/author/juvenal-campos/" class="partner-card glass-card"
          target="_blank" rel="noopener noreferrer">
-        <img class="partner-logo" src="https://i0.wp.com/atiempo.tv/wp-content/uploads/2024/02/Logo-atiempo-SEMANARIO-01-1.png?fit=1510%2C694&ssl=1" alt="Logo ATiempo.TV">
+        <img class="partner-logo atiempo-logo" src="images/socios/atiempo.png" alt="Logo ATiempo.TV" loading="lazy" decoding="async">
         <span class="partner-name">ATiempo.TV</span>
       </a>
 
@@ -114,7 +122,7 @@ toc: false
 
       <!-- Proyecto 1: Índice de Progreso Social -->
       <a href="https://mexicocomovamos.mx/indice-de-progreso-social/" class="project-card glass-card" target="_blank" rel="noopener noreferrer">
-        <img class="project-img" src="https://mexicocomovamos.mx/wp-content/uploads/2025/11/ips25-portada-alta.jpg" alt="Índice de Progreso Social">
+        <img class="project-img" src="images/proyectos/ips25.jpg" alt="Índice de Progreso Social" width="1920" height="1080" loading="lazy" decoding="async">
         <div class="project-info">
           <div class="project-tags">
             <span class="tag">Índice</span>
@@ -130,7 +138,7 @@ toc: false
 
       <!-- Proyecto 2: Artículos ATiempo.TV -->
       <a href="https://atiempo.tv/author/juvenal-campos/" class="project-card glass-card" target="_blank" rel="noopener noreferrer">
-        <img class="project-img" src="https://i0.wp.com/atiempo.tv/wp-content/uploads/2026/02/Juvenal.jpg.jpeg?resize=1024%2C576&ssl=1" alt="Apuntes de datos en ATiempo.TV">
+        <img class="project-img" src="images/proyectos/atiempo_juvenal.jpg" alt="Apuntes de datos en ATiempo.TV" width="1024" height="576" loading="lazy" decoding="async">
         <div class="project-info">
           <div class="project-tags">
             <span class="tag">Periodismo de datos</span>
@@ -146,7 +154,7 @@ toc: false
 
       <!-- Proyecto 3: Presentaciones -->
       <a href="https://juvecampos.github.io/presentaciones/" class="project-card glass-card" target="_blank" rel="noopener noreferrer">
-        <img class="project-img" src="images/proyectos/prez.png" alt="Presentaciones">
+        <img class="project-img" src="images/proyectos/prez_card.jpg" alt="Presentaciones" width="1200" height="701" loading="lazy" decoding="async">
         <div class="project-info">
           <div class="project-tags">
             <span class="tag">Docencia</span>
@@ -162,7 +170,7 @@ toc: false
 
       <!-- Proyecto 4: Índice de Ciudades Sostenibles -->
       <a href="https://ics.novagob.mx" class="project-card glass-card" target="_blank" rel="noopener noreferrer">
-        <img class="project-img" src="images/proyectos/ics.png" alt="Índice de Ciudades Sostenibles 2024">
+        <img class="project-img" src="images/proyectos/ics.png" alt="Índice de Ciudades Sostenibles 2024" loading="lazy" decoding="async">
         <div class="project-info">
           <div class="project-tags">
             <span class="tag">Índice</span>

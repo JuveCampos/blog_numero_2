@@ -597,6 +597,19 @@ body:not(.has-hero) .theme-toggle-btn:hover {
   filter: brightness(1.5);
 }
 
+/* Clave Igualdad: texto azul marino, ilegible en oscuro → blanco */
+[data-theme="dark"] .partner-logo.clave-logo {
+  filter: brightness(0) invert(1);
+}
+
+/* ATiempo: logo blanco, invisible en claro → negro */
+.partner-logo.atiempo-logo {
+  filter: brightness(0);
+}
+[data-theme="dark"] .partner-logo.atiempo-logo {
+  filter: none;
+}
+
 .partner-name {
   font-size: 0.85rem;
   font-weight: 600;
