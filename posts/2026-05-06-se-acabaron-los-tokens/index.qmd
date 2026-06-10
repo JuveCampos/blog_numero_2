@@ -1,0 +1,18 @@
+---
+title: "Se acabaron los tokens"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2026-05-06"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2026/05/token_fincompara_899x493.png?resize=1000%2C563&ssl=1"
+description: "Muy probablemente usted ya haya usado alguna herramienta de Inteligencia Artificial en los últimos meses, como Chat GPT, Claude, Gemini, Grok o Copilot. Y si su uso es un poco más avanzado, quizá tamb..."
+---
+
+![Se acabaron los tokens](https://i0.wp.com/atiempo.tv/wp-content/uploads/2026/05/token_fincompara_899x493.png?resize=1000%2C563&ssl=1)
+
+Muy probablemente usted ya haya usado alguna herramienta de Inteligencia Artificial en los últimos meses, como Chat GPT, Claude, Gemini, Grok o Copilot. Y si su uso es un poco más avanzado, quizá también haya probado agentes de IA: programas capaces de encadenar pasos por su cuenta para investigar, programar, redactar documentos o navegar por internet con menor supervisión humana. En otras palabras, inteligencias artificiales que no solo «responden preguntas»; también empiezan a ejecutar tareas por su cuenta.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/articulos-de-semanario/apuntes-de-datos-articulos-de-semanario/se-acabaron-los-tokens/){target="_blank" rel="noopener noreferrer"}
