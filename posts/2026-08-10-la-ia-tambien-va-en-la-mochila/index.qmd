@@ -1,0 +1,18 @@
+---
+title: "La IA también va en la mochila: panorama de la IA ante el inicio de un nuevo semestre"
+author: "Jorge Juvenal Campos Ferreira"
+date: "2026-08-10"
+categories:
+  - ATiempo.TV
+  - Periodismo de datos
+image: "https://i0.wp.com/atiempo.tv/wp-content/uploads/2023/12/universitarios.jpg?resize=1000%2C563&ssl=1"
+description: "Este 10 de agosto inician clases en varias escuelas y universidades a lo largo del país, y si lo ocurrido en la UNAM nos ha enseñado algo, es que las herramientas de inteligencia artificial ya son p..."
+---
+
+![La IA también va en la mochila: panorama de la IA ante el inicio de un nuevo semestre](https://i0.wp.com/atiempo.tv/wp-content/uploads/2023/12/universitarios.jpg?resize=1000%2C563&ssl=1)
+
+Este 10 de agosto inician clases en varias escuelas y universidades a lo largo del país, y si lo ocurrido en la UNAM nos ha enseñado algo, es que las herramientas de inteligencia artificial ya son parte de los útiles escolares de 2026.
+
+---
+
+[**Continúa leyendo en ATiempo.TV →**](https://atiempo.tv/nacional/la-ia-ya-esta-en-las-mochilas/){target="_blank" rel="noopener noreferrer"}
